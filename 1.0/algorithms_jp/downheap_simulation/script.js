@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "ヒープノードの値の減少";
+document.getElementById('ptitle_en').innerHTML = "Decreasing Value of Heap Node";
+document.getElementById('input_comment').innerHTML = "最大ヒープに対する要素の減少更新<ul><li>ヒープの要素数N &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "再構築された最大ヒープ";
+document.getElementById('motivation').innerHTML = "最大ヒープに対する更新は要素の増加と減少です。ヒープのノードの値が減少した場合は、その子、そして子孫の値に応じてヒープを再構築する必要があります。";
+document.getElementById('description').innerHTML = "最大ヒープに対して、一つの要素が、優先度が減少するように更新されました。最大ヒープを再構築してください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/heap_decrease/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/heap_decrease/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/downheap_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "ダウンヒープ";
+document.getElementById('atitle_en').innerHTML = "Down Heap";
+document.getElementById('abstract').innerHTML = "最大ヒープの要素が「減少によって」更新された場合は、最大ヒープ条件を満たすように「小さくなった」要素を葉に向かって移動させます。この操作をダウンヒープと呼びます。ここでは、要素の移動をスワップで行います。";
+document.getElementById('explanation').innerHTML = "最大ヒープのノードの値が減少したときは、そのノードを現在地として開始し、子の値と大きさを比較し、逆順だったらスワップする処理を繰り返します。ヒープ条件を維持するため、子の値と比べるときは、左右で大きい方のノードを選ぶ必要があります。ここでは、親と左右の子のうち最大値を持つノードを特定し、どのようにスワップするか（しないか）を判断します。要素をスワップした後はその時選んだ子を現在地に変更します。この処理は、左右の子がともにヒープ条件を満たすとき（親が最大値を持つとき）、あるいは現在地が葉に達したときに終了します。";
+document.getElementById('note').innerHTML = "ここでは、親ノードの要素と子ノードの要素を比較・スワップするswap関数を応用した方法で実装しました。一方、減少した要素を一時変数に保持しておき、それより大きい子孫の値を上昇させ、適切な位置に減少した要素を挿入するinsertionを応用した実装を行うこともできます。swapによる方法もinsertionによる方法も、各要素が動く範囲は、完全二分木の高さに抑えられるため、ダウンヒープのオーダーはO(log N)となります。";
+document.getElementById('application').innerHTML = "この処理は優先度付きキューを実装するための部品になります。また、高等的な整列アルゴリズムのひとつであるヒープソートに実装されます。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/ACBT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_t.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">おおよそ完全二分木</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>最大ヒープの要素</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">入力・初期化</th></tr><tr><td class="symbol"><img src="formula_input.svg" /></td><td>最大ヒープ条件を満たす整数の列を読み込みます。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">要素の更新とダウンヒープ</th></tr><tr><td class="symbol"><img src="formula_write.svg" /></td><td>要素を更新します。</td><td class="code">A[i] &larr; value</td></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>親と左右の子の中で最大値を持つノードを探します。</td><td class="code">largest &larr; ?</td></tr><tr><td class="symbol"><img src="formula_cp.svg" /></td><td>値が最大のノードを指します。</td><td class="code">largest</td></tr><tr><td class="symbol"><img src="formula_pair.svg" /></td><td>親子の値をスワップします。</td><td class="code">swap(A[i], A[largest])</td></tr><tr><td class="symbol"><img src="formula_trace.svg" /></td><td>更新された要素が葉に向かって移動していきます。</td><td class="code">iの軌跡</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">親子の大小関係を調べ、最大値を持つノードを探します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">大きい方の子が親よりも大きい場合スワップします。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">入力・初期化</b><br/><img src="scene_0.svg" alt="ダウンヒープ | 入力・初期化" title="ダウンヒープ | 入力・初期化"/></p></div><div><p><b class="scene_desc">要素の更新とダウンヒープ</b><br/><img src="scene_1.svg" alt="ダウンヒープ | 要素の更新とダウンヒープ" title="ダウンヒープ | 要素の更新とダウンヒープ"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/swap.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

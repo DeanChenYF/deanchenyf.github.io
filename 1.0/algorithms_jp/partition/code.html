@@ -1,0 +1,17 @@
+<pre>
+#配列Aの区間[l, r]をA[r]の値を基準に分割する
+partition(A, l, r):
+    p &larr; l
+    i &larr; p-1
+    for j &larr; p to r-1:
+        if A[j] < A[r]:
+            i &larr; i+1
+            swap(A[i], A[j])
+
+    i &larr; i + 1
+    swap(A[i], A[r])
+    return i
+
+# 配列Aの全体を分割する場合の使用例
+q &larr; partition(A, 0, N-1)
+</pre>

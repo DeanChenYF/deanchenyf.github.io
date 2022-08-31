@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "點的凸包";
+document.getElementById('ptitle_en').innerHTML = "Convex Hull";
+document.getElementById('input_comment').innerHTML = "平面上的點群<ul><li>點數 N &le; 1,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "包含所有點且面積最小的凸多邊形";
+document.getElementById('motivation').innerHTML = "點的凸包（Convex Hull）是指包含所有的點，且面積最小的凸多邊形。凸多邊形是不往內凹陷的多邊形。";
+document.getElementById('description').innerHTML = "從一個點集合，求出凸包。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/convex_hull_small/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/convex_hull_small/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/gift_wrapping.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "包裹法";
+document.getElementById('atitle_en').innerHTML = "Gift Wrapping";
+document.getElementById('abstract').innerHTML = "包裹法是一種很簡單的演算法，就像包裝禮物一樣，一次增加 1 條邊到凸包當中。";
+document.getElementById('explanation').innerHTML = "包裹法也稱為 Jarvis 步進法（Jarvis march），是一種透過線性搜尋法逐步找出凸包邊的演算法。<br/><br/>首先，選擇 1 個一定會在凸包中的點為起點。本節是以 x 座標最小的點（最左邊的點）為起點，若存在多點同時符合此條件，則選擇其中 y 座標最小的點。<br/><br/>接著，從起點開始逐步接起凸包的邊。我們假設最後新增到凸包的邊之端點為head，且第一個 head 為起點。各步驟要做的就是以 head 為中心，尋找可構成最大逆時針夾角的邊，並將其端點 t 新增到凸包中。之後再以點 t 為 head，重複進行上述處理，直到 head 回到起點，凸包就完成了。";
+document.getElementById('note').innerHTML = "包裹法的時間複雜度取決於輸入的點的狀態。假設給定的凸包邊數為 H，由於新增每一條邊時，都必須對 N 個點執行線性搜尋法，因此時間複雜度為 O(HN)。";
+document.getElementById('application').innerHTML = "包裹法不太適合用於凸包邊數（點數）較多的應用程式，但是在輸入的凸包邊數較小時，執行效率相當高。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/P2D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">二維點群</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">建立凸包</th></tr><tr><td class="symbol"><img src="formula_order.svg" /></td><td>找到最左邊的點。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>以起點為中心，選擇在逆時針旋轉時最晚碰到的點。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_pointer.svg" /></td><td>指向所選的點。</td><td class="code">t</td></tr><tr><td class="symbol"><img src="formula_head.svg" /></td><td>將點新增至凸包中。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_trace.svg" /></td><td>逐步決定凸包的邊。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">以起點為中心，選擇在逆時針旋轉時最晚碰到的點。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">將選定的點新增到凸包中，並以其為新的起點。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">建立凸包</b><br/><img src="scene_0.svg" alt="包裹法 | 建立凸包" title="包裹法 | 建立凸包"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/quad.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

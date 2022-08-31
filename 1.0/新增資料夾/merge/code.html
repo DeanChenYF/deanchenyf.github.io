@@ -1,0 +1,25 @@
+<pre>
+# 合併陣列 A 中區間 [l, m) 與區間 [m, r) 的元素
+# 各區間的元素皆已按升冪排序完成  
+merge(A, l, m, r):
+    for i &larr; 0 to m-1:
+        T[i] &larr; A[i]  #將陣列A的所有元素暫存到陣列T
+
+    reverse(T, m, r)  #反轉暫存陣列T的後半部序列
+
+    i &larr; l
+    j &larr; r-1
+
+    for k &larr; l to r-1:
+        if T[i] &le; T[j]:  #比較前、後段序列最前端的元素，並選出較小者
+        
+            A[k] &larr; T[i] #將選出的較小元素放回原陣列
+            i &larr; i + 1
+        else:
+            A[k] &larr; T[j]
+            j &larr; j - 1
+
+
+# 將陣列整體分為前、後 2 段並使用此函式進行合併的範例 
+merge(A, 0, N/2, N)
+</pre>

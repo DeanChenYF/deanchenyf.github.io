@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "有序字典";
+document.getElementById('ptitle_en').innerHTML = "Sorted Dictionary";
+document.getElementById('input_comment').innerHTML = "對有序字典進行搜尋、新增與刪除的操作<ul><li>操作或提問的次數 Q &le; 100,000</li><li>0 &le; 鍵 &le; 1,000,000,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "回應查詢並輸出排序後的元素";
+document.getElementById('motivation').innerHTML = "字典內容若能經常保持已排序且管理良好的狀態，便能靈活地回應各種查詢。";
+document.getElementById('description').innerHTML = "請實作一個可以搜尋、新增及刪除資料，並能管理與提供已排序元素的「字典」資料結構。本節將不會討論鍵（key）與值（value）的關係，且處理資料時只以鍵為代表。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sorted_dictionary/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sorted_dictionary/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/treap_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "樹堆";
+document.getElementById('atitle_en').innerHTML = "Treap";
+document.getElementById('abstract').innerHTML = "　樹堆（Treap，由 Tree 和 Heap 兩字組合而成）是同時符合以下二元搜尋樹與堆疊條件的搜尋樹。<ul><li>　若 x 為搜尋樹中的節點，而 y 為 x 左子樹中的節點、z 為 x 右子樹中的節點，則 y 的鍵 &le; x 的鍵 &le; zの的鍵</li><li>　若 x 為搜尋樹中的節點，且 c 為 x 的子節點，則 c 的優先權 &lt;  x 的優先權</li></ul>　樹堆會在考慮優先權的情況下進行旋轉操作，以保持樹的平衡。本節主要講解的是插入與刪除資料的演算法。";
+document.getElementById('explanation').innerHTML = "　樹堆中的各元素雖然是由 ( 鍵 , 優先度 ) 的組合所構成，但實際上只有鍵才是資料主體，而這些鍵必須永遠滿足二元搜尋樹的條件。優先權則是必須滿足（最大）堆積性質。為了維持樹的良好平衡，我們會希望優先權能夠隨機地分布在樹當中。<br><br>　在新增新元素到樹堆中時，可以使用與一般二元搜尋樹插入操作相同的做法，將給定鍵及隨機生成的優先權所構成的元素插入樹堆中。不過插入後，雖然可確定新節點已符合二元搜尋樹的條件，但其優先權卻不一定也剛好滿足堆積性質。因此為了確保新節點滿足堆積性質，必須透過旋轉將插入的元素往根節點的方向移動。<br><br>　在從樹堆中刪除具有指定鍵的元素時，需先以一般二元搜尋樹的方式進行搜尋，若能找到節點，便再透過旋轉將其往葉節點的方向移動。由於旋轉時必須將優先權高的節點往上移動，因此子節點的選擇必須符合此原則。當要刪除的目標移動到成為葉節點時，刪除的操作就很簡單了。";
+document.getElementById('note').innerHTML = "　在樹堆中進行資料的搜尋、插入與刪除時，時間複雜度取決於樹的高度。樹的高度則取決於給定的操作、鍵以及生成的優先權，由於我們可透過隨機生成優先權的方式來保持樹的平衡，因此針對樹堆所進行的操作，時間複雜度可望能達到 O(log N)。";
+document.getElementById('application').innerHTML = "　目前雖然已經有好幾款相當不錯的演算法可以提供有序字典，但樹堆在這當中算是相對容易實作又強大的一種資料結構。從字典在多數程式語言中的普及程度就可看出它是資訊處理中不可或缺的一種概念。此外，雜湊表無法提供有序字典。樹堆是一種非常好的二元搜尋樹，它可以維持鍵的順序，因此能進行的操作種類很多，例如列出元素的清單，或是列舉指定範圍內的元素等。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/DBT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">動態二元樹</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_key.svg" /></td><td>字典的鍵</td><td class="code">key</td></tr><tr><td class="symbol"><img src="variable_pri.svg" /></td><td>優先權</td><td class="code">pri</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">搜尋、插入與刪除資料</th></tr><tr><td class="symbol"><img src="formula_inp.svg" /></td><td>插入元素。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_inpMarker.svg" /></td><td>指向要插入的節點。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_del.svg" /></td><td>刪除元素。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_delMarker.svg" /></td><td>指向要刪除的節點。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_rotate.svg" /></td><td>進行旋轉。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_insert.svg" /><p class="caption">新增元素。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_delete.svg" /><p class="caption">刪除元素。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_rotate.svg" /><p class="caption">要素の追加、削除にはそれぞれ一連の回転操作がともないます。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">搜尋、插入與刪除資料</b><br/><img src="scene_0.svg" alt="樹堆(Treap) | 搜尋、插入與刪除資料" title="樹堆(Treap) | 搜尋、插入與刪除資料"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/bst_simulation.svg" width="60"/><img src="../../icons/algorithms/rotate.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

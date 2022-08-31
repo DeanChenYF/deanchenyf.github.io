@@ -1,0 +1,15 @@
+<pre>
+A &larr; 整數序列 # 由索引1開始輸入
+AC[0] &larr; 0  #AC的第0個元素需初始化為0
+
+    
+for i &larr; 1 to N-1:
+    AC[i] &larr; AC[i-1] + A[i] #與前1個元素累加
+
+Q &larr; [l, r] #要計算區間和的區間
+
+for q in Q:
+    l &larr; q.l
+    r &larr; q.r
+    sum &larr; AC[r] - AC[l-1] #根據區間的起點和終點計算總和
+</pre>

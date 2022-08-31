@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9733; ";
+document.getElementById('ptitle').innerHTML = "最短路徑（負邊）";
+document.getElementById('ptitle_en').innerHTML = "Shortest Path on Graph with Negative Weight";
+document.getElementById('input_comment').innerHTML = "加權圖形<ul><li>節點數 N  &le; 1,000</li><li>邊數 　M  &le; 2,000</li><li>-10,000 &lt; 邊上權重 &le; 10,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "從起點到終點的最短距離";
+document.getElementById('motivation').innerHTML = "由於某些問題必須要將加權圖形的邊上可法是否能在這類圖形上正常運作也非常重要。";
+document.getElementById('description').innerHTML = "從給定的加權圖形、起點及終點，找出起點到終點的最短距離。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/shortest_distance_neg/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/shortest_distance_neg/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/bellman_ford.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "貝爾曼-福特演算法";
+document.getElementById('atitle_en').innerHTML = "Bellman Ford's Algorithm";
+document.getElementById('abstract').innerHTML = "貝爾曼 - 福特演算法（Bellman-Ford Algorithm）是透過對圖形中的邊進行一定次數的走訪，來更新暫定最短距離。";
+document.getElementById('explanation').innerHTML = "貝爾曼 - 福特演算法 (Bellman-Ford Algorithm) 與戴克斯特拉演算法（Dijkstra'sAlgorithm）的相同之處在於：兩者都會持續更新從起點到各節點 i 的暫定最短距離dist[i]，並藉此在演算法結束時獲得所求的最短距離。不過戴克斯特拉演算法是選擇最佳節點並更新其相鄰節點的暫定距離，貝爾曼 - 福特演算法則是利用反覆走訪每一條邊的方式來進行更新。<br/><br/>貝爾曼 - 福特演算法在走訪過程中會比較每一條邊 (u,v) 的 dist[v] 與 dist[u] +weight[u][v] 的大小，並以較小值更新 dist[v]。此處理雖然執行到所有節點的 dist[i] 都固定不變時便會停止，但執行 N-1 次可以保證會獲得最佳解。<br><br>最短路徑問題不得出現負迴路（因為距離可以無限減小），透過貝爾曼 - 福特演算法可以檢測出負迴路，檢測方式是在反覆走訪所有邊的過程中，觀察 dist 是否會在第 N 次的走訪中被更新。<br><br>此外，貝爾曼 - 福特演算法與戴克斯特拉演算法，皆可透過在更新暫定距離時，以記錄父節點的方式建立出最短路徑樹。";
+document.getElementById('note').innerHTML = "貝爾曼 - 福特演算法 (Bellman-Ford Algorithm) 必須對圖形中的 M 條邊各進行 N 次操作，因此時間複雜度為 O(NM)。由於在暫定距離不再被更新時便會停止，因此依圖形的形狀與邊上權重的特性不同，也有可能會執行得非常快。";
+document.getElementById('application').innerHTML = "貝爾曼 - 福特演算法 (Bellman-Ford Algorithm) 的計算效率雖然比戴克斯特拉演算法差，但是可以應用在需要處理邊上有負權重的圖形。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/DGR.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">加權有向圖</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_dist.svg" /></td><td>起點到各節點的最短距離</td><td class="code">dist</td></tr><tr><td class="symbol"><img src="variable_weight.svg" /></td><td>節點間的距離</td><td class="code">weight</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">初始化起點</th></tr><tr><td class="symbol"><img src="formula_source.svg" /></td><td>將起點的暫定距離初始化為 0。</td><td class="code">dist[s] &larr; 0</td></tr><tr><td class="symbol"><img src="formula_others.svg" /></td><td>將其餘節點的暫定距離初始化為極大的值。</td><td class="code">dist[v] &larr; INF</td></tr><tr><th class="scene_desc" colspan="3">更新距離</th></tr><tr><td class="symbol"><img src="formula_v.svg" /></td><td>更新暫定距離。</td><td class="code">if dist[e.v] &gt; dist[u] + e.weight: <br>&nbsp;&nbsp;&nbsp;&nbsp;dist[e.v] &larr; dist[u] + e.weight</td></tr><tr><th class="scene_desc" colspan="3">輸出最短距離</th></tr><tr><td class="symbol"><img src="formula_all.svg" /></td><td>輸出由起點開始的最短距離。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">更新暫定距離。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">初始化起點</b><br/><img src="scene_0.svg" alt="貝爾曼-福特演算法 | 初始化起點" title="貝爾曼-福特演算法 | 初始化起點"/></p></div><div><p><b class="scene_desc">更新距離</b><br/><img src="scene_1.svg" alt="貝爾曼-福特演算法 | 更新距離" title="貝爾曼-福特演算法 | 更新距離"/></p></div><div><p><b class="scene_desc">輸出最短距離</b><br/><img src="scene_2.svg" alt="貝爾曼-福特演算法 | 輸出最短距離" title="貝爾曼-福特演算法 | 輸出最短距離"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/cube.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

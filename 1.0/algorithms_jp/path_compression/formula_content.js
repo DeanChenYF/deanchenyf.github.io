@@ -1,0 +1,2 @@
+var variable_content = '<tr><th class="scene_desc" colspan="3">データ</th></tr>';
+var formula_content = '<tr><th class="scene_desc" colspan="3">経路圧縮</th></tr><tr><td class="symbol"><img src="formula_parse.svg" /></td><td>根までの経路を探索します。</td><td class="code">compress(x)</td></tr><tr><td class="symbol"><img src="formula_update.svg" /></td><td>親を更新します。</td><td class="code">parent[x] &larr; compress(parent[x])</td></tr><tr><td class="symbol"><img src="formula_path.svg" /></td><td>圧縮する経路</td><td class="code"></td></tr>';

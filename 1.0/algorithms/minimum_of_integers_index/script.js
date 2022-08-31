@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; ";
+document.getElementById('ptitle').innerHTML = "陣列中最小元素的位置";
+document.getElementById('ptitle_en').innerHTML = "Place of Minimum Element in Array";
+document.getElementById('input_comment').innerHTML = "含有 N 個整數的序列";
+document.getElementById('output_comment').innerHTML = "最小值的位置";
+document.getElementById('motivation').innerHTML = "對演算法或程式而言，若資料是有順序性的序列，使用目標元素的「位置」，會比使用目標元素的「值」還要好。";
+document.getElementById('description').innerHTML = "從 N 個整數中找出最小元素的「位置」。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/minimum_of_integers_index/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/minimum_of_integers_index/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/minimum_of_integers_index.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "最小元素的位置";
+document.getElementById('atitle_en').innerHTML = "(Index of Minimum Value)";
+document.getElementById('abstract').innerHTML = "我們用一維陣列變數來儲存整數序列，並標示出陣列元素中最小值的「位置」（index），過程中不需使用變數 minv 來記錄最小值，而是用變數 mini 來記錄目前最小值所在的索引值。";
+document.getElementById('explanation').innerHTML = "一開始先將箭頭指向陣列的最前端，並從陣列前端開始依序比對各個元素。將各元素與箭頭所指的目前最小值進行比較，若比對到的值較小，則移動箭頭指向新的最小值位置（index）。最後箭頭落在整個陣列比對完所指的元素即為最小值，而箭頭停留處即為所求的位置。";
+document.getElementById('note').innerHTML = "接下來的章節，我們會直接使用 minimum(A, a, b) 函式來進行此處理。此函式會在陣列 A 的第 a 個元素到第 b-1 個元素之間尋找最小值，並傳回其位置（索引值）。";
+document.getElementById('application').innerHTML = "各種演算法都會用到在陣列或其子陣列中尋找最小值或最大值的位置。例如選擇排序法（Selection Sort），就需要在陣列的特定範圍內找出最小值的位置。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">一維陣列</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整數序列</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">入力</th></tr><tr><td class="symbol"><img src="formula_all.svg" /></td><td>載入整數序列。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">更新最小值的位置</th></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>比較目前元素與最小值。</td><td class="code">if A[i] < A[mini]:</td></tr><tr><td class="symbol"><img src="formula_cp.svg" /></td><td>指向最小值的位置。</td><td class="code">mini</td></tr><tr><td class="symbol"><img src="formula_passed.svg" /></td><td>移到下一個元素。</td><td class="code">for 迴圈的 i 值 +1</td></tr><tr><th class="scene_desc" colspan="3">輸出</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>輸出最小值的位置。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">比較目前位置的值與最小值。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">選擇較小值。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">輸入</b><br/><img src="scene_0.svg" alt="最小元素的位置（Index of Minimum Value） | 輸入" title="最小元素的位置（Index of Minimum Value） | 輸入"/></p></div><div><p><b class="scene_desc">更新最小值的位置</b><br/><img src="scene_1.svg" alt="最小元素的位置（Index of Minimum Value） | 更新最小值的位置" title="最小元素的位置（Index of Minimum Value） | 更新最小值的位置"/></p></div><div><p><b class="scene_desc">輸出</b><br/><img src="scene_2.svg" alt="最小元素的位置（Index of Minimum Value） | 輸出" title="最小元素的位置（Index of Minimum Value） | 輸出"/></p></div>';
+document.getElementById('complexity').innerHTML = '';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-28377245-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-28377245-2');
+</script>
+<!--<meta http-equiv="X-UA-Compatible" content="chrome=1">-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Down Heap| 會動的演算法</title>
+<link rel="stylesheet" href="print.css" type="text/css" media="all" />
+<!--<script language="JavaScript" type="text/javascript" src="print.js"></script>-->
+</head>
+<body>
+  <div class="wrapper">
+    <h3>Down Heap| <a href="https://yutaka-watanobe.github.io/star-aida/books/">會動的演算法</a></h3>
+
+    <div id="content" class="content">
+      <h4>符號表示</h4>
+      
+      <table class="items" cellspacing="0">
+        <tbody id="variable">
+	  <tr><th class="scene_desc" colspan="3">資料</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>最大堆積的元素</td><td class="code">A</td></tr>
+	</tbody>
+      </table>
+      <br/>
+      <table class="items" cellspacing="0">
+        <tbody id="formula">
+	  <tr><th class="scene_desc" colspan="3">輸入與初始化</th></tr><tr><td class="symbol"><img src="formula_input.svg" /></td><td>載入滿足最大堆積性質的整數序列。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">更新元素與 Down Heap</th></tr><tr><td class="symbol"><img src="formula_write.svg" /></td><td>更新元素。</td><td class="code">A[i] &larr; value</td></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>找出父節點與左、右子節點中擁有最大值的節點。</td><td class="code">largest &larr; ?</td></tr><tr><td class="symbol"><img src="formula_cp.svg" /></td><td>指向最大值的節點。</td><td class="code">largest</td></tr><tr><td class="symbol"><img src="formula_pair.svg" /></td><td>將父、子節點的 值互換。</td><td class="code">swap(A[i], A[largest])</td></tr><tr><td class="symbol"><img src="formula_trace.svg" /></td><td>將更新後的節點往葉節點方向移動。</td><td class="code">i 的軌跡</td></tr>
+	</tbody>
+      </table>
+
+      <br/>
+      <h4>演算法動畫</h4>
+      <div id="scene" class="scene">
+	<div><p><b class="scene_desc">輸入與初始化</b><br/><img src="scene_0.svg" alt="Down Heap | 輸入與初始化" title="Down Heap | 輸入與初始化"/></p></div><div><p><b class="scene_desc">更新元素與 Down Heap</b><br/><img src="scene_1.svg" alt="Down Heap | 更新元素與 Down Heap" title="Down Heap | 更新元素與 Down Heap"/></p></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

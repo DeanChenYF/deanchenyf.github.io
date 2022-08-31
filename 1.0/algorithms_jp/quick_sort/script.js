@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "整数列の整列";
+document.getElementById('ptitle_en').innerHTML = "Sorting Integers";
+document.getElementById('input_comment').innerHTML = "整数の列$a_0, a_1, ..., a_{N-1}$ <ul><li>$N &le; 100,000$</li><li>$a_i &le; 1,000,000,000$</li></ul>";
+document.getElementById('output_comment').innerHTML = "整列された整数の列";
+document.getElementById('motivation').innerHTML = "";
+document.getElementById('description').innerHTML = "整数の列を小さい順に並び替えてください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sort/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sort/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/quick_sort.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "クイックソート";
+document.getElementById('atitle_en').innerHTML = "Quick Sort";
+document.getElementById('abstract').innerHTML = "クイックソート(quickSort)は、二分木の先行順巡回の流れの中で、分割(partition)によって区間を小さい要素の区間と大きい要素の区間に分け、それぞれの区間に対して再帰的にquickSortを行います。";
+document.getElementById('explanation').innerHTML = "クイックソートは、配列構造上のデータを整列しますが、その計算手順は二分木構造における先行順巡回に基づいています。 アルゴリズムの起点は、配列全体をソートする範囲としてquickSortを実行します。二分木の各ノードでは、最初に現在の区間[l, r]についてpartitionを行い、要素を基準値よりも小さいグループと大きいグループに分割します。このときグループの境にある基準値の位置qを保持しておき、それを基に区間[l, r]を前半の区間[l, q-1]と後半の区間[q+1, r]に分割し、それぞれに対してquickSortを再帰的に実行します。";
+document.getElementById('note').innerHTML = "クイックソートでは、partitionにおける基準値の位置が、計算量に影響します。基準値の位置がソート範囲の中央に近ければ、バランスのとれた二分木となり、その高さは $log_2 N$ に近づきます。このとき各レベルで行われる比較・スワップ処理のオーダーはO(N)となるため、全体のオーダーはO(N log N)となります。一方、基準値を固定してしまうと、入力データの並びに隔たりがあった場合（例えば、既に整列されているか、それに近い場合）は、partitionがバランスよく機能せず、O($N^2$) になってしまいます。これは、基準の位置をランダムに選択するなどの工夫で、対策を行うことが可能です。また、クイックソートは離れた要素を交換するため、安定なソートではありません。<br/><br/>一方、クイックソートは、マージソートとは違い、１つの配列でソートを完結することができます。このようなソートをインプレイス(in-place)ソートと言います。";
+document.getElementById('application').innerHTML = "クイックソートは、データの隔たりや安定性の問題に対する工夫が必要ですが、現在考案されているアルゴリズムの中でも、最も高速に動く整列アルゴリズムのひとつとして、広く応用されています。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/><img src="../../icons/structures/BT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">１次元配列と二分木</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整数の列</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">入力</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>整数の列を読み込みます。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">クイックソート</th></tr><tr><td class="symbol"><img src="formula_partition.svg" /></td><td>区間を分割します。</td><td class="code">partition(A, l, r)</td></tr><tr><td class="symbol"><img src="formula_pivp.svg" /></td><td>分割の基準値を指します。</td><td class="code">q</td></tr><tr><th class="scene_desc" colspan="3">出力</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>整列された整数の列を出力します。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_divide_and_conqur.svg" /><p class="caption">partitionにより区間を大小２つのグループに分割します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">入力</b><br/><img src="scene_0.svg" alt="クイックソート | 入力" title="クイックソート | 入力"/></p></div><div><p><b class="scene_desc">クイックソート</b><br/><img src="scene_1.svg" alt="クイックソート | クイックソート" title="クイックソート | クイックソート"/></p></div><div><p><b class="scene_desc">出力</b><br/><img src="scene_2.svg" alt="クイックソート | 出力" title="クイックソート | 出力"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear_log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/partition.svg" width="60"/><img src="../../icons/algorithms/btree_preorder.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

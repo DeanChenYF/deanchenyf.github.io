@@ -1,0 +1,5 @@
+window.onload = function () {
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">点の整列</th></tr><tr><td class="symbol"><img src="formula_all.svg" /></td><td>点をxの昇順にソートします。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">凸包の構築</th></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>3点が反時計回りかどうかをチェックします。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_head.svg" /></td><td>点の番号をスタックに追加します。</td><td class="code">st.push(head)</td></tr><tr><td class="symbol"><img src="formula_trace.svg" /></td><td>凸包の点を確定していきます。</td><td class="code"></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">点の整列</b><br/><img src="scene_0.svg" alt="アンドリューのアルゴリズム | 点の整列" title="アンドリューのアルゴリズム | 点の整列"/></p></div><div><p><b class="scene_desc">凸包の構築</b><br/><img src="scene_1.svg" alt="アンドリューのアルゴリズム | 凸包の構築" title="アンドリューのアルゴリズム | 凸包の構築"/></p></div>';
+};

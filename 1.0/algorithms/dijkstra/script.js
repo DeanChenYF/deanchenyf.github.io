@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "最短路徑";
+document.getElementById('ptitle_en').innerHTML = "Shortest Path";
+document.getElementById('input_comment').innerHTML = "加權圖形<ul><li>節點數 N &le; 100,000</li><li>邊數 M  &le; 100,000</li><li>0 &lt; 邊上權重 &le; 10,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "從起點到終點的最短路徑";
+document.getElementById('motivation').innerHTML = "本節將介紹如何在較大的圖形中尋找最短路徑。";
+document.getElementById('description').innerHTML = "從給定的加權圖形、起點及終點，找出起點到終點的最短路徑。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/shortest_distance/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/shortest_distance/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/dijkstra.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "戴克斯特拉演算法（優先佇列）";
+document.getElementById('atitle_en').innerHTML = "Dijkstra's Algorithm (with Priority Queue)";
+document.getElementById('abstract').innerHTML = "戴克斯特拉演算法可使用以最小堆積（min heap）實作而成的優先佇列，來提升建立最短路徑樹的速度。";
+document.getElementById('explanation').innerHTML = "從距離暫定的節點中挑選出最短距離並新增到最短路徑樹的處理，必須藉由對樹外節點進行搜尋，以找出距離最短的節點。而此處理若以優先佇列執行，將可使演算法的效率獲得提升。優先佇列可以 ( 暫定距離 , 節點編號 ) 的組合為元素，並以最小堆積進行管理，使暫定距離最小的元素可以優先被挑選出來。<br/><br/>此做法的第一步是將起點的暫定距離初始化為 0，並將 ( 0, 起點的節點編號 ) 放入優先佇列 que 中。接下來則是在 que 被清空之前，重複以下處理：從 que 中取出 ( 暫定距離 cost, 節點編號 u )，將 u 加入最短路徑樹，並更新 u 的相鄰節點 v 的暫定距離。同時，將 ( v 的暫定距離 , v ) 放入 que 中。";
+document.getElementById('note').innerHTML = "以堆積（優先佇列）實作戴克斯特拉演算法時，其時間複雜度在從堆積中取出最佳元素時為 O(N log N)，更新暫定距離並將元素新增到堆積中時為 O(M log N)，因此整體為O((N+M) log N)。<br/><br/>戴克斯特拉演算法雖然效率很高，但是無法在邊上有負權重的圖形中正常運作，使用時還請務必多加留意。";
+document.getElementById('application').innerHTML = "以堆積實作的戴克斯特拉演算法效率很高，在大型圖形中也相當實用。使用戴克斯特拉演算法的應用程式很多，較具代表性的有地圖資訊系統中的路徑搜尋等。此外，解決最短路徑問題的演算法除了網際網路等領域外，在排程（scheduling）、社群網路服務、路線規劃、匯兌及遊戲等應用程式中也有相當廣泛的應用。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/GR.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_g.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">加權無向圖</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_dist.svg" /></td><td>從起點到各節點的暫定最短距離</td><td class="code">dist</td></tr><tr><td class="symbol"><img src="variable_nodeId.svg" /></td><td>節點編號</td><td class="code">nodeId</td></tr><tr><td class="symbol"><img src="variable_parent.svg" /></td><td>最短路徑樹中的父節點</td><td class="code">parent</td></tr><tr><td class="symbol"><img src="variable_weight.svg" /></td><td>節點間的距離</td><td class="code">weight</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">決定起點</th></tr><tr><td class="symbol"><img src="formula_source.svg" /></td><td>將起點的距離初始化 為 0。</td><td class="code">dist[s] &larr; 0</td></tr><tr><td class="symbol"><img src="formula_others.svg" /></td><td>將其餘節點的距離初始化為極大的值。</td><td class="code">dist[v] &larr; INF</td></tr><tr><th class="scene_desc" colspan="3">建立最短路徑樹</th></tr><tr><td class="symbol"><img src="formula_u.svg" /></td><td>指向從堆積中取出的最佳節點。</td><td class="code">u</td></tr><tr><td class="symbol"><img src="formula_target.svg" /></td><td>拜訪相鄰節點並更新距離。</td><td class="code">if dist[e.v] &gt; dist[u] + e.weight:<br>&nbsp;&nbsp;&nbsp;&nbsp;dist[e.v] &larr; dist[u] + e.weight<br>&nbsp;&nbsp;&nbsp;&nbsp;在 que 中插入 (dist[e.v], e.v)<br>&nbsp;&nbsp;&nbsp;&nbsp;parent[e.v] &larr; u</td></tr><tr><td class="symbol"><img src="formula_edges.svg" /></td><td>標示最短路徑樹暫定 要使用的邊。</td><td class="code">(v, parent[v])</td></tr><tr><td class="symbol"><img src="formula_finished.svg" /></td><td>擴大最短路徑樹。</td><td class="code">Tに含まれるノード</td></tr><tr><th class="scene_desc" colspan="3">輸出最短路徑樹</th></tr><tr><td class="symbol"><img src="formula_all.svg" /></td><td>利用父節點的資訊建立最短路徑樹。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">從優先佇列中取得最佳節點。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">更新相鄰節點的距離。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">決定起點</b><br/><img src="scene_0.svg" alt="戴克斯特拉演算法（優先佇列） | 決定起點" title="戴克斯特拉演算法（優先佇列） | 決定起點"/></p></div><div><p><b class="scene_desc">建立最短路徑樹</b><br/><img src="scene_1.svg" alt="戴克斯特拉演算法（優先佇列） | 建立最短路徑樹" title="戴克斯特拉演算法（優先佇列） | 建立最短路徑樹"/></p></div><div><p><b class="scene_desc">輸出最短路徑樹</b><br/><img src="scene_2.svg" alt="戴克斯特拉演算法（優先佇列） | 輸出最短路徑樹" title="戴克斯特拉演算法（優先佇列） | 輸出最短路徑樹"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear_log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/priority_queue_simulation.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

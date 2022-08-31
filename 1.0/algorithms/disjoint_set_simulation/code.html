@@ -1,0 +1,28 @@
+<pre>
+class DisjointSet:
+    parent  # 用於儲存森林中各節點的父節點陣列
+    rank    # 管理 rank 的陣列
+
+    init(): # 初始化
+        for i &larr; 0 to N-1:
+            parent[i] &larr; i
+            rank[i] &larr; 0
+
+    unite(x, y):
+        root1 &larr; findSet(x)
+        root2 &larr; findSet(y)
+        link(root1, root2)
+
+    findSet(x):
+        if paret[x] &ne; x:
+            parent[x] &larr; findSet(parent[x])
+        return parent[x];
+
+    link(x, y):
+        if rank[x] > rank[y]:
+            parent[y] &larr; x
+        else:
+            parent[x] &larr; y
+            if rank[x] = rank[y]:
+                rank[y]++
+</pre>

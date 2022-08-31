@@ -1,0 +1,5 @@
+window.onload = function () {
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_key.svg" /></td><td>串列的元素</td><td class="code">key</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">插入與刪除資料</th></tr><tr><td class="symbol"><img src="formula_create.svg" /></td><td>產生節點並設定其資料與指標。</td><td class="code">insert(data):的前半段</td></tr><tr><td class="symbol"><img src="formula_link.svg" /></td><td>改變指標的指向，將節點連接起來。</td><td class="code">insert(data):的後半段</td></tr><tr><td class="symbol"><img src="formula_delete.svg" /></td><td>改變指標的指向，將節點刪除。</td><td class="code">deleteNode(Node *t)</td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">插入與刪除資料</b><br/><img src="scene_0.svg" alt="雙向鏈結串列 | 插入與刪除資料" title="雙向鏈結串列 | 插入與刪除資料"/></p></div>';
+};

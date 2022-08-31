@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "二分木の巡回：子優先";
+document.getElementById('ptitle_en').innerHTML = "Traversal on Binary Tree: Children First";
+document.getElementById('input_comment').innerHTML = "二分木<ul><li>ノードの数 N &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "親よりも子を優先した巡回の訪問順";
+document.getElementById('motivation').innerHTML = "それぞれの子の計算結果を、親の計算に有効活用することで、効率的なアルゴリズムを実装することができます。";
+document.getElementById('description').innerHTML = "二分木のノードを次の条件を満たすように訪問してください：親よりも子を優先的に訪問する。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/btree_postorder/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/btree_postorder/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/btree_postorder.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "後行順巡回";
+document.getElementById('atitle_en').innerHTML = "Post-order Traversal";
+document.getElementById('abstract').innerHTML = "後行順巡回アルゴリズムは、二分木のノードを左部分木、右部分木、部分木の根の順に訪問します。二分木の各ノードに、後行順巡回で訪問した順番を印字していきます。";
+document.getElementById('explanation').innerHTML = "postorder(t, u)を二分木tのノードuを訪問する再帰関数とすると、後行順巡回は、postorder(t, uの左の子)で左部分木、postorder(t, uの右の子)で右部分木のノードを順番に訪問してから、uを印字します。";
+document.getElementById('note').innerHTML = "二分木の巡回では、各ノードが一度訪問されるので、オーダーはO(N)となります。";
+document.getElementById('application').innerHTML = "後行順巡回アルゴリズムでは、親がその子たちの後に処理されます。この特徴は、子ノードの計算結果を使って、親ノードの計算を行うアルゴリズムに現れます。例えば、高等的な整列アルゴリズムであるマージソートをはじめとする分割統治法や動的計画法と呼ばれる手法に広く応用されています。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/BT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_t.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">二分木</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_L.svg" /></td><td>訪問した順番</td><td class="code">L</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">二分木の巡回</th></tr><tr><td class="symbol"><img src="formula_visit.svg" /></td><td>ノードを訪問して順番のラベルをつけます。</td><td class="code">L[u] &larr; time++</td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>訪問済みのノードを拡張していきます。</td><td class="code">L[u]が設定されたノード</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">ノードを訪問します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">二分木の巡回</b><br/><img src="scene_0.svg" alt="後行順巡回 | 二分木の巡回" title="後行順巡回 | 二分木の巡回"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

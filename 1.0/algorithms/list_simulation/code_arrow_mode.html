@@ -1,0 +1,40 @@
+<pre>
+class Node:
+    Node *prev
+    Node *next
+    key
+
+class LinkedList:
+    Node *nil  # 哨兵
+
+    init():
+        nil &larr; 產生節點
+        nil->next &larr; nil  # 指向自己
+        nil->prev &larr; nil  # 指向自己
+
+    insert(data):
+        # 生成節點並設定其資料與指標
+        Node *x &larr; ノードを生成
+        x->key &larr; data # 設定資料內容
+        x->next &larr; nil->next
+        x->prev &larr; nil
+        # 設定哨兵及原本位於最前端的節點指標
+        nil->next->prev &larr; x
+        nil->next &larr; x
+
+    listSearch(k):
+        Node *cur &larr; nil->next # 從哨兵正後方的元素開始追蹤
+        while cur &ne; nil and cur->key &ne; k:
+            cur &larr; cur->next
+        return cur
+
+    deleteNode(Node *t):
+        if t = nil: return # 若 t 為哨兵則不進行處理
+        t->prev->next &larr; t->next
+        t->next->prev &larr; t->prev
+        釋放 t 的記憶體
+
+    deleteKey(k):
+        # 將取得的節點刪除
+        deleteNode(listSearch())
+</pre>

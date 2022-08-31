@@ -1,0 +1,15 @@
+<pre>
+BinaryTree t &larr; 產生二元樹
+time &larr; 1
+
+# 走訪二元樹 t 的節點 u 的函式
+preorder(u):
+    if u = NIL: # u 不存在
+        return
+    L[u] &larr; time++ # 先把 time 值存入 L[u]，再把 time 值加 1
+    preorder(t.nodes[u].left)  # u 的左子節點
+    preorder(t.nodes[u].right) # u 的右子節點
+
+# 以二元樹的根節點為起點，開始走訪
+preorder(t.root)
+</pre>

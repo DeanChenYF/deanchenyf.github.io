@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr; <br/>&larr;";
+document.getElementById('level').innerHTML = "&#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "先入先出 (FIFO)";
+document.getElementById('ptitle_en').innerHTML = "First-In-First-Out";
+document.getElementById('input_comment').innerHTML = "追加するデータ";
+document.getElementById('output_comment').innerHTML = "FIFOに従って取り出されるデータ";
+document.getElementById('motivation').innerHTML = "お店のレジの待ち行列のように、より早く到着したデータを優先的に扱う処理は多くのアプリケーションやアルゴリズムに現れます。";
+document.getElementById('description').innerHTML = "最初に挿入したデータを優先的に取り出すFirst-In-First-Out (FIFO)のルールに従ったデータ構造を実装してください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/fifo/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/fifo/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/queue_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "キュー";
+document.getElementById('atitle_en').innerHTML = "Queue";
+document.getElementById('abstract').innerHTML = "配列を用いてキューを実装します。キューはデータの集合に対して、主にenqueueとdequeueの操作を行うデータ構造です。キューは一列のデータの集合を表し、enqueueは列の末尾に要素を追加し、dequeueは列の先頭から要素を取得・削除します。";
+document.getElementById('explanation').innerHTML = "キューは１次元配列とキューの先頭と末尾をそれぞれ指す矢印head, tailで実現します。区間[head, tail)がキューに含まれる要素を表します。enqueue操作では、tailの位置に与えられたデータを挿入してから、tailを１つ増やします。dequeue操作では、headが指す要素を返しますが、操作の後にheadを１つ増やします。この実装では、headとtailが等しいとき、キューが空になります。また、操作の過程でtailとheadがそれぞれ配列のサイズを超えた場合は、それらを先頭に戻すことで、空間構造（メモリ）を無駄なく利用することができます（疑似コードでは、この処理を行っていません）。";
+document.getElementById('note').innerHTML = "eunqueue操作、dequeue操作の計算量は要素の数に依存しないため、オーダーはそれぞれO(1)です。スタックと同様に、空のキュー（headとtailが一致するとき）に対するdequeue操作と、満杯のキュー（tail+1 = headを満たすとき）に対するenqueue操作は避ける必要があります。";
+document.getElementById('application').innerHTML = "キューの動作は、レストランの行列など、日常生活の中にも多くみられます。システムやアルゴリズムの中でも、到着した順番にタスクを処理したい場面など、広く応用されるデータ構造です。例えば、幅優先探索（２２章）を実装するためのデータ構造としてキューが使われます。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">１次元配列</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_Q.svg" /></td><td>キューの要素</td><td class="code">Q</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">データの挿入と削除</th></tr><tr><td class="symbol"><img src="formula_tail.svg" /></td><td>キューの末尾にデータを追加します。</td><td class="code">Q[tail++] &larr; x</td></tr><tr><td class="symbol"><img src="formula_head.svg" /></td><td>キューの先頭からデータを取り出します。</td><td class="code">return Q[head++]</td></tr><tr><td class="symbol"><img src="formula_p_head.svg" /></td><td>キューの先頭を指します。</td><td class="code">head</td></tr><tr><td class="symbol"><img src="formula_p_tail.svg" /></td><td>キューの末尾を指します。</td><td class="code">tail</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_enqueue.svg" /><p class="caption">キューへデータを追加します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_dequeue.svg" /><p class="caption">キューからデータを取り出します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">データの挿入と削除</b><br/><img src="scene_0.svg" alt="キュー | データの挿入と削除" title="キュー | データの挿入と削除"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/const.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

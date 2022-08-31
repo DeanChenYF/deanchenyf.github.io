@@ -1,0 +1,21 @@
+<pre>
+Graph g &larr; 建立圖形
+palette &larr; WHITE
+
+# 對不一定是連通圖的圖形 g 進行深度優先搜尋
+depthFirstSearch():
+    for v &larr; 0 to g.N-1:
+        color[v] &larr; WHITE
+    
+    for v &larr; 0 to g.N-1:
+        if color[v] = WHITE:
+            palette &larr; 新顏色 # 更新調色盤的顏色
+	    dfs(v)
+
+# 以遞迴方式進行深度優先搜尋
+dfs(u):
+    color[u] &larr; palette
+    for v in g.adjLists[u]:
+        if color[v] = WHITE:
+            dfs(v)
+</pre>

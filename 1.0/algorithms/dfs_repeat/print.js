@@ -1,0 +1,5 @@
+window.onload = function () {
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_color.svg" /></td><td>連通元件的顏色</td><td class="code">color</td></tr><tr><td class="symbol"><img src="variable_palette.svg" /></td><td>調色盤</td><td class="code">palette</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">深度優先搜尋</th></tr><tr><td class="symbol"><img src="formula_oi.svg" /></td><td>更新顏色。</td><td class="code">palette &larr; 新顏色</td></tr><tr><td class="symbol"><img src="formula_ui.svg" /></td><td>走訪節點並塗上顏色。</td><td class="code">color[u] &larr; palette</td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>擴大已走訪過的節點群組。</td><td class="code">color不為 WHITE 的節點</td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">深度優先搜尋</b><br/><img src="scene_0.svg" alt="利用深度優先搜尋區分連通元件 | 深度優先搜尋" title="利用深度優先搜尋區分連通元件 | 深度優先搜尋"/></p></div>';
+};

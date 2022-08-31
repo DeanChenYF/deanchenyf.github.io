@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; ";
+document.getElementById('ptitle').innerHTML = "整數序列的排序";
+document.getElementById('ptitle_en').innerHTML = "Sorting Integers";
+document.getElementById('input_comment').innerHTML = "整數序列 $a_0, a_1, ..., a_{N-1}$<ul><li>$N &le; 100,000$</li><li>$0 &le; a_i &le; 100,000$</li></ul>)";
+document.getElementById('output_comment').innerHTML = "排序完成的整數序列";
+document.getElementById('motivation').innerHTML = "當我們在思考要使用哪一種演算法時，將問題本身的限制列入考慮是非常重要的。假設已知資料的「值」的範圍較小，就可以善用這項特性。";
+document.getElementById('description').innerHTML = "請由小而大重新排列整數序列。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sort_low/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sort_low/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/counting_sort.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "計數排序法";
+document.getElementById('atitle_en').innerHTML = "Counting Sort";
+document.getElementById('abstract').innerHTML = "計數排序法的做法是先列舉出輸入陣列內每個整數的出現次數，再利用累積和快速進行資料排序。";
+document.getElementById('explanation').innerHTML = "此演算法由 3 個階段構成。第 1 階段先走訪輸入陣列 A，將陣列中各個整數的累計出現次數記錄在計數用的陣列 C 中。此時，計數用陣列 C 的元素 i 儲存的是整數 i 的出現次數。<br/>第 2 階段則從計數用陣列 C 的前端（意即整數 0）開始，計算累積和。透過累積和，我們就能以 O(1) 的時間複雜度求出「現階段輸入陣列中有幾個 i 以下的整數」，也就是說，「待排序元素應該放在輸出陣列中的第幾個位置」。<br/>第 3 階段就是利用累積和，從輸入陣列 A 的尾端開始，依序將元素移動到輸出陣列B 中。移動到 B 的元素，必須將對應的出現次數減 1。";
+document.getElementById('note').innerHTML = "計數排序法適用於元素的最大值相對較小，且所有元素均非負值的情況。計算元素的出現次數與移動元素到輸出陣列的時間複雜度皆為 O(N)。此外，若元素的最大值為 K，則計算累積和的時間複雜度為 O(K)。因此計數排序法整體的時間複雜度為 O(N+K)。計數排序法是一種既快速又穩定的排序法。不過計數排序法除了輸入陣列之外，還需要準備 1 個大小為 N 的輸出陣列，以及 1 個大小為 K 的出現次數累積和陣列。";
+document.getElementById('application').innerHTML = "可以針對元素最大值較小的大規模資料進行快速排序。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">3 個一維陣列</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>欲輸入的整數序列</td><td class="code">A</td></tr><tr><td class="symbol"><img src="variable_C.svg" /></td><td>各整數出現次數的累積和</td><td class="code">C</td></tr><tr><td class="symbol"><img src="variable_B.svg" /></td><td>排序完成的整數序列</td><td class="code">B</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">輸入</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>輸入整數序列。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">計算次數</th></tr><tr><td class="symbol"><img src="formula_inc.svg" /></td><td>將整數的出現次數加 1。</td><td class="code">C[A[i]]++</td></tr><tr><th class="scene_desc" colspan="3">計算出現次數的累積和</th></tr><tr><td class="symbol"><img src="formula_acc.svg" /></td><td>計算累積和。</td><td class="code">C[i] &larr; C[i] + C[i-1]</td></tr><tr><th class="scene_desc" colspan="3">移動到輸出陣列</th></tr><tr><td class="symbol"><img src="formula_dec.svg" /></td><td>將使用到的整數出現次數減 1。</td><td class="code">C[A[i]]--</td></tr><tr><td class="symbol"><img src="formula_cp.svg" /></td><td>以出現次數做為輸出陣列的索引，將輸入元素複製到對應位置。</td><td class="code">B[C[A[i]]] &larr; A[i]</td></tr><tr><th class="scene_desc" colspan="3">輸出</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>輸出排序完成的整數序列。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">計算輸入資料中每個整數出現的次數。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">計算出現次數的累積和。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step3.svg" /><p class="caption">利用累積和，將輸入陣列的元素放到輸出陣列中。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">輸入</b><br/><img src="scene_0.svg" alt="計數排序法 | 輸入" title="計數排序法 | 輸入"/></p></div><div><p><b class="scene_desc">計算次數</b><br/><img src="scene_1.svg" alt="計數排序法 | 計算次數" title="計數排序法 | 計算次數"/></p></div><div><p><b class="scene_desc">計算出現次數的累積和</b><br/><img src="scene_2.svg" alt="計數排序法 | 計算出現次數的累積和" title="計數排序法 | 計算出現次數的累積和"/></p></div><div><p><b class="scene_desc">移動到輸出陣列</b><br/><img src="scene_3.svg" alt="計數排序法 | 移動到輸出陣列" title="計數排序法 | 移動到輸出陣列"/></p></div><div><p><b class="scene_desc">輸出</b><br/><img src="scene_4.svg" alt="計數排序法 | 輸出" title="計數排序法 | 輸出"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/accumulation.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

@@ -1,0 +1,63 @@
+<pre>
+class Node:
+    Node *left
+    Node *right
+    key
+    pri
+
+class Treap:
+    Node *root
+
+    # 以遞迴方式搜尋插入位置
+    insert(Node *t, key, pri):
+        # 抵達沒有子節點的位置時，生成並傳回新節點
+        if t = NULL: 
+            return Node(key, pri) # 傳回指標
+
+        # 忽略重複的鍵
+        if key = t.key: 
+            return t
+
+        if key &lt; t.key: # 往左子節點移動
+            # 將傳回的節點新增為左子節點
+            t.left &larr; insert(t.left, key, pri) 
+            # 若子節點的優先權較高，則以右旋轉將其往上提
+            if t.pri &lt; t.left.pri:
+                t &larr; rightRotate(t)
+        else: # 往右子節點移動
+            # 將傳回的節點新增為右子節點
+            t.right &larr; insert(t.right, key, pri)
+            # 若子節點的優先權較高，則以左旋轉將其往上提
+            if t.pri &lt; t.right.pri:
+                t &larr; leftRotate(t)
+
+        return t
+
+    # 以遞迴方式搜尋目標
+    erase(Node *t, key):
+        if t = NULL:
+            return NULL
+
+        if key = t.key # t 為欲刪除之目標
+            if t.left = NULL and t.right = NULL: # t 為葉節點 :
+                return NULL
+            else if t.left = NULL:               # t 只有 1 個右子節點
+                t &larr; leftRotate(t)
+            else if t.right = NULL:              # t 只有 1 個左子節點
+                t &larr; rightRotate(t)
+            else:                                # t 有 2 個子節點
+                # 將優先權高的子節點往上提
+                if t.left.pri &gt; t.right.pri
+                    t &larr; rightRotate(t)
+                else:
+                    t &larr; leftRotate(t)
+            return erase(t, key)
+
+         # 以遞迴方式搜尋目標
+         if key &lt; t.key:
+             t.left &larr; erase(t.left, key)
+         else:
+             t.right &larr; erase(t.right, key)
+
+         return t
+</pre>

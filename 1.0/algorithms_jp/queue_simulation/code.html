@@ -1,0 +1,29 @@
+<pre>
+#クラスによるキューの実装
+class Queue
+    Q          # キューの要素を保持する配列
+    head       # キューの先頭を指す矢印
+    tail       # キューの末尾を指す矢印
+
+    init():
+        head &larr; 0
+        tail &larr; 0
+  
+    enqueue(x):
+        Q[tail++] &larr; x       # xを代入した後にtailを1増やす
+
+    dequeue():
+        return Q[head++]         # Q[head]の値を返した後にheadを1増やす
+
+    empty():
+        return head = tail       # headとtailが等しいとき真を返す
+
+#キューのシミュレーション
+Queue que(6)
+que.enqueue(4)
+que.enqueue(8)
+que.enqueue(1)
+que.dequeue()
+que.enqueue(7)
+que.dequeue()
+</pre>

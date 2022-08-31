@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "整數序列的排序";
+document.getElementById('ptitle_en').innerHTML = "Sorting Integers";
+document.getElementById('input_comment').innerHTML = "整數序列$a_0, a_1, ..., a_{N-1}$ <ul><li>$N &le; 100,000$</li><li>$a_i &le; 1,000,000,000$</li></ul>";
+document.getElementById('output_comment').innerHTML = "排序完成的整數序列";
+document.getElementById('motivation').innerHTML = "";
+document.getElementById('description').innerHTML = "請由小而大重新排列整數序列。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sort/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sort/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/merge_sort.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "合併排序法";
+document.getElementById('atitle_en').innerHTML = "Merge Sort";
+document.getElementById('abstract').innerHTML = "合併排序法（Merge Sort）是以二元樹的後序追蹤順序，遞迴式地將陣列分成兩半，各自排序後再將結果合併（merge）的一種演算法。";
+document.getElementById('explanation').innerHTML = "合併排序法雖然是對陣列結構上的資料做排序，但計算順序其實是以二元樹結構的後序追蹤為基礎。演算法的起點是以陣列整體為排序範圍執行 mergeSort。接著再按照二元樹各節點的位置將排序範圍分成前、後半段，各自執行 mergeSort。當左、右子節點的 mergeSort 皆結束時，代表 2 個子序列皆已各自排序完成，此時再以 merge 整合兩者即可。";
+document.getElementById('note').innerHTML = "合併排序法需進行的 merge 次數與二元樹的內部節點數相同，但其中各階層皆需進行 N 次的資料比較與移動。合併排序法中的二元樹高度為 log2 N，因此時間複雜度為O(N log N)。合併排序法有個缺點，就是必須要在輸入資料之外，另外準備 1 個陣列（記憶體）來執行 merge，這種排序法稱為外部排序 （external sort）。<br/><br/>不過合併排序法也有優點，它是屬於「穩定（stable）」的排序演算法。穩定排序是指當輸入資料中有 2 個以上的元素擁有相同值時，可以保證這些元素在排序過後仍維持原有順序的排序法。假設有一套卡牌需要排序，其花色由 1 個數字及 S、D、C、H 四種字母所組成。當 4 張花色為 5H、3D、2S、3C 的卡牌只以數字進行排序時，有可能在過程中將 3D 與 3C 調換順序，使卡牌排序成 2S、3C、3D、5H 的演算法，這就不是穩定的演算法。";
+document.getElementById('application').innerHTML = "先遞迴式地將問題分成幾個較小的子問題來計算，再將計算結果整合起來的做法，稱為分治法 （Divide and Conquer）。合併排序法就是以分治法為基礎的演算法。合併排序法雖然需花費額外的記憶體空間，但其時間複雜度較低，又不受資料的排列方式影響，而且屬於穩定排序，因此仍被廣泛應用在許多程式語言的標準函式庫當中。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/><img src="../../icons/structures/BT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">一維陣列與二元樹</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整數序列</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">輸入</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>輸入整數序列。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">合併排序法</th></tr><tr><td class="symbol"><img src="formula_merge.svg" /></td><td>合併 2 個區間。</td><td class="code">merge(A, l, m, r)</td></tr><tr><th class="scene_desc" colspan="3">輸出</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>輸出排序完成的整數序列。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_conqur.svg" /><p class="caption">合併及整合相鄰的 2 個區間。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">輸入</b><br/><img src="scene_0.svg" alt="マージソート | 入力" title="合併排序法 | 輸入"/></p></div><div><p><b class="scene_desc">合併排序法</b><br/><img src="scene_1.svg" alt="マージソート | マージソート" title="合併排序法 | 合併排序法"/></p></div><div><p><b class="scene_desc">輸出</b><br/><img src="scene_2.svg" alt="マージソート | 出力" title="合併排序法 | 輸出"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear_log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/merge.svg" width="60"/><img src="../../icons/algorithms/btree_postorder.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

@@ -1,0 +1,12 @@
+<pre>
+# 針對陣列 A 的區間 [l, r) 執行快速排序法
+quickSort(A, l, r):
+    if  l < r:
+        q &larr; partition(A, l, r)
+        quickSort(A, l, q-1)
+        quickSort(A, q+1, r)
+
+# 針對陣列整體執行快速排序法	    
+A &larr; 欲輸入的整數序列
+quickSort(A, 0, N-1)
+</pre>

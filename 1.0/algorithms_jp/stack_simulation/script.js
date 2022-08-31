@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr; <br/>&larr;";
+document.getElementById('level').innerHTML = "&#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "後入先出(LIFO)";
+document.getElementById('ptitle_en').innerHTML = "Last-In-First-Out";
+document.getElementById('input_comment').innerHTML = "追加するデータ";
+document.getElementById('output_comment').innerHTML = "LIFOに従って取り出されるデータ";
+document.getElementById('motivation').innerHTML = "処理途中のデータや状態を、一時的に退避しておき、最後に退避したデータ・状態を優先的に続行する処理は、多くのアルゴリズムやシステムの制御に現れます。";
+document.getElementById('description').innerHTML = "最後に挿入したデータを優先的に取り出すLast-In-First-Out (LIFO)のルールに従ったデータ構造を実装してください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/lifo/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/lifo/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/stack_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "スタック";
+document.getElementById('atitle_en').innerHTML = "Stack";
+document.getElementById('abstract').innerHTML = "配列を用いてスタックを実装します。スタックはデータの集合に対して主にpushとpopの操作を行うデータ構造です。pushはデータの集合に要素を追加し、popは最後に追加された要素を取得・削除します。";
+document.getElementById('explanation').innerHTML = "スタックは１次元配列とスタックの頂点を指す矢印topで実現します。topは配列変数の添え字（ノード番号）を保持します。push操作では、topを１つ増やしてからその場所に与えられたデータを挿入します。pop操作では、topが指す要素を返しますが、操作の後にtopを１つ減らします。";
+document.getElementById('note').innerHTML = "push操作、pop操作の計算量は要素の数に依存しないため、オーダーはそれぞれO(1)になります。実装においては、スタックが空の状態（topが-1の状態）でのpop操作や、スタックが満杯の状態でのpush操作を避けるためのチェックが必要になります。<br/><br/>一般的に、スタックのようなデータ構造は、クラスや構造体として定義しておきます。クラスとして定義しておけば、プログラムの中でスタックのオブジェクトを生成して、より直観的にデータを扱うことができます（複数生成することも容易です）。";
+document.getElementById('application').innerHTML = "スタックの動作は、机の上に積みあがった書類やバイキングのプレートなど、日常生活の中にも多くみられます。コンピュータシステムにおいては、割り込みなどで計算途中の処理を一時的に退避したい場面で広く応用されるデータ構造です。再帰関数の仕組みも、スタックで実装されています。アルゴリズムでは、深さ優先探索（２３章）や点の凸包（２７章）を実現するためのデータ構造として応用されます。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">１次元配列</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_S.svg" /></td><td>スタックの要素</td><td class="code">S</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">データの挿入と取り出し</th></tr><tr><td class="symbol"><img src="formula_push.svg" /></td><td>スタックの頂点にデータを追加します。</td><td class="code">S[++top] &larr; x</td></tr><tr><td class="symbol"><img src="formula_pop.svg" /></td><td>スタックの頂点からデータを取り出し削除します。</td><td class="code">return S[top--]</td></tr><tr><td class="symbol"><img src="formula_top.svg" /></td><td>スタックの頂点を指します。</td><td class="code">top</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_push.svg" /><p class="caption">スタックへデータを追加します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_pop.svg" /><p class="caption">スタックからデータを取り出します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">データの挿入と取り出し</b><br/><img src="scene_0.svg" alt="スタック | データの挿入と取り出し" title="スタック | データの挿入と取り出し"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/const.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

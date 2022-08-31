@@ -1,0 +1,22 @@
+<pre>    
+# グラフgと始点ノードs
+depthFristSearch(g, s):
+    Stack st
+    st.push(s)
+
+    for i &larr; 0 to g.N-1:
+        color[i] &larr; WHITE
+
+    color[s] &larr; GRAY
+    
+    while not st.empty():
+        u &larr; st.peak() # スタックの頂点を見る
+        v = g.next(u)      # ノードuに隣接するノードvを順番に取り出す
+        if v &ne; NIL:    # 隣接するノードがある
+            if color[v] = WHITE:
+                color[v] &larr; GRAY
+                st.push(v)
+        else:              # 隣接するノードを調べつくした
+            color[u] &larr; BLACK
+            st.pop()
+</pre>

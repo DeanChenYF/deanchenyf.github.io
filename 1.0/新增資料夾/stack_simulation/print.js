@@ -1,0 +1,5 @@
+window.onload = function () {
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">資料</th></tr><tr><td class="symbol"><img src="variable_S.svg" /></td><td>堆疊的元素</td><td class="code">S</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">插入與取出資料</th></tr><tr><td class="symbol"><img src="formula_push.svg" /></td><td>新增資料到堆疊頂端。</td><td class="code">S[++top] &larr; x</td></tr><tr><td class="symbol"><img src="formula_pop.svg" /></td><td>從堆疊頂端取出資料並將其刪除。</td><td class="code">return S[top--]</td></tr><tr><td class="symbol"><img src="formula_top.svg" /></td><td>指向堆疊頂端。</td><td class="code">top</td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">插入與取出資料</b><br/><img src="scene_0.svg" alt="堆疊 | 插入與取出資料" title="堆疊 | 插入與取出資料"/></p></div>';
+};

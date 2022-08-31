@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; ";
+document.getElementById('ptitle').innerHTML = "圖形的連通度";
+document.getElementById('ptitle_en').innerHTML = "Connectivity of Graph";
+document.getElementById('input_comment').innerHTML = "無向圖<ul><li>節點數 N &le; 1,000</li><li>邊數 M &le; 1,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "各節點的拜訪狀態";
+document.getElementById('motivation').innerHTML = "圖形中最基本的操作就是從給定起點開始追蹤所有可能的邊，以調查節點的連通度（connectivity）。";
+document.getElementById('description').innerHTML = "請由適當的起點出發，系統性地走訪圖形中的所有節點。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/connectivity/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/connectivity/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/bfs_queue.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "廣度優先搜尋";
+document.getElementById('atitle_en').innerHTML = "Breadth First Search";
+document.getElementById('abstract').innerHTML = "廣度優先搜尋是一種系統性走訪圖形中各節點的演算法，過程中會以佇列管理未拜訪完成的節點。";
+document.getElementById('explanation').innerHTML = "廣度優先搜尋會利用佇列，從起點開始由近而遠依序拜訪節點。節點的拜訪狀態會以顏色（color）表示。白色（WHITE：0）表示尚未拜訪，灰色（GRAY：1）表示已走訪過，黑色（BLACK：2）表示已拜訪完成。<br><br>搜尋開始時，需先將起點節點插入佇列當中，接著從佇列中取出節點，並標示為已拜訪完成。若該節點有尚未拜訪的相鄰節點，則前往拜訪並將其插入佇列當中。之後繼續重複以上步驟，直到佇列被清空為止。";
+document.getElementById('note').innerHTML = "將資料插入佇列中的 enqueue 操作以及將資料取出的 dequeue 操作，時間複雜度皆為 O(1)。利用佇列執行的廣度優先搜尋，在從各節點出發前往相鄰節點的過程當中，會走訪所有的邊。所有的節點都會先被走訪並插入佇列，再被取出並標示為已拜訪完成。若廣度優先搜尋的對象是以相鄰串列建立而成的圖形，則走訪所有節點的相鄰節點的時間複雜度為 O(N+M)。若圖形是以相鄰矩陣建立而成，則由於走訪各節點的相鄰節點的時間複雜度為 O(N)，因此整體的時間複雜度為 O(N<sup>2</sup>)。";
+document.getElementById('application').innerHTML = "廣度優先搜尋走訪節點的過程，就像把各節點按照與起點的距離分成不同的層，再由起點開始一層層依序走訪節點，並一層層標示為已拜訪完成。由於節點的走訪順序是由起點開始由近而遠，因此可應用在與距離相關的問題上。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/GR.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_g.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">無向圖</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_color.svg" /></td><td>各節點的拜訪狀態</td><td class="code">color</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">決定起點</th></tr><tr><td class="symbol"><img src="formula_tail.svg" /></td><td>將起點插入佇列中。</td><td class="code">que.enqueue(s)</td></tr><tr><th class="scene_desc" colspan="3">搜尋</th></tr><tr><td class="symbol"><img src="formula_vi.svg" /></td><td>走訪相鄰的節點。</td><td class="code">color[v] &larr; GRAY</td></tr><tr><td class="symbol"><img src="formula_tail.svg" /></td><td>將走訪到的節點插入佇列中。</td><td class="code">que.enqueue(v)</td></tr><tr><td class="symbol"><img src="formula_ui.svg" /></td><td>將從佇列中取出的節點標示為已拜訪完成。</td><td class="code">color[u] &larr; BLACK</td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>擴大已走訪過的節點群組。</td><td class="code">color 為 GRAY的節點</td></tr><tr><td class="symbol"><img src="formula_finished.svg" /></td><td>擴大已拜訪完成的節點群組。</td><td class="code">color 為 BLACK的節點</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">將從佇列中取出的節點標示為已拜訪完成。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">走訪相鄰的節點，並將其插入佇列當中。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">決定起點</b><br/><img src="scene_0.svg" alt="廣度優先搜尋 | 決定起點" title="廣度優先搜尋 | 決定起點"/></p></div><div><p><b class="scene_desc">搜尋</b><br/><img src="scene_1.svg" alt="廣度優先搜尋 | 搜尋" title="廣度優先搜尋 | 搜尋"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/quad.svg" /><img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/queue_simulation.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

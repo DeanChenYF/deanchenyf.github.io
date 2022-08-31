@@ -1,0 +1,23 @@
+<pre>
+Graph g &larr; グラフを生成
+List list &larr; 空のリスト
+
+# グラフgに対するトポロジカルソート
+# リストlistにノードの順番を記録する
+topologicalSort():
+    for v &larr; 0 to g.N-1:
+        color[v] &larr; WHITE
+    
+    for v &larr; 0 to g.N-1:
+        if color[v] = WHITE:
+            dfs(v)
+
+dfs(u):
+    color[u] &larr; GRAY
+    for v in g.adjLists[u]:
+        if color[v] = WHITE:
+            dfs(v)
+
+    color[u] &larr; BLACK
+    list.insert(u) # リスト の先頭にu を追加する
+</pre>

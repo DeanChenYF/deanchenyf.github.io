@@ -1,0 +1,13 @@
+<pre>
+for i &larr; 2 to N:
+    P[i] &larr; 1
+
+for j &larr; 4, 6, 8, ... N-1:
+    P[j] &larr; 0
+
+for i &larr; 3, 5, 7, ... sqrt(N): # Nの平方根まで
+    if P[i] = 0:
+        continue  # continue文は残りの処理を無視して当該繰り返し処理の次のステップへ移ります
+    for j &larr; i*2, i*3, ..., N-1:
+	P[j] &larr; 0
+</pre>

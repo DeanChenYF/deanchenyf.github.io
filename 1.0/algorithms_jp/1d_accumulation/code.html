@@ -1,0 +1,12 @@
+<pre>
+Q &larr; 線分の列
+    
+for segment in Q:
+    b &larr; segment.begin.x  # 始点のx座標
+    e &larr; segment.end.x    # 終点のx座標
+    A[b]++
+    A[e]--
+
+for i &larr; 1 to N-1:
+    A[i] &larr; A[i] + A[i-1]
+</pre>

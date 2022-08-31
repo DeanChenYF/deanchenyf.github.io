@@ -1,0 +1,21 @@
+<pre>
+#配列Aで構築されたヒープの要素iをより大きい値に更新
+increase(A, i, value):
+    A[i] &larr; value
+
+#配列Aで構築されたヒープの要素iからアップヒープ
+upHeap(A, i):
+    while True:
+        if  i &le; 0:               # 根に到達したら終了
+            break 
+        if  A[i] &le; A[parent(i)]: # ヒープ条件を満たしたら終了
+            break 
+        swap(A[i], A[parent(i)])
+        i &larr; parent(i)          # 根に向かって移動
+
+
+# 要素の増加の使用例
+A &larr; ヒープ条件を満たす整数の列
+increase(A, 9, 25)
+upHeap(A, 9)
+</pre>

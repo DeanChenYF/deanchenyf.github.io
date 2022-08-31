@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "整數序列的排序";
+document.getElementById('ptitle_en').innerHTML = "Sorting Integers";
+document.getElementById('input_comment').innerHTML = "整數序列$a_0, a_1, ..., a_{N-1}$ <ul><li>$N &le; 100,000$</li><li>$a_i &le; 1,000,000,000$</li></ul>";
+document.getElementById('output_comment').innerHTML = "排列完成的整數序列";
+document.getElementById('motivation').innerHTML = "";
+document.getElementById('description').innerHTML = "請由小而大重新排列整數序列。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sort/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sort/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/shell_sort.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "希爾排序法";
+document.getElementById('atitle_en').innerHTML = "Shell Sort";
+document.getElementById('abstract').innerHTML = "希爾排序法是反覆對相距一定間隔的元素執行插入排序法，來進行陣列元素的排序。";
+document.getElementById('explanation').innerHTML = "希爾排序法的排序方式是針對相距一定間隔 interval = {g1, g2, ...} 的元素執行插入排序法 insertionSort(A, gi)。間隔 g 一開始會先設定為較大值，之後再逐漸縮小間隔並反覆執行插入排序法。決定好 g 的值之後，間距為 g 的元素就會被分成幾個子序列各自排序，而各子序列內的已排序範圍也會從前端開始逐次往後擴大。<br/><br/>為了確保資料為升冪排列，最後必須設定 g=1，也就是直接對整體序列執行插入排序法，不過由於此時資料已大致排序完成，因此可合理期待幾乎不需要移動到資料。";
+document.getElementById('note').innerHTML = "希爾排序法是利用插入排序法對大致排序完成的資料可快速動作的特性，是一款能夠快速排序的演算法。雖然最差情況的時間複雜度為 O(N2)，但若間隔挑選得好，已知平均時間複雜度可以達到 O(N1.25)。";
+document.getElementById('application').innerHTML = "";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">一維陣列</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整數序列</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">輸入</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>輸入整數序列。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">插入排序法</th></tr><tr><td class="symbol"><img src="formula_insertion.svg" /></td><td>針對相距指定間隔的元素執行插入排序法。</td><td class="code">insertionSort(A, g)</td></tr><tr><th class="scene_desc" colspan="3">輸出</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>輸出排序完成的整數序列。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">設定間隔為 g1，執行插入排序法。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">設定間隔為 g2，執行插入排序法。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step3.svg" /><p class="caption">設定間隔為 g3，執行插入排序法ます・・・</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">輸入</b><br/><img src="scene_0.svg" alt="希爾排序法 | 輸入" title="希爾排序法 | 輸入"/></p></div><div><p><b class="scene_desc">插入排序法</b><br/><img src="scene_1.svg" alt="希爾排序法 | 插入排序法" title="希爾排序法 | 插入排序法"/></p></div><div><p><b class="scene_desc">輸出</b><br/><img src="scene_2.svg" alt="希爾排序法 | 輸出" title="希爾排序法 | 輸出"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/quad.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/insertion_sort.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

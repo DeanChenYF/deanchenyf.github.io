@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "整数列の整列";
+document.getElementById('ptitle_en').innerHTML = "Sorting Integers";
+document.getElementById('input_comment').innerHTML = "整数の列<ul><li>$N &le; 100$</li><li> $a_i &le; 10^9$</li></ul>";
+document.getElementById('output_comment').innerHTML = "整列された整数の列";
+document.getElementById('motivation').innerHTML = "データをそれらがもつある共通のキーを基準に整列することは情報処理の基本です。ここでは、要素数が比較的少ない、整数の列を整列することを考えます。";
+document.getElementById('description').innerHTML = "整数の列{a_0, a_1, ..., a_N}を小さい順に並べ替えてください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sort_small/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sort_small/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/insertion_sort.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "挿入ソート";
+document.getElementById('atitle_en').innerHTML = "Insertion Sort";
+document.getElementById('abstract').innerHTML = "挿入ソートは、挿入操作(insertion)を前方から順番に行うことでデータを整列します。";
+document.getElementById('explanation').innerHTML = "要素数１の部分配列はソート済みなので、配列の２番目の位置から順番に挿入する要素を決め、insertionを行います。i回目のinsertionが終了すると先頭からi+1個の要素がソート済みになり、ソート済みの部分は前方から１つずつ増えていきます。";
+document.getElementById('note').innerHTML = "挿入ソートは、入力データの要素の並びの特徴で、計算効率が変わるアルゴリズムです。要素がすでに昇順に整列されている場合（またはこれに近い場合も）は、１回のinsertion操作をO(1)で達成できるため、挿入ソートのオーダーはO($N$)になります。逆に、要素が降順に整列されている場合（またはこれに近い場合も）は、i回目のinsertion操作に、i個の要素を走査するので、挿入ソートのオーダーはO($N^2$)になります。平均の場合は、i回目のinsertionの要素の比較・移動がi/2回起こると考え、オーダーは同じくO($N^2$)になります。";
+document.getElementById('application').innerHTML = "挿入ソートは、すでに昇順に、あるいはおおよそ昇順に整列されているデータに対して高速に動作するため、そのような特徴のデータを扱うアプリケーションや、高等的なソートアルゴリズムの一部として使われています。例えば、挿入ソートは高等的な整列アルゴリズムであるシェルソートに応用されます。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_s.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">１次元配列</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整数の列</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">入力</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>整数の列を入力します。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">整列</th></tr><tr><td class="symbol"><img src="formula_insertion.svg" /></td><td>insertionを実行します。</td><td class="code">insertion(0, j)</td></tr><tr><td class="symbol"><img src="formula_sorted.svg" /></td><td>整列済みの範囲を拡張していきます。</td><td class="code">区間[0, i)</td></tr><tr><th class="scene_desc" colspan="3">出力</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>整列された整数の列を出力します。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">insertionを実行します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">入力</b><br/><img src="scene_0.svg" alt="挿入ソート | 入力" title="挿入ソート | 入力"/></p></div><div><p><b class="scene_desc">整列</b><br/><img src="scene_1.svg" alt="挿入ソート | 整列" title="挿入ソート | 整列"/></p></div><div><p><b class="scene_desc">出力</b><br/><img src="scene_2.svg" alt="挿入ソート | 出力" title="挿入ソート | 出力"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/quad.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/insertion.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

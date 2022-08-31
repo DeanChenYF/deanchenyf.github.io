@@ -1,0 +1,22 @@
+<pre>
+Graph g &larr; 建立圖形
+
+depthFirstSearch():
+    for v &larr; 0 to g.N-1:
+        color[v] &larr; WHITE
+
+    for v &larr; 0 to g.N-1:
+        if color[v] = WHITE:
+            dfs(v)
+
+dfs(u):
+    color[u] &larr; GRAY
+
+    for v in g.adjLists[u]:
+        if color[v] = WHITE:
+            dfs(v)
+        else:
+            邊 (u, v) 為後向邊 # 檢測
+
+    color[u] &larr; BLACK
+</pre>

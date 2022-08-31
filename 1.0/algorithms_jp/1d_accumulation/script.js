@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "線分の重なり";
+document.getElementById('ptitle_en').innerHTML = "Overlapped Segments";
+document.getElementById('input_comment').innerHTML = "始点と終点の座標の組で表された複数の線分<ul><ll>1 &le; x座標の最大値N &le; 100,000</li><li>線分の数Q &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "各座標の線分の本数";
+document.getElementById('motivation').innerHTML = "1次元の整数座標の区間に関する問題は、累積和のアイデアで効率良く解ける場合があります。";
+document.getElementById('description').innerHTML = "複数の線分が与えられるので、各座標について重なっている線分の数を求めてください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/overlapping_1d/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/overlapping_1d/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/1d_accumulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "１次元累積和";
+document.getElementById('atitle_en').innerHTML = "1 Dimensional Accumulation";
+document.getElementById('abstract').innerHTML = "線分の端点の座標を１次元配列構造のノードで表し、対応する配列の要素にその座標上にある線分の数を記録していきます。ここでは、線分の終点は数えないものとします。";
+document.getElementById('explanation').innerHTML = "与えられた線分の端点の座標をそれぞれb, eとすると、A[b]に1を加え、A[e]から1を引きます。これは、線分の重なりの本数を配列の前方から調べていったときに、座標bから線分が１つ加わり、座標eからその線分がなくなることを意味します。<br/></br>線分の追加処理が終わった後は、各座標から線分が何本増えるか（負の値の場合は何本減るか）が記録されているので、Aの前方から累積和をとることにより、各座標にある線分の本数を求めることができます。";
+document.getElementById('note').innerHTML = "この問題を素朴なアルゴリズムで解決する場合、与えられた線分の端点の座標をそれぞれb, eとすると、配列のb番目からe-1番目までの値（本数）を１増やすことで、各座標における線分の数を数えます。この素朴なアルゴリズムのオーダーはO(NQ)となります。<br/><br/>累積和を用いたアルゴリズムでは、Q本の線分を追加する操作にO(Q)、累積和を求める処理にO(N)かかるので、オーダーはO(N + Q)になります。";
+document.getElementById('application').innerHTML = "線分のような幾何学的な問題だけでなく、例えば時間軸に対する区間の重なりと考えることで、アプリケーションの幅は広がります。例えば、各客の入店と退店の時刻から、ある時間単にレストランの中にいる客の人数を求める問題などが考えられます。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">１次元配列</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>重なりの数</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">線分を追加する</th></tr><tr><td class="symbol"><img src="formula_bw.svg" /></td><td>線分の始点に対応する要素に１を加えます。</td><td class="code">A[b]++</td></tr><tr><td class="symbol"><img src="formula_ew.svg" /></td><td>線分の終点に対応する要素から１を引きます。</td><td class="code">A[e]--</td></tr><tr><th class="scene_desc" colspan="3">累積和をとる</th></tr><tr><td class="symbol"><img src="formula_cur.svg" /></td><td>前方の要素を加算していきます。</td><td class="code">A[i] &larr; A[i] + A[i-1]</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">区間を追加します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">累積和による重なり数を求めます。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">線分を追加する</b><br/><img src="scene_0.svg" alt="１次元累積和 | 線分を追加する" title="１次元累積和 | 線分を追加する"/></p></div><div><p><b class="scene_desc">累積和をとる</b><br/><img src="scene_1.svg" alt="１次元累積和 | 累積和をとる" title="１次元累積和 | 累積和をとる"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/accumulation.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

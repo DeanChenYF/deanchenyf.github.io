@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-28377245-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-28377245-2');
+</script>
+<!--<meta http-equiv="X-UA-Compatible" content="chrome=1">-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>利用深度優先搜尋區分連通元件 | 會動的演算法</title>
+<link rel="stylesheet" href="print.css" type="text/css" media="all" />
+<!--<script language="JavaScript" type="text/javascript" src="print.js"></script>-->
+</head>
+<body>
+  <div class="wrapper">
+    <h3>利用深度優先搜尋區分連通元件 | <a href="https://yutaka-watanobe.github.io/star-aida/books/">會動的演算法</a></h3>
+
+    <div id="content" class="content">
+      <h4>シンボル</h4>
+      
+      <table class="items" cellspacing="0">
+        <tbody id="variable">
+	  <tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_color.svg" /></td><td>連通元件的顏色</td><td class="code">color</td></tr><tr><td class="symbol"><img src="variable_palette.svg" /></td><td>調色盤</td><td class="code">palette</td></tr>
+	</tbody>
+      </table>
+      <br/>
+      <table class="items" cellspacing="0">
+        <tbody id="formula">
+	  <tr><th class="scene_desc" colspan="3">深度優先搜尋</th></tr><tr><td class="symbol"><img src="formula_oi.svg" /></td><td>更新顏色。</td><td class="code">palette &larr; 新顏色</td></tr><tr><td class="symbol"><img src="formula_ui.svg" /></td><td>走訪節點並塗上顏色。</td><td class="code">color[u] &larr; palette</td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>擴大已走訪過的節點群組。</td><td class="code">color不為 WHITE 的節點</td></tr>
+	</tbody>
+      </table>
+
+      <br/>
+      <h4>アニメーション</h4>
+      <div id="scene" class="scene">
+	<div><p><b class="scene_desc">深度優先搜尋</b><br/><img src="scene_0.svg" alt="利用深度優先搜尋區分連通元件 | 深度優先搜尋" title="利用深度優先搜尋區分連通元件 | 深度優先搜尋"/></p></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

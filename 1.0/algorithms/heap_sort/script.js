@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "整數序列的排序";
+document.getElementById('ptitle_en').innerHTML = "Sorting Integers";
+document.getElementById('input_comment').innerHTML = "整數序列$a_0, a_1, ..., a_{N-1}$ <ul><li>$N &le; 100,000$</li><li>$a_i &le; 1,000,000,000$</li></ul>";
+document.getElementById('output_comment').innerHTML = "排序完成的整數序列";
+document.getElementById('motivation').innerHTML = "";
+document.getElementById('description').innerHTML = "請由小而大重新排列整數序列。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sort/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sort/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/heap_sort.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "堆積排序法";
+document.getElementById('atitle_en').innerHTML = "Heap Sort";
+document.getElementById('abstract').innerHTML = "顧名思義，堆積排序法就是利用堆積結構快速排序的一種演算法。";
+document.getElementById('explanation').innerHTML = "堆積排序法的預處理是根據給定資料建立堆積。由於堆積的根節點永遠會是當下優先權最高（值最大）的元素，因此我們可利用此特性，從根節點依序取出元素，再由堆積尾端開始，由大至小往前排序。堆積排序法是透過將根節點與尾端元素互換，並縮減堆積大小 heapSize 的方式，來區分堆積的區間與已排序的區間。heapSize 同時也代表了未排序部分的元素數，因此可用來控制下濾的執行範圍。";
+document.getElementById('note').innerHTML = "堆積排序法會進行 N 次下濾，因此時間複雜度為 O(N log N)。堆積排序法的優點是只需要 1 個陣列就能完成排序，為原地排序，但因為會讓距離較遠的元素進行互換，所以並非穩定排序。此外，由於堆積排序法經常需要將陣列中距離較遠的元素互換位置，因此執行時間有可能會受到系統的影響。";
+document.getElementById('application').innerHTML = "";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/ACBT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_Heap_Space.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">接近完整二元樹</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整數序列</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">輸入</th></tr><tr><td class="symbol"><img src="formula_input.svg" /></td><td>輸入整數序列。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">建立堆積</th></tr><tr><td class="symbol"><img src="formula_downRotation.svg" /></td><td>對子樹進行下濾。</td><td class="code">downHeap(A, i)</td></tr><tr><th class="scene_desc" colspan="3">互換與下濾</th></tr><tr><td class="symbol"><img src="formula_downRotation.svg" /></td><td>由根節點開始進行下濾。</td><td class="code">downHeap(A, 0)</td></tr><tr><td class="symbol"><img src="formula_exchange.svg" /></td><td>將根節點與堆積尾端的值互換。</td><td class="code">swap(A[0], A[heapSize-1])</td></tr><tr><td class="symbol"><img src="formula_heap.svg" /></td><td>縮小滿足堆積性質，但尚未排序的範圍。</td><td class="code">區間[0, heapSize)</td></tr><tr><th class="scene_desc" colspan="3">輸出</th></tr><tr><td class="symbol"><img src="formula_output.svg" /></td><td>輸出排序完成的整數序列。。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_swap.svg" /><p class="caption">將堆積中擁有最大值的根節點與最尾端的元素互換。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_downheap.svg" /><p class="caption">由根節點開始進行下濾。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">輸入</b><br/><img src="scene_0.svg" alt="堆積排序法 | 輸入" title="堆積排序法 | 輸入"/></p></div><div><p><b class="scene_desc">建立堆積</b><br/><img src="scene_1.svg" alt="堆積排序法 | 建立堆積" title="堆積排序法 | 建立堆積"/></p></div><div><p><b class="scene_desc">互換與下濾</b><br/><img src="scene_2.svg" alt="堆積排序法 | 互換與下濾" title="堆積排序法 | 互換與下濾"/></p></div><div><p><b class="scene_desc">輸出</b><br/><img src="scene_3.svg" alt="堆積排序法 | 輸出" title="堆積排序法 | 輸出"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear_log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/heap_construction.svg" width="60"/><img src="../../icons/algorithms/downheap_simulation.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

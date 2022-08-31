@@ -1,0 +1,19 @@
+<pre>
+# グラフgと始点ノードs
+breadthFirstSearch(g, s):
+    Queue que
+
+    for i &larr; 0 to g.N-1:
+        color[i] &larr; WHITE
+
+    color[s] &larr; GRAY
+    que.enqueue(s)
+    
+    while not que.empty():
+        u &larr; que.dequeue()
+        color[u] &larr; BLACK
+        for v in g.adjLists[u]:
+            if color[v] = WHITE:
+                color[v] &larr; GRAY
+                que.enqueue(v)
+</pre>

@@ -1,0 +1,18 @@
+<pre>
+# 從圖形 g 中建立最小生成樹 MST
+kruskal(g):
+    MST &larr; 空串列
+    edges &larr; 利用串列儲存 g 的邊
+
+    將 edges 按照權重大小以升冪方式排序
+
+    DisjointSet ds(g.N) # 生成元素數為 N 且互不相交之集合
+
+    for e in edges:
+        u &larr; e 的第 1 個端點
+        v &larr; e 的第 2 個端點
+
+        if ds.findSet(u) &ne; ds.findSet(v):
+            ds.link(u, v)
+            將 e 新增至 MST 內
+</pre>

@@ -1,0 +1,5 @@
+window.onload = function () {
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_rank.svg" /></td><td>ランク（ノードの高さ）</td><td class="code">rank</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">合併</th></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>ランクを比較します。</td><td class="code">rank[x] &gt; rank[y]:</td></tr><tr><td class="symbol"><img src="formula_update_rank.svg" /></td><td>ランクを１つ増やします。</td><td class="code">rank[y]++</td></tr><tr><td class="symbol"><img src="formula_update.svg" /></td><td>親を更新します。</td><td class="code">parent[y] &larr; ?</td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">合併</b><br/><img src="scene_0.svg" alt="ランクによる合併 | 合併" title="ランクによる合併 | 合併"/></p></div>';
+};

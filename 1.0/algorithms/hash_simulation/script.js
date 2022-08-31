@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "字典";
+document.getElementById('ptitle_en').innerHTML = "Dictionary";
+document.getElementById('input_comment').innerHTML = "對字典進行搜尋、新增與刪除的操作<ul><li>操作或提問的次數 Q &le; 100,000</li><li>0 &le; 鍵 &le; 1,000,000,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "回應提問";
+document.getElementById('motivation').innerHTML = "字典是一種可藉由指定鍵值對（key–value pair）來新增、搜尋或刪除資料的機制，也稱為關聯陣列（associative array）。「鍵（key）」是搜尋或排序的基準，在字典中相當於用來識別其對應「值（value）」的標識符（identifier）。";
+document.getElementById('description').innerHTML = "請實作一個可以搜尋、新增及刪除資料，並提供字典功能的資料結構。本節將不會討論鍵與值的關係，且處理資料時只會以鍵為代表。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/dictionary/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/dictionary/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/hash_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "雜湊表";
+document.getElementById('atitle_en').innerHTML = "Hash Table";
+document.getElementById('abstract').innerHTML = "雜湊表是透過雜湊函數（hash function）求出輸入資料（鍵）對應儲存位置的一種資料結構。雜湊表可使用一維陣列結構實作。本節會實作新增鍵的功能。";
+document.getElementById('explanation').innerHTML = "雜湊表的資料結構是由大小為 N 的雜湊表主體，與決定元素（鍵）儲存位置的雜湊函數所組成。一般來說，鍵在輸入雜湊函數之後，即可藉由其中的運算式計算出儲存位置，但不同的鍵也有可能求出相同的位置。若預定寫入的位置已有其他資料，則稱為發生碰撞。開放定址法 （open addressing）是一種即使發生碰撞，仍可找到空白區域來插入鍵的做法。本節將會以開放定址法為基礎，利用 2 個子函數（sub function）來進行實作。<br><br>開放定址法中，雜湊函數會以鍵和碰撞次數為輸入資料來決定儲存位置。也就是說每次發生碰撞之後，都會以雜湊函數重新尋找空白區域。雜湊函數可使用的運算式有許多種，本節在實作中使用的如下所示。<br><br> $hash(k, i) = (h_1(k) + i$ &times; $h_2(k))$ mod $N$<br><br>運算式最後取「除以 N 的餘數」，是為了將計算結果限制在雜湊表的大小之內。$h_1(k)$與$h_2(k)$ 皆為雜湊函數的子函數。i 代表碰撞次數，因此第一次計算時會以$hash(k, 0)$ 也就是$h_1(k)$來決定儲存位置，之後若發生碰撞，再以$hash(k, 1)$,$hash(k , 2)$, ... 重新尋找空白區域。換句話說，$h_2(k)$就代表碰撞後計算出的新位置與碰撞發生位置的距離。由於計算結果會取「除以 N 的餘數」，因此搜尋地點絕對不會超過陣列大小，可以一直循環下去。不過有一點要注意的是，$h_2(k))$與雜湊表的大小 N 必須互為質數，以確保搜尋時不會有無法抵達的位置（避免搜尋到相同位置）。本節使用的解決方法是設定 N 為質數，$h_2(k))$ 為比 N 小的數。";
+document.getElementById('note').innerHTML = "雜湊表若不用處理碰撞問題，則新增、搜尋或刪除資料的時間複雜度都將為 O(1)，但實際上的時間複雜度會受到雜湊函數所使用的運算式及參數影響。本節所使用的只是最基本的運算式而已，只要再多花點心思設計雜湊函數，便能實作出更有效率的資料結構或搜尋演算法。<br><br>本節雖然只有說明資料的新增方式，但資料的搜尋與刪除皆可使用同一個雜湊函數，只要稍做調整即可完成實作。";
+document.getElementById('application').innerHTML = "由於字典（Dictionary）能以直覺又有效率的方式管理元素，因此對程式設計來說是不可或缺的一種資料結構。而雜湊則是用來實作字典的一種強大的資料結構或演算法。但是以雜湊建立的字典有 2 個缺點，第一是無法維持字典中鍵的順序，因此可使用的操作類型有限。第二則是即使資料排列較鬆散也必須建立出一個大表，因此在記憶體管理上必須要多下苦心。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">一維陣列</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_key.svg" /></td><td>雜湊表的元素</td><td class="code">key</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">新增資料</th></tr><tr><td class="symbol"><img src="formula_input.svg" /></td><td>新增資料。</td><td class="code">insert(k):</td></tr><tr><td class="symbol"><img src="formula_hash2.svg" /></td><td>透過雜湊函數尋找空白區域。</td><td class="code">pos &larr; hash(k, i)</td></tr><tr><td class="symbol"><img src="formula_pointer.svg" /></td><td>指向透過雜湊函數求得的位置。</td><td class="code">pos</td></tr><tr><td class="symbol"><img src="formula_write.svg" /></td><td>將資料寫入元素。</td><td class="code">key[pos] &larr; k</td></tr><tr><td class="symbol"><img src="formula_collision.svg" /></td><td>標示發生碰撞的位置。</td><td class="code">pos値的軌跡</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">尋找插入鍵的位置。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">發生碰撞（collision），重新尋找插入位置。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step3.svg" /><p class="caption">將鍵寫入空白區域。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">新增資料</b><br/><img src="scene_0.svg" alt="雜湊表 | 新增資料" title="雜湊表 | 新增資料"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/const.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

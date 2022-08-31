@@ -1,0 +1,184 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--<meta http-equiv="X-UA-Compatible" content="chrome=1">-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>*AIDA</title>
+<link rel="stylesheet" href="cover.css" type="text/css" media="all" />
+<script language="JavaScript" type="text/javascript" src="script.js"></script>
+
+
+</head>
+<body>
+  <!--
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"], ["\\(","\\)"]], skipTags: ["script","noscript","style","textarea","code"], processEscapes: true }});
+</script>
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+-->
+
+ <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [["$","$"], ["\\(","\\)"]], skipTags: ["script","noscript","style","textarea","code"], processEscapes: true }});
+    </script>
+    <script language="JavaScript" type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+
+  <div class="cover">
+    
+    <table cellspacing="8">
+      <tr>
+	<td width="60">
+	  <div class="icon"><img src="../../../problem_default.svg"/></div>
+	</td>
+	<td width="720">
+	  <div class="title">
+	    <b id="ptitle"></b>
+	    <b style="font-size:10pt" id="ptitle_en"> English Title</b>
+	  </div>
+	</td>
+	<td width="220">
+	  <div class="level">
+	    <b id="level"></b>
+	  </div>
+	</td>
+      </tr>
+      
+      <tr>
+	<td colspan="4">
+	  <div class="motivation">
+	    <p id="motivation">motivation</p>
+	  </div>
+	</td>
+      </tr>
+      
+    </table>
+    
+    <div class="section">
+      <table cellspacing="8">
+	<tr>
+	  <td>
+	    <div class="abstract">
+	      <p id="description">description</p>
+	    </div>
+	  </td>
+	</tr>
+      </table>
+      <table cellspacing="8">
+	<tr>
+	  <td>
+	    <div class="io" id="input_panel"></div>
+	  </td>
+	  <td width="80"><b id="io_arrow" style="font-size:32pt"> &rarr;</b> </td>
+	  <td>
+	    <div class="io" id="output_panel"></div>
+	  </td>
+	</tr>
+	<tr>
+	  <td valign="top" id="input_comment"></td>
+	  <td></td>
+	  <td valign="top" id="output_comment"></td>
+	</tr>
+      </table>
+    </div>
+    
+    <table cellspacing="8">
+      <tr>
+	<td width="100">
+	  <div class="icon" id="algorithm_icon"><img src="../../../algorithm_default.svg"/></div>
+	</td>
+	<td width="640">
+	  <div class="title">
+	    <b id="atitle"></b>
+	    <b style="font-size:10pt" id="atitle_en"> English Title</b>
+	  </div>
+	</td>
+	<td width="140" id="prerequisites">
+	  <b></b>
+	</td>
+	<td width="40" id="complexity">
+	  <b></b>
+	</td>
+      </tr>
+    </table>
+    
+    <div class="section">
+      <table cellspacing="8">
+	<tr>
+	  <td>
+	    <div class="abstract">
+	      <p id="abstract">abstract</p>
+	    </div>
+	  </td>
+	</tr>
+      </table>
+      <table cellspacing="12" class="how">
+	<tr>
+	  <td width="500">
+	    <table cellspacing="0"  width="500">
+	      <tbody id="structure"/>
+	    </table>
+	  </td>
+	  <td width="450">
+	    <table class="items" cellspacing="0" width="450">
+	      <tbody id="variable"/>
+	    </table>
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <table cellspacing="0"  width="500">
+	      <tbody id="scheme"/>
+	    </table>
+	  </td>
+	  <td>
+	    <table class="items" cellspacing="0" width="450">
+	      <tbody id="formula"/>
+	    </table>
+	  </td>
+	</tr>
+      </table>
+    </div>
+    
+  </div>
+  
+  <br/><br/><br/>
+
+  <!--
+  <table>
+    <tr>
+      <td>
+	<div class="scene_icon"><b>流れ ICON</b> </div>
+      </td>
+      <td>
+	<div>
+	  <img src="anim_qr.svg" width="120"/>
+	</div>
+      </td>
+    </tr>
+  </table>
+  -->
+  
+  <!--  <div id="scene"><img src="frames.svg"/></div>-->
+  <div class="cover">
+    <div id="scene"></div>
+  </div>
+  
+  <br/><br/><br/>
+  
+  <div class="cover">
+    <div class="code">
+      <object type="text/html" data="code.html" width="100%" height="100%"></object>
+    </div>
+    <div class="explanation" id="explanation">
+      解説
+    </div>
+    <div class="note" id="note">
+      計算量・その他の補足
+    </div>
+    <div class="application" id="application">
+      應用
+    </div>
+  </div>
+  
+  
+</body>
+</html>
+

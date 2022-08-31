@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "閉路検知";
+document.getElementById('ptitle_en').innerHTML = "Cycle Ditection";
+document.getElementById('input_comment').innerHTML = "有向グラフ<ul><li>ノードの数N &le; 100,000</li><li>エッジの数M &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "閉路の有無";
+document.getElementById('motivation').innerHTML = "有向グラフにおいて、エッジをたどってノードを訪問している際、一度訪れたノードに再び戻ってくるような閉路が存在する場合があります。閉路の有無は、有向グラフの重要な特徴のひとつです。";
+document.getElementById('description').innerHTML = "有向グラフに閉路があるかどうかチェックしてください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/cycle_detection/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/cycle_detection/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/dfs_back_edge.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "DFSによる閉路検知";
+document.getElementById('atitle_en').innerHTML = "DFS for Cycle Detection";
+document.getElementById('abstract').innerHTML = "深さ優先探索のノードの探索状況をチェックすることで、閉路を形成するバックエッジを検出することができます。";
+document.getElementById('explanation').innerHTML = "深さ優先探索において、ノードの訪問状態は、未訪問、訪問済み、完了済みのいずれかです。探索中に訪問済みのノードへたどり着くエッジをバックエッジと呼び、バックエッジは閉路の一部になります。訪問したノードから、隣接する未訪問のノードを探す過程で、対象となるノードの訪問状態を確認してバックエッジを検出します。";
+document.getElementById('note').innerHTML = "バックエッジを調べる処理を考えても、隣接リストによる実装では深さ優先探索の中で各エッジが1度だけ走査されるので、オーダーはO(N + M)となります。";
+document.getElementById('application').innerHTML = "身近な応用例としては、ネットワークシステムのループ検出などが挙げられます。バックエッジをはじめとした探索中のエッジの状態は、グラフのより興味深い性質を見つけるための重要な情報になります。特に深さ優先探索は、エッジの状態を考慮したアルゴリズムが多く、グラフの橋（そのエッジを削除してしまうとグラフが連結でなくなるエッジ）や強連結成分（有向グラフで、任意の2点が行き来できる連結成分）分解など、様々な問題解決に応用されます。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/DGR.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_g.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">有向グラフ</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_color.svg" /></td><td>ノードの訪問状態</td><td class="code">color</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">深さ優先探索</th></tr><tr><td class="symbol"><img src="formula_ui.svg" /></td><td>ノードを訪問します。</td><td class="code">color[u] &larr; GRAY</td></tr><tr><td class="symbol"><img src="formula_fi.svg" /></td><td>ノードの訪問を完了します。</td><td class="code">color[u] &larr; BLACK</td></tr><tr><td class="symbol"><img src="formula_bi.svg" /></td><td>バックエッジを検出します。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_backEdge.svg" /></td><td>バックエッジを表します。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>訪問したノードのグループを拡張していきます。</td><td class="code">colorがGRAYのノード</td></tr><tr><td class="symbol"><img src="formula_finished.svg" /></td><td>訪問が完了したノードのグループを拡張していきます。</td><td class="code">colorがBLACKのノード</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_visit.svg" /><p class="caption">隣接するノードを訪問します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_back.svg" /><p class="caption">バックエッジを検出します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_finish.svg" /><p class="caption">隣接する全てのノードの訪問を完了します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">深さ優先探索</b><br/><img src="scene_0.svg" alt="DFSによる閉路検知 | 深さ優先探索" title="DFSによる閉路検知 | 深さ優先探索"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/dfs_repeat.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

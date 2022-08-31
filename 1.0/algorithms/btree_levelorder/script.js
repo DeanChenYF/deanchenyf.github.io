@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "追蹤二元樹：距離優先";
+document.getElementById('ptitle_en').innerHTML = "Traversal on Binary Tree: Distance First";
+document.getElementById('input_comment').innerHTML = "二元樹<ul><li>節點數 N &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "優先走訪深度較淺的節點的追蹤方式";
+document.getElementById('motivation').innerHTML = "　前序追蹤雖然是以父節點為優先的追蹤演算法，但它並未設定與節點深度有關的條件。若能按照與根節點的距離，由近而遠地進行走訪，不但能符合以父節點為優先的追蹤方式，還能得知一些從根節點到節點距離（深度）有關的特殊性質。";
+document.getElementById('description').innerHTML = "請以滿足此條件的方式走訪二元樹的節點：先走訪完所有深度為 k-1 的節點，再走訪深度為 k 的節點。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/btree_levelorder/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/btree_levelorder/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/btree_levelorder.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "層序追蹤";
+document.getElementById('atitle_en').innerHTML = "Level-order Traversal";
+document.getElementById('abstract').innerHTML = "　層序追蹤演算法會依據與根節點的距離，一層一層地往下走訪節點。本節會在二元樹的各節點上寫下層序追蹤的走訪順序。";
+document.getElementById('explanation').innerHTML = "　層序追蹤會依照與根節點的距離，由近而遠地走訪節點。換句話說，就是在走訪深度為 k 的節點之前，必須要先走訪完所有深度為 k-1 的節點。這種追蹤方式可以透過佇列管理節點的方式實現。做法是先將根節點的編號放入佇列，再開始反覆進行從佇列中取出節點，並將其子節點放入佇列的操作，直到佇列被清空為止。";
+document.getElementById('note').innerHTML = "二元樹的追蹤會將每個節點各走訪一次，因此時間複雜度為 O(N)。";
+document.getElementById('application').innerHTML = "　層序追蹤除了以父節點為優先外，也會依照節點的深度，也就是節點與根節點的距離（邊的數量），由近而遠依序走訪。這項性質可以應用在一些重視節點與根節點距離的問題或應用程式上。層序追蹤的做法若拓展到圖形上時，便稱為廣度優先搜尋 （Breadth-First Search）。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/BT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_t.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">二元樹</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_L.svg" /></td><td>走訪順序</td><td class="code">L</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">追蹤二元樹</th></tr><tr><td class="symbol"><img src="formula_visit.svg" /></td><td>走訪節點並寫下走訪順序。</td><td class="code">L[u] &larr; time++</td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>擴大已走訪的節點範圍。</td><td class="code">已在 L[u] 中寫下順序的節點</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">走訪節點。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">追蹤二元樹</b><br/><img src="scene_0.svg" alt="層序追蹤 | 追蹤二元樹" title="層序追蹤 | 追蹤二元樹"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/queue_simulation.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

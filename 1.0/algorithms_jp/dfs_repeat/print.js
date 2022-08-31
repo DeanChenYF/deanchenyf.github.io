@@ -1,0 +1,5 @@
+window.onload = function () {
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_color.svg" /></td><td>連結成分の色</td><td class="code">color</td></tr><tr><td class="symbol"><img src="variable_palette.svg" /></td><td>パレットの色</td><td class="code">palette</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">深さ優先探索</th></tr><tr><td class="symbol"><img src="formula_oi.svg" /></td><td>色を更新します。</td><td class="code">palette &larr; 新しい色</td></tr><tr><td class="symbol"><img src="formula_ui.svg" /></td><td>ノードを訪問して色をつけます。</td><td class="code">color[u] &larr; palette</td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>訪問したノードのグループを拡張していきます。</td><td class="code">colorがWHITEではないノード</td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">深さ優先探索</b><br/><img src="scene_0.svg" alt="DFSによる連結成分分解 | 深さ優先探索" title="DFSによる連結成分分解 | 深さ優先探索"/></p></div>';
+};

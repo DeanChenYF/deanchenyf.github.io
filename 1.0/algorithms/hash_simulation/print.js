@@ -1,0 +1,5 @@
+window.onload = function () {
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_key.svg" /></td><td>雜湊表的元素</td><td class="code">key</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">新增資料</th></tr><tr><td class="symbol"><img src="formula_input.svg" /></td><td>新增資料。</td><td class="code">insert(k):</td></tr><tr><td class="symbol"><img src="formula_hash2.svg" /></td><td>透過雜湊函數尋找空白區域。</td><td class="code">pos &larr; hash(k, i)</td></tr><tr><td class="symbol"><img src="formula_pointer.svg" /></td><td>指向透過雜湊函數求得的位置。</td><td class="code">pos</td></tr><tr><td class="symbol"><img src="formula_write.svg" /></td><td>將資料寫入元素。</td><td class="code">key[pos] &larr; k</td></tr><tr><td class="symbol"><img src="formula_collision.svg" /></td><td>標示發生碰撞的位置。</td><td class="code">pos値的軌跡</td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">新增資料</b><br/><img src="scene_0.svg" alt="雜湊表 | 新增資料" title="雜湊表 | 新增資料"/></p></div>';
+};

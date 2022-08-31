@@ -1,0 +1,12 @@
+<pre>
+heapSort(A):
+    # buildHeap
+    for i &larr; N/2 - 1 downto 0:
+        downHeap(A, i)
+
+    heapSize &larr; N
+    while heapSize &ge; 2:
+        swap(A[0], A[heapSize-1])
+        heapSize--
+        downHeap(A, 0) # heapSizeの範囲でダウンヒープ
+</pre>

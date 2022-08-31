@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-28377245-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-28377245-2');
+</script>
+<!--<meta http-equiv="X-UA-Compatible" content="chrome=1">-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>利用廣度優先搜尋計算距離 | 會動的演算法</title>
+<link rel="stylesheet" href="print.css" type="text/css" media="all" />
+<!--<script language="JavaScript" type="text/javascript" src="print.js"></script>-->
+</head>
+<body>
+  <div class="wrapper">
+    <h3>利用廣度優先搜尋計算距離 | <a href="https://yutaka-watanobe.github.io/star-aida/books/">會動的演算法</a></h3>
+
+    <div id="content" class="content">
+      <h4>シンボル</h4>
+      
+      <table class="items" cellspacing="0">
+        <tbody id="variable">
+	  <tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_dist.svg" /></td><td>從起點出發的最短距離</td><td class="code">dist</td></tr>
+	</tbody>
+      </table>
+      <br/>
+      <table class="items" cellspacing="0">
+        <tbody id="formula">
+	  <tr><th class="scene_desc" colspan="3">初始化起點</th></tr><tr><td class="symbol"><img src="formula_si.svg" /></td><td>將起點的最短距離初始化為 0。</td><td class="code">dist[s] &larr; 0</td></tr><tr><th class="scene_desc" colspan="3">廣度優先搜尋</th></tr><tr><td class="symbol"><img src="formula_vi.svg" /></td><td>更新最短距離。</td><td class="code">dist[v] &larr; dist[u] + 1</td></tr>
+	</tbody>
+      </table>
+
+      <br/>
+      <h4>アニメーション</h4>
+      <div id="scene" class="scene">
+	<div><p><b class="scene_desc">初始化起點</b><br/><img src="scene_0.svg" alt="利用廣度優先搜尋計算距離 | 初始化起點" title="利用廣度優先搜尋計算距離 | 初始化起點"/></p></div><div><p><b class="scene_desc">廣度優先搜尋</b><br/><img src="scene_1.svg" alt="利用廣度優先搜尋計算距離 | 廣度優先搜尋" title="利用廣度優先搜尋計算距離 | 廣度優先搜尋"/></p></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

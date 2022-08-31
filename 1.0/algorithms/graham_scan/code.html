@@ -1,0 +1,24 @@
+<pre>
+# 二維點群 PointGroup pg
+grahamScan(pg):
+    Stack st
+    leftmost &larr; pg.points 中最左下角的點
+　　orderedIndex &larr; pg.points 以 leftmost 為基準對 pg.points 進行極角排序後的索引序列
+
+    st.push(orderedIndex[0])
+    st.push(orderedIndex[1])
+    st.push(orderedIndex[2])
+
+    for i &larr; 3 to pg.N-1:
+        head = orderedIndex[i]
+      
+        while st.size() &ge; 2:
+            top2 &larr; 頂端數來第 2 個值
+            top &larr; 頂端數來第 1 個值
+            if 對於 pg.points[top2] 與 pg.points[top] 形成的直線而言
+                pg.points[head] 位於右側（順時針方向）:
+                st.pop()
+            else:
+                break
+        st.push(head)
+</pre>

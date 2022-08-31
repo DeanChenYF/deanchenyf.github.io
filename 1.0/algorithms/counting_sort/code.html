@@ -1,0 +1,14 @@
+<pre>
+countingSort(A, B, N):
+    C # 大小為 K+1 的陣列
+
+    for i &larr; 0 to N-1:
+        C[A[i]]++
+
+    for i &larr; 1 to K:
+        C[i] &larr; C[i] + C[i-1]
+
+    for i &larr; N-1 downto 0:
+        C[A[i]]--
+        B[C[A[i]]] &larr; A[i]
+</pre>

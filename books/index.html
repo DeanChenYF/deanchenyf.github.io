@@ -1,0 +1,3753 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-28377245-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-28377245-2');
+</script>
+
+    
+<!--<meta http-equiv="X-UA-Compatible" content="chrome=1">-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<meta name="viewport" content="width=device-width,initial-scale=1">-->
+<meta name="viewport" content="width=device-width">
+<title>アルゴリズムビジュアル大事典</title>
+<link rel="stylesheet" href="books.css" type="text/css" media="all" />
+<script language="JavaScript" type="text/javascript" src="script.js"></script>
+</head>
+
+
+<body>
+  <div class="container">
+    
+    <center>
+      <table width="760">
+	<tr>
+	  <!--
+	  <td><a href="https://book.mynavi.jp/ec/products/detail/id=114278"><img src="book_cover.jpg" width="160" style="border: 1px solid #888888"></a></td>
+	  <td width="28"></td>
+-->
+	  <td style="text-align:center"><center><img src="cover_algo.jpg" width="560"></center><br/></td>
+	</tr>
+      </table>
+      <br/>
+    </center>
+
+    <div class="description">
+      <p>
+	このサポートページでは、マイナビ出版発行の書籍「<a href="https://book.mynavi.jp/ec/products/detail/id=114278">アルゴリズムビジュアル大事典</a>」にて作成しましたシンボル、アニメーション、疑似コードを掲載いたします。また、内容のアップデートを行ってまいります。詳しい解説は、本書をご参考にしてください。
+      </p>
+
+      <p>
+	アニメーションコントローラの使い方は<a href="https://yutaka-watanobe.github.io/star-aida/1.1/quick_manual/ja/">クイックマニュアル</a>でご確認頂けます。
+      </p>
+      
+      <p>
+<u><b class="icon_info" title="補足情報"></b> 補足情報が表示されているトピックにつきましては、ご注意ください。</u>その他の訂正等は<!--<a href="https://book.mynavi.jp/supportsite/detail/9784839968274.html">--><a href="https://yutaka-watanobe.github.io/star-aida/books/correction_01/">正誤表</a>をご覧ください。ご質問、不具合等のご報告は、ご遠慮なくy.watanobe@gmail.com（渡部）までお送りください。
+      </p>
+      <!--
+      <p style="color:#f00">
+ メンテナンスのため、2021/09/03-2021/09/05の間、入力データ指定によるアニメーション生成（★ボタン機能）がご利用になれません。あらかじめご了承ください。
+      </p>
+      -->
+      
+      
+
+    </div>
+
+    <h1 class="part_title" style="color:#888822">Part 1 準備編</h1>
+    <h2 class="chapter_title" style="color:#888822">3章　計算量</h2>
+
+    <div class="section">
+      <table>
+	<tr>
+	  <td>
+	    <table class="symbol">
+	      <tr>
+		<td><img alt="定数倍" class="icon_small" src="../icons/complexity/const.svg" style="width:60px"></td>
+		<td width="208">定数</td>
+	      </tr>
+	      <tr>
+		<td><img alt="対数" class="icon_small" src="../icons/complexity/log.svg" style="width:60px"></td>
+		<td width="208">対数</td>
+	      </tr>
+	    </table>
+	  </td>
+	  <td width="12"></td>
+	  <td>
+	    <table  class="symbol">
+	      <tr>
+		<td><img alt="線形" class="icon_small" src="../icons/complexity/linear.svg" style="width:60px"></td>
+		<td width="208">線形</td>
+	      </tr>
+	      <tr>
+		<td><img alt="線形・対数" class="icon_small" src="../icons/complexity/linear_log.svg" style="width:60px"></td>
+		<td width="208">線形・対数</td>
+	      </tr>
+	    </table>
+	  </td>
+	  <td width="12"></td>
+	  <td>
+	    <table  class="symbol">
+	      <tr>
+		<td><img alt="二次関数" class="icon_small" src="../icons/complexity/quad.svg" style="width:60px"></td>
+		<td width="200">2次関数</td>
+	      </tr>
+	      <tr>
+		<td><img alt="三次関数" class="icon_small" src="../icons/complexity/cube.svg" style="width:60px"></td>
+	      <td width="200">3次関数</td>
+	      </tr>
+	    </table>
+	  </td>
+	</tr>
+      </table>
+    </div>
+    
+    <h1 class="part_title" style="color:#cc8822">Part 2 空間構造</h1>
+    <h2 class="chapter_title"  style="color:#cc8822">4-9章　</h2>
+    
+    <div class="section">
+      <table>
+	<tr>
+	  <td>
+	    <table class="symbol">
+	      <tr>
+		<td><img alt="シングルノード" class="icon_small" src="../1.0/icons/structures/A0D.svg" style="width:60px"></td>
+		<td width="208">シングルノード</td>
+	      </tr>
+	      <tr>
+		<td><img alt="1次元配列" class="icon_small" src="../1.0/icons/structures/A1D.svg" style="width:60px"></td>
+		<td>１次元配列</td>
+	      </tr>
+	      <tr>
+		<td><img alt="2次元配列" class="icon_small" src="../1.0/icons/structures/A2D.svg" style="width:60px"></td>
+		<td>２次元配列</td>
+	      </tr>
+	      <tr>
+		<td><img alt="二分木" class="icon_small" src="../1.0/icons/structures/BT.svg" style="width:60px"></td>
+		<td>二分木</td>
+	      </tr>
+	    </table>
+	  </td>
+	  <td width="12"></td>
+	  <td>
+	    <table  class="symbol">
+	      <tr>
+		<td><img alt="おおよそ完全二分木" class="icon_small" src="../1.0/icons/structures/ACBT.svg" style="width:60px"></td>
+		<td width="208">おおよそ完全二分木</td>
+	      </tr>
+	      <tr>
+		<td><img alt="完全二分木" class="icon_small" src="../1.0/icons/structures/CBT.svg" style="width:60px"></td>
+		<td>完全二分木
+		  <a href="correction_01/supplement_CBT.html"><b class="icon_info" title="補足情報"></b></a>
+		</td>
+	      </tr>
+	      <tr>
+		<td><img alt="無向グラフ" class="icon_small" src="../1.0/icons/structures/GR.svg" style="width:60px"></td>
+		<td>無向グラフ</td>
+	      </tr>
+	      <tr>
+		<td><img alt="有向グラフ" class="icon_small" src="../1.0/icons/structures/DGR.svg" style="width:60px"></td>
+		<td>有向グラフ</td>
+	      </tr>
+	    </table>
+	  </td>
+	  <td width="12"></td>
+	  <td>
+	    <table  class="symbol">
+	      <tr>
+		<td><img alt="森" class="icon_small" src="../1.0/icons/structures/FRST.svg" style="width:60px"></td>
+		<td width="208">森</td>
+	      </tr>
+	      <tr>
+		<td><img alt="二次元点群" class="icon_small" src="../1.0/icons/structures/P2D.svg" style="width:60px"></td>
+		<td>２次元点群</td>
+	      </tr>
+	      <tr>
+		<td><img alt="連結リスト" class="icon_small" src="../1.0/icons/structures/DA1D.svg" style="width:60px"></td>
+		<td>連結リスト</td>
+	      </tr>
+	      <tr>
+		<td><img alt="動的な二分木" class="icon_small" src="../1.0/icons/structures/DBT.svg" style="width:60px"></td>
+		<td>動的な二分木</td>
+	      </tr>
+	    </table>
+	  </td>
+	</tr>
+      </table>
+    </div>
+    
+    <h1 class="part_title" style="color:#8888aa">Part 3 アルゴリズムとデータ構造</h1>
+    <h2 class="chapter_title">10章  入門</h2>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="スワップ" class="icon_algorithm" src="../1.0/icons/algorithms/swap.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">スワップ </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A0D.svg">
+	    <img class="icon_small" src="../icons/complexity/const.svg">
+	  </td>
+	  <!--<td class="level"><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">異なる２つの変数の値を入れ替えてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="スワップ | 入力" class="ioframe" src="../1.0/problems/swap/input.svg" ></td>
+		<td class="arrow"><b class="icon_right"></b></td>
+		<td class="io"><img alt="スワップ | 出力" class="ioframe" src="../1.0/problems/swap/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/swap/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/swap/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/swap/print.html"><b class="icon_frame" title="フレーム"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/swap/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="correction_01/error_swap.html"><b class="icon_info" title="補足情報"></b></a></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="最大値" class="icon_algorithm" src="../1.0/icons/algorithms/max.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">マックス </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A0D.svg">
+	    <img class="icon_small" src="../icons/complexity/const.svg">
+	  </td>
+	  <!--<td class="level"><b class="star_half">★</b></td -->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">与えられた２つの整数のうち、大きい方を選択してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="最大値 | 入力" class="ioframe" src="../1.0/problems/max/input.svg" ></td>
+		<td class="arrow"><b class="icon_right"></b></td>
+		<td class="io"><img alt="最大値 | 出力" class="ioframe" src="../1.0/problems/max/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/max/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/max/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/max/print.html"><b class="icon_frame" title="フレーム"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/max/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_caution"></b><a><b class="star">訂正情報</b></a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="スワップによるソート" class="icon_algorithm" src="../1.0/icons/algorithms/sorting_three_elements.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">スワップによるソート </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A0D.svg">
+	    <img class="icon_small" src="../icons/complexity/const.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/swap.svg">
+	  </td>
+<!--	  <td class="level"><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">３つの整数を小さい順に並べ替えてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="スワップソート | 入力" class="ioframe" src="../1.0/problems/sorting_three_elements/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="スワップソート | 出力" class="ioframe" src="../1.0/problems/sorting_three_elements/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/sorting_three_elements/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/sorting_three_elements/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/sorting_three_elements/print.html"><b class="icon_frame" title="フレーム"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/sorting_three_elements/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_caution"></b><a><b class="star">訂正情報</b></a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">11章  配列に対する基本クエリ</h2>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="合計" class="icon_algorithm" src="../1.0/icons/algorithms/sum_of_integers.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">合計（サム）</td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">与えられたN個の整数の和を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="合計 | 入力" class="ioframe" src="../1.0/problems/sum_of_integers/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="合計 | 出力" class="ioframe" src="../1.0/problems/sum_of_integers/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/sum_of_integers/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/sum_of_integers/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/sum_of_integers/print.html"><b class="icon_frame" title="フレーム"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/sum_of_integers/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="最小要素の値" class="icon_algorithm" src="../1.0/icons/algorithms/minimum_of_integers_value.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">最小要素の値 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">与えられたN個の整数の中で最も小さい「値」を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="最小要素の値 | 入力" class="ioframe" src="../1.0/problems/minimum_of_integers_value/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="最小要素の値 | 出力" class="ioframe" src="../1.0/problems/minimum_of_integers_value/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/minimum_of_integers_value/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/minimum_of_integers_value/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td></b><a href="../1.0/algorithms/minimum_of_integers_value/print.html"><b class="icon_frame"></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/minimum_of_integers_value/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="最小要素の位置" class="icon_algorithm" src="../1.0/icons/algorithms/minimum_of_integers_index.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">最小要素の位置 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">与えられたN個の整数の列の要素の中で、最も小さい要素の「位置」を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="最小要素の位置 | 入力" class="ioframe" src="../1.0/problems/minimum_of_integers_index/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="最小要素の位置 | 出力" class="ioframe" src="../1.0/problems/minimum_of_integers_index/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/minimum_of_integers_index/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/minimum_of_integers_index/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/minimum_of_integers_index/print.html"><b class="icon_frame" title="フレーム"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/minimum_of_integers_index/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="correction_01/error_minimum_of_integers_index.html"><b class="icon_info" title="補足情報"></b></a></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">12章  探索</h2>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="線形探索" class="icon_algorithm" src="../1.0/icons/algorithms/linear_search.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">線形探索 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★/<b></td> -->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">配列の中から、指定された値を探してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="線形探索 | 入力" class="ioframe" src="../1.0/problems/search/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="線形探索 | 出力" class="ioframe" src="../1.0/problems/search/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/linear_search/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/linear_search/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/linear_search/print.html"><b class="icon_frame" title="フレーム"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/linear_search/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="二分探索" class="icon_algorithm" src="../1.0/icons/algorithms/binary_search.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">二分探索 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/log.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">要素が昇順に整列された配列の中から、指定された値を探してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="二分探索 | 入力" class="ioframe" src="../1.0/problems/search_sorted/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="二分探索 | 出力" class="ioframe" src="../1.0/problems/search_sorted/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/binary_search/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/binary_search/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/binary_search/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td></b><a href="pseudo_code/binary_search/code.html"><b class="icon_code" title="疑似コード"></a></td>
+		    </tr>
+		    <tr>
+		      <td></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    
+    <h2 class="chapter_title">13章  配列要素の並び替え</h2>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="リバース" class="icon_algorithm" src="../1.0/icons/algorithms/reverse.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">リバース </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/swap.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数の列の要素を逆順に並び替えてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="リバース | 入力" class="ioframe" src="../1.0/problems/reverse/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="リバース | 出力" class="ioframe" src="../1.0/problems/reverse/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/reverse/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/reverse/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/reverse/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/reverse/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="挿入" class="icon_algorithm" src="../1.0/icons/algorithms/insertion.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">挿入 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">昇順に整列された整数の列に、昇順を保つように１つの整数を追加してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="挿入 | 入力" class="ioframe" src="../1.0/problems/insertion/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="挿入 | 出力" class="ioframe" src="../1.0/problems/insertion/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/insertion/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/insertion/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/insertion/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/insertion/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="correction_01/error_insertion.html"><b class="icon_info"  title="補足情報"></b></a></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="マージ" class="icon_algorithm" src="../1.0/icons/algorithms/merge.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">マージ </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/reverse.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">それぞれ昇順に整列された２つの整数の列を、１つの昇順に整列された整数の列として統合してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="マージ | 入力" class="ioframe" src="../1.0/problems/merge/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="マージ | 出力" class="ioframe" src="../1.0/problems/merge/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/merge/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/merge/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/merge/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/merge/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="correction_01/error_merge.html"><b class="icon_info" title="補足情報"></b></a></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="パーティション" class="icon_algorithm" src="../1.0/icons/algorithms/partition.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">パーティション </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/swap.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">配列の適当な１つの要素を基準として、基準より小さいグループと大きいグループに分割してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="パーティション | 入力" class="ioframe" src="../1.0/problems/partition/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="パーティション | 出力" class="ioframe" src="../1.0/problems/partition/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/partition/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/partition/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/partition/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/partition/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">14章  遅いソート</h2>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="バブルソート" class="icon_algorithm" src="../1.0/icons/algorithms/bubble_sort.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">バブルソート </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/quad.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/swap.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数の列{a<sub>0</sub>, a<sub>1</sub>, ..., a<sub>N-1</sub>}を小さい順に並べ替えてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="バブルソート | 入力" class="ioframe" src="../1.0/problems/sort_small/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="バブルソート | 出力" class="ioframe" src="../1.0/problems/sort_small/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/bubble_sort/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/bubble_sort/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/bubble_sort/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/bubble_sort/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="選択ソート" class="icon_algorithm" src="../1.0/icons/algorithms/selection_sort.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">選択ソート </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/quad.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/minimum_of_integers_index.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/swap.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数の列{a<sub>0</sub>, a<sub>1</sub>, ..., a<sub>N-1</sub>}を小さい順に並べ替えてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="選択ソート | 入力" class="ioframe" src="../1.0/problems/sort_small/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="選択ソート | 出力" class="ioframe" src="../1.0/problems/sort_small/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/selection_sort/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/selection_sort/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/selection_sort/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/selection_sort/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/10</h5>
+    <div class="card">
+      <img alt="挿入ソート" class="icon_algorithm" src="../1.0/icons/algorithms/insertion_sort.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">挿入ソート </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/quad.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/insertion.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数の列{a<sub>0</sub>, a<sub>1</sub>, ..., a<sub>N-1</sub>}を小さい順に並べ替えてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="挿入ソート | 入力" class="ioframe" src="../1.0/problems/sort_small/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="挿入ソート | 出力" class="ioframe" src="../1.0/problems/sort_small/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/insertion_sort/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/insertion_sort/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/insertion_sort/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/insertion_sort/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="footnote">※このアルゴリズムは、本書に含まれません。2021/05/11</h5>
+    <div class="card">
+      <img alt="シェーカーソート" class="icon_algorithm" src="../1.0/icons/algorithms/shaker_sort.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">シェーカーソート </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/quad.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/bubble_sort.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数の列{a<sub>0</sub>, a<sub>1</sub>, ..., a<sub>N-1</sub>}を小さい順に並べ替えてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="シェーカーソート | 入力" class="ioframe" src="../1.0/problems/sort_small/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="シェーカーソート | 出力" class="ioframe" src="../1.0/problems/sort_small/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/shaker_sort/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/shaker_sort/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/shaker_sort/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/shaker_sort/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+
+
+    
+    <h2 class="chapter_title">15章  整数に関するアルゴリズム</h2>
+    <h5 class="update">2021/05/11</h5>
+    <div class="card">
+      <img alt="エラトステネスの篩" class="icon_algorithm" src="../1.0/icons/algorithms/sieve_of_eratosthenes.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">エラトステネスの篩 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear_log.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数iが素数のときi番目の要素が1、合成数のとき0となるような素数表を作成してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="エラトステネスの篩 | 入力" class="ioframe" src="../1.0/problems/prime_number_table/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="エラトステネスの篩 | 出力" class="ioframe" src="../1.0/problems/prime_number_table/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/sieve_of_eratosthenes/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/sieve_of_eratosthenes/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/sieve_of_eratosthenes/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/sieve_of_eratosthenes/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="correction_01/error_eratosthenes.html"><b class="icon_info" title="補足情報"></b></a></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/11</h5>
+    <div class="card">
+      <img alt="ユークリッドの互除法" class="icon_algorithm" src="../1.0/icons/algorithms/euclidean_algorithm.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">ユークリッドの互除法 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A0D.svg">
+	    <img class="icon_small" src="../icons/complexity/log.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">２つの整数の最大公約数を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="ユークリッドの互除法 | 入力" class="ioframe" src="../1.0/problems/gcd/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="ユークリッドの互除法 | 出力" class="ioframe" src="../1.0/problems/gcd/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/euclidean_algorithm/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/euclidean_algorithm/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/euclidean_algorithm/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/euclidean_algorithm/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">16章  基本データ構造1</h2>
+    <h5 class="update">2021/05/23</h5>
+    <div class="card">
+      <img alt="スタック" class="icon_algorithm" src="../1.0/icons/algorithms/stack_simulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">スタック </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/const.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">最後に挿入したデータを優先的に取り出すLast-In-First-Out (LIFO)のルールに従ったデータ構造を実装してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="スタック | 入力" class="ioframe" src="../1.0/problems/lifo/input.svg" ></td>
+		<td><b class="icon_right"></b><br/><b class="icon_left"></b></td>
+		<td class="io"><img alt="スタック | 出力" class="ioframe" src="../1.0/problems/lifo/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/stack_simulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/stack_simulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/stack_simulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/stack_simulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/23</h5>
+    <div class="card">
+      <img alt="キュー" class="icon_algorithm" src="../1.0/icons/algorithms/queue_simulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">キュー </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/const.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">最初に挿入したデータを優先的に取り出すFirst-In-First-Out (FIFO)のルールに従ったデータ構造を実装してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="キュー | 入力" class="ioframe" src="../1.0/problems/fifo/input.svg" ></td>
+		<td><b class="icon_right"></b><br/><b class="icon_left"></b></td>
+		<td class="io"><img alt="キュー | 出力" class="ioframe" src="../1.0/problems/fifo/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/queue_simulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/queue_simulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/queue_simulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/queue_simulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">17章  配列に対する計算</h2>
+    <h5 class="update">2021/05/16</h5>
+    <div class="card">
+      <img alt="累積和" class="icon_algorithm" src="../1.0/icons/algorithms/accumulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">累積和 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数の列と、それに対するQ個の区間が与えられます。各区間の和を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="累積和 | 入力" class="ioframe" src="../1.0/problems/range_sum/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="累積和 | 出力" class="ioframe" src="../1.0/problems/range_sum/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/accumulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/accumulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/accumulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/accumulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="correction_01/error_accumulation.html"><b class="icon_info" title="補足情報"></b></a></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/16</h5>
+    <div class="card">
+      <img alt="1次元累積和" class="icon_algorithm" src="../1.0/icons/algorithms/1d_accumulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">１次元累積和 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/accumulation.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">複数の線分が与えられるので、各座標について重なっている線分の数を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="1次元累積和 | 入力" class="ioframe" src="../1.0/problems/overlapping_1d/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="1次元累積和 | 出力" class="ioframe" src="../1.0/problems/overlapping_1d/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/1d_accumulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/1d_accumulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/1d_accumulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/1d_accumulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/22</h5>
+    <div class="card">
+      <img alt="2次元累積和" class="icon_algorithm" src="../1.0/icons/algorithms/2d_accumulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">２次元累積和 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A2D.svg">
+	    <img class="icon_small" src="../icons/complexity/quad.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/1d_accumulation.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">複数の長方形が与えられるので、各座標において重なっている長方形の個数を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="2次元累積和 | 入力" class="ioframe" src="../1.0/problems/overlapping_2d/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="2次元累積和 | 出力" class="ioframe" src="../1.0/problems/overlapping_2d/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/2d_accumulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/2d_accumulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/2d_accumulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/2d_accumulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="footnote">※このアルゴリズムは、本書に含まれません。2021/05/22</h5>
+    <div class="card">
+      <img alt="グリッド上の動的計画法" class="icon_algorithm" src="../1.0/icons/algorithms/grid_dp_path.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">グリッド上の動的計画法 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/G2D.svg">
+	    <img class="icon_small" src="../icons/complexity/quad.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">格子状の道路網があります。最北西の交差点から最南東の交差点までの最短経路の数を求めてください。工事中の交差点は通れません。</td></tr>
+	      <tr>
+		<td class="io"><img alt="グリッド上の最短経路の数 | 入力" class="ioframe" src="../1.0/problems/path_on_grid/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="グリッド上の最短経路の数 | 出力" class="ioframe" src="../1.0/problems/path_on_grid/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/grid_dp_path/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/grid_dp_path/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/grid_dp_path/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">18章  ヒープ</h2>
+    <h5 class="update">2021/05/22</h5>
+    <div class="card">
+      <img alt="アップヒープ" class="icon_algorithm" src="../1.0/icons/algorithms/upheap_simulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">アップヒープ </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/ACBT.svg">
+	    <img class="icon_small" src="../icons/complexity/log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/swap.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">最大ヒープに対して、一つのノードの値が、優先度が増加するように更新されました。最大ヒープを再構築してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="アップヒープ | 入力" class="ioframe" src="../1.0/problems/heap_increase/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="アップヒープ | 出力" class="ioframe" src="../1.0/problems/heap_increase/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/upheap_simulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/upheap_simulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/upheap_simulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/upheap_simulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/22</h5>
+    <div class="card">
+      <img alt="ダウンヒープ" class="icon_algorithm" src="../1.0/icons/algorithms/downheap_simulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">ダウンヒープ </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/ACBT.svg">
+	    <img class="icon_small" src="../icons/complexity/log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/swap.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">最大ヒープに対して、一つの要素が、優先度が減少するように更新されました。最大ヒープを再構築してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="ダウンヒープ | 入力" class="ioframe" src="../1.0/problems/heap_decrease/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="ダウンヒープ | 出力" class="ioframe" src="../1.0/problems/heap_decrease/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/downheap_simulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/downheap_simulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/downheap_simulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/downheap_simulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/22</h5>
+    <div class="card">
+      <img alt="ビルドヒープ" class="icon_algorithm" src="../1.0/icons/algorithms/heap_construction.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">ビルドヒープ </ed>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/ACBT.svg">
+	    <img class="icon_small" src="../icons/complexity/log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/downheap_simulation.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/insertion.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">適当な整数の列から最大ヒープを構築してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="ビルドヒープ | 入力" class="ioframe" src="../1.0/problems/heap_construction/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="ビルドヒープ | 出力" class="ioframe" src="../1.0/problems/heap_construction/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/heap_construction/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/heap_construction/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/heap_construction/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/heap_construction/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="correction_01/error_heap_construction.html"><b class="icon_info" title="補足情報"></b></a></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/23</h5>
+    <div class="card">
+      <img alt="優先度付きキュー" class="icon_algorithm" src="../1.0/icons/algorithms/priority_queue_simulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">優先度付きキュー </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/ACBT.svg">
+	    <img class="icon_small" src="../icons/complexity/log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/upheap_simulation.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/downheap_simulation.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">優先度が最も高いデータ（ここでは値が大きいもの）を優先的に取り出すルールに従ったデータ構造を実装してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="優先度付きキュー | 入力" class="ioframe" src="../1.0/problems/priority_queue/input.svg" ></td>
+		<td><b class="icon_right"></b><br/><b class="icon_left"></b></td>
+		<td class="io"><img alt="優先度付きキュー | 出力" class="ioframe" src="../1.0/problems/priority_queue/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/priority_queue_simulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/priority_queue_simulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/priority_queue_simulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/priority_queue_simulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+
+
+    <!-- basic data structure summary -->
+    <h2 class="chapter_title">基本データ構造：比較表</h2>
+
+    <div class="section">
+      <table class="summary">
+	<tr>
+	  <th colspan="2" width="240">データ構造</th>
+	  <th width="100">計算量</th>
+	  <th width="280">ルール</th>
+	  <th>テクニック</th>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="スタック" class="symbol" src="../1.0/icons/algorithms/stack_simulation.svg">
+	  </td>
+	  <td style="text-align:left">スタック</td>
+	  <td>
+	    <img alt="定数" class="icon_small" src="../icons/complexity/const.svg">
+	  </td>
+	  <td style="text-align:left">後入先出 (LIFO: Last-In-First-Out)</td>
+	  <td></td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="キュー" class="symbol" src="../1.0/icons/algorithms/queue_simulation.svg">
+	  </td>
+	  <td style="text-align:left">キュー</td>
+	  <td>
+	    <img alt="定数" class="icon_small" src="../icons/complexity/const.svg">
+	  </td>
+	  <td style="text-align:left">先入先出 (FIFO: First-In-First-Out)</td>
+	  <td></td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="優先度付きキュー" class="symbol" src="../1.0/icons/algorithms/priority_queue_simulation.svg">
+	  </td>
+	  <td style="text-align:left">優先度付きキュー</td>
+	  <td>
+	    <img alt="対数" class="icon_small" src="../icons/complexity/log.svg">
+	  </td>
+	  <td style="text-align:left">優先度の高いものから取り出す</td>
+	  <td>
+	    <img alt="ヒープ" class="icon_small" src="../1.0/icons/algorithms/downheap_simulation.svg">
+	  </td>
+	</tr>
+      </table>
+    </div>
+    <br/>
+
+
+    
+    <h2 class="chapter_title">19章  二分木</h2>
+    <h5 class="update">2021/05/30</h5>
+    <div class="card">
+      <img alt="先行順巡回" class="icon_algorithm" src="../1.0/icons/algorithms/btree_preorder.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">先行順巡回 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/BT.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">二分木のノードを次の条件を満たすように訪問してください：子よりも親を優先的に訪問する。</td></tr>
+	      <tr>
+		<td class="io"><img alt="先行順巡回 | 入力" class="ioframe" src="../1.0/problems/btree_preorder/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="先行順巡回 | 出力" class="ioframe" src="../1.0/problems/btree_preorder/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/btree_preorder/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/btree_preorder/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/btree_preorder/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/btree_preorder/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/30</h5>
+    <div class="card">
+      <img alt="後行順巡回" class="icon_algorithm" src="../1.0/icons/algorithms/btree_postorder.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">後行順巡回 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/BT.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">二分木のノードを次の条件を満たすように訪問してください：親よりも子を優先的に訪問する。</td></tr>
+	      <tr>
+		<td class="io"><img alt="後行順巡回 | 入力" class="ioframe" src="../1.0/problems/btree_postorder/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="後行順巡回 | 出力" class="ioframe" src="../1.0/problems/btree_postorder/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/btree_postorder/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/btree_postorder/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/btree_postorder/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/btree_postorder/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/30</h5>
+    <div class="card">
+      <img alt="中間順巡回" class="icon_algorithm" src="../1.0/icons/algorithms/btree_inorder.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">中間順巡回 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/BT.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">二分木のノードを次の条件を満たすように訪問してください：親が左の子の子孫の後、右の子の子孫の前に訪問される。</td></tr>
+	      <tr>
+		<td class="io"><img alt="中間順巡回 | 入力" class="ioframe" src="../1.0/problems/btree_inorder/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="中間順巡回 | 出力" class="ioframe" src="../1.0/problems/btree_inorder/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/btree_inorder/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/btree_inorder/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/btree_inorder/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/btree_inorder/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/30</h5>
+    <div class="card">
+      <img alt="レベル順巡回" class="icon_algorithm" src="../1.0/icons/algorithms/btree_levelorder.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">レベル順巡回 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/BT.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/queue_simulation.svg">
+	  </td>	
+<!--  <td class="level"><b class="star">★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">二分木のノードを次の条件を満たすように訪問してください：深さがkのノードを訪問する前に、深さがk-1の全てのノードが訪問されている。</td></tr>
+	      <tr>
+		<td class="io"><img alt="レベル順巡回 | 入力" class="ioframe" src="../1.0/problems/btree_levelorder/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="レベル順巡回 | 出力" class="ioframe" src="../1.0/problems/btree_levelorder/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/btree_levelorder/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/btree_levelorder/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/btree_levelorder/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/btree_levelorder/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">20章  ソート</h2>
+    <h5 class="update">2021/05/15</h5>
+    <div class="card">
+      <img alt="マージソート" class="icon_algorithm" src="../1.0/icons/algorithms/merge_sort.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">マージソート </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear_log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/merge.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/btree_postorder.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数の列{a<sub>0</sub>, a<sub>1</sub>, ..., a<sub>N-1</sub>}を小さい順に並べ替えてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="マージソート | 入力" class="ioframe" src="../1.0/problems/sort/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="マージソート | 出力" class="ioframe" src="../1.0/problems/sort/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/merge_sort/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/merge_sort/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/merge_sort/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/merge_sort/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/15</h5>
+    <div class="card">
+      <img alt="クイックソート" class="icon_algorithm" src="../1.0/icons/algorithms/quick_sort.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">クイックソート </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear_log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/partition.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/btree_preorder.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数の列{a<sub>0</sub>, a<sub>1</sub>, ..., a<sub>N-1</sub>}を小さい順に並べ替えてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="クイックソート | 入力" class="ioframe" src="../1.0/problems/sort/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="クイックソート | 出力" class="ioframe" src="../1.0/problems/sort/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/quick_sort/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/quick_sort/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/quick_sort/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/quick_sort/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="correction_01/error_quick_sort.html"><b class="icon_info" title="補足情報"></b></a></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/22</h5>
+    <div class="card">
+      <img alt="ヒープソート" class="icon_algorithm" src="../1.0/icons/algorithms/heap_sort.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">ヒープソート </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/ACBT.svg">
+	    <img class="icon_small" src="../icons/complexity/linear_log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/heap_construction.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/downheap_simulation.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数の列{a<sub>0</sub>, a<sub>1</sub>, ..., a<sub>N-1</sub>}を小さい順に並べ替えてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="ヒープソート | 入力" class="ioframe" src="../1.0/problems/sort/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="ヒープソート | 出力" class="ioframe" src="../1.0/problems/sort/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/heap_sort/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/heap_sort/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/heap_sort/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/heap_sort/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/15</h5>
+    <div class="card">
+      <img alt="計数ソート" class="icon_algorithm" src="../1.0/icons/algorithms/counting_sort.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">計数ソート </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/accumulation.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数の列{a<sub>0</sub>, a<sub>1</sub>, ..., a<sub>N-1</sub>}を小さい順に並べ替えてください。ただし、各整数の上限は比較的小さいものとします。</td></tr>
+	      <tr>
+		<td class="io"><img alt="計数ソート | 入力" class="ioframe" src="../1.0/problems/sort_low/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="計数ソート | 出力" class="ioframe" src="../1.0/problems/sort_low/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/counting_sort/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/counting_sort/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/counting_sort/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/counting_sort/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="correction_01/error_counting_sort.html"><b class="icon_info" title="補足情報"></b></a></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2021/05/15</h5>
+    <div class="card">
+      <img alt="シェルソート" class="icon_algorithm" src="../1.0/icons/algorithms/shell_sort.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">シェルソート </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear_log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/insertion_sort.svg">
+	  </td>
+<!--  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数の列{a<sub>0</sub>, a<sub>1</sub>, ..., a<sub>N-1</sub>}を小さい順に並べ替えてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="シェルソート | 入力" class="ioframe" src="../1.0/problems/sort/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="シェルソート | 出力" class="ioframe" src="../1.0/problems/sort/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/shell_sort/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/shell_sort/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/shell_sort/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/shell_sort/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="correction_01/error_shell_sort.html"><b class="icon_info" title="補足情報"></b></a></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+
+    <!-- sort summary -->
+    <h2 class="chapter_title">ソートアルゴリズム：比較表</h2>
+
+    <div class="section">
+      <table class="summary">
+	<tr>
+	  <th colspan="2" width="240">アルゴリズム</th>
+	  <th width="100">計算量</th>
+	  <th width="50">安定性</th>
+	  <th width="50" style="font-size:7">インプレイス<br>（メモリ効率）</th>
+	  <th>テクニック</th>
+	  <th>特徴</th>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="バブルソート" class="symbol" src="../1.0/icons/algorithms/bubble_sort.svg">
+	  </td>
+	  <td>バブルソート</td>
+	  <td align="center">
+	    <img alt="二次関数" class="icon_small" src="../icons/complexity/quad.svg">
+	  </td>
+	  <td>〇</td>
+	  <td>〇</td>
+	  <td>
+	    <table><tr>
+		<td  style="border:none; padding:0; font-size:9; text-align:center">
+		  <img class="icon_small" src="../1.0/icons/algorithms/swap.svg"> <br>スワップ
+		</td>
+	    </tr></table>
+	  </td>
+	  <td style="text-align:left; font-size:11">× 実用的ではない</td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="選択ソート" class="symbol" src="../1.0/icons/algorithms/selection_sort.svg">
+	  </td>
+	  <td>選択ソート</td>
+	  <td align="center">
+	    <img alt="二次関数" class="icon_small" src="../icons/complexity/quad.svg">
+	  </td>
+	  <td>×</td>
+	  <td>〇</td>
+	  <td>
+	    <table><tr>
+		<td  style="border:none; padding:0; font-size:9; text-align:center">
+		  <img class="icon_small" src="../1.0/icons/algorithms/swap.svg"> <br>スワップ
+		</td>
+		<td  style="border:none; padding:0; font-size:9; text-align:center">
+		  <img class="icon_small" src="../1.0/icons/algorithms/linear_search.svg"><br>探索
+		</td>
+	    </tr></table>
+	  </td>
+	  <td style="text-align:left; font-size:11">× 実用的ではない</td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="挿入ソート" class="symbol" src="../1.0/icons/algorithms/insertion_sort.svg">
+	  </td>
+	  <td>挿入ソート</td>
+	  <td align="center">
+	    <img alt="二次関数" class="icon_small" src="../icons/complexity/quad.svg">
+	  </td>
+	  <td>〇</td>
+	  <td>〇</td>
+	  <td>
+	    <table><tr>
+		<td  style="border:none; padding:0; font-size:9; text-align:center">
+		  <img class="icon_small" src="../1.0/icons/algorithms/insertion.svg"> <br>挿入
+		</td>
+	    </tr></table>
+	  </td>
+	  <td style="text-align:left; font-size:11">〇昇順に近いデータに対して高速</td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="シェーカーソート" class="symbol" src="../1.0/icons/algorithms/shaker_sort.svg">
+	  </td>
+	  <td>シェーカーソート</td>
+	  <td align="center">
+	    <img alt="二次関数" class="icon_small" src="../icons/complexity/quad.svg">
+	  </td>
+	  <td>〇</td>
+	  <td>〇</td>
+	  <td>
+	    <table><tr>
+		<td  style="border:none; padding:0; font-size:9; text-align:center">
+		  <img class="icon_small" src="../1.0/icons/algorithms/swap.svg"> <br>スワップ
+		</td>
+	    </tr></table>
+	  </td>
+	  <td style="text-align:left; font-size:11">〇昇順に近いデータに対して高速</td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="マージソート" class="symbol" src="../1.0/icons/algorithms/merge_sort.svg">
+	  </td>
+	  <td>マージソート</td>
+	  <td align="center">
+	    <img alt="線形・対数" class="icon_small" src="../icons/complexity/linear_log.svg">
+	  </td>
+	  <td>〇</td>
+	  <td>×</td>
+	  <td>
+	    <table><tr>
+		<td  style="border:none; padding:0; font-size:9; text-align:center">
+		  <img class="icon_small" src="../1.0/icons/algorithms/merge.svg"> <br>マージ
+		</td>
+		<td  style="border:none; padding:0; font-size:9; text-align:center">
+		  <img class="icon_small" src="../1.0/icons/algorithms/btree_postorder.svg"><br>後行巡回
+		</td>
+	    </tr></table>
+	  </td>	  
+	  <td style="text-align:left;  font-size:11">〇 安定でかつ高速<br>× メモリが必要</td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="クイックソート" class="symbol" src="../1.0/icons/algorithms/quick_sort.svg">
+	  </td>
+	  <td>クイックソート</td>
+	  <td align="center">
+	    <img alt="二次関数" class="icon_small" src="../icons/complexity/quad.svg">
+	    <img alt="線形・対数" class="icon_small" src="../icons/complexity/linear_log.svg">
+	  </td>
+	  <td>×</td>
+	  <td>〇</td>
+	  <td>
+	    <table><tr>
+		<td  style="border:none; padding:0; font-size:9; text-align:center">
+		  <img class="icon_small" src="../1.0/icons/algorithms/partition.svg"> <br>ﾊﾟｰﾃｨｼｮﾝ
+		</td>
+		<td  style="border:none; padding:0; font-size:9; text-align:center">
+		  <img class="icon_small" src="../1.0/icons/algorithms/btree_preorder.svg"><br>先行巡回
+		</td>
+	    </tr></table>
+	  </td>
+	  <td style="text-align:left;  font-size:11">× 基準の選び方で遅くなる<br>〇 インプレイスで高速</td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="ヒープソート" class="symbol" src="../1.0/icons/algorithms/heap_sort.svg">
+	  </td>
+	  <td>ヒープソート</td>
+	  <td align="center">
+	    <img alt="線形・対数" class="icon_small" src="../icons/complexity/linear_log.svg">
+	  </td>
+	  <td>×</td>
+	  <td>〇</td>
+	  <td>
+	    <table><tr>
+		<td  style="border:none; padding:0; font-size:9; text-align:center">
+		  <img class="icon_small" src="../1.0/icons/algorithms/downheap_simulation.svg"> <br>ヒープ
+		</td>
+	    </tr></table>
+	  </td>		  
+	  <td style="text-align:left;  font-size:11">× システムによって実行速度が遅くなる可能性がある</td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="シェルソート" class="symbol" src="../1.0/icons/algorithms/shell_sort.svg">
+	  </td>
+	  <td>シェルソート</td>
+	  <td align="center">
+	    <img alt="二次関数" class="icon_small" src="../icons/complexity/quad.svg">
+	    <img alt="線形・対数" class="icon_small" src="../icons/complexity/linear_log.svg">
+
+	  </td>	  
+	  <td>×</td>
+	  <td>〇</td>
+	  <td>
+	    <table><tr>
+		<td  style="border:none; padding:0; font-size:9; text-align:center">
+		  <img class="icon_small" src="../1.0/icons/algorithms/insertion_sort.svg"> <br>挿入ソート
+		</td>
+	    </tr></table>
+	  </td>
+	  <td style="text-align:left;  font-size:11">× 間隔の選び方によって遅くなる</td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="計数ソート" class="symbol" src="../1.0/icons/algorithms/counting_sort.svg">
+	  </td>
+	  <td>計数ソート</td>
+	  <td align="center">
+	    <img alt="線形・対数" class="icon_small" src="../icons/complexity/linear_log.svg">
+	  </td>
+	  <td>〇</td>
+	  <td>×</td>
+	  <td>
+	    <table><tr>
+		<td  style="border:none; padding:0; font-size:9; text-align:center">
+		  <img class="icon_small" src="../1.0/icons/algorithms/accumulation.svg"> <br>累積和
+		</td>
+	    </tr></table>
+	  </td>
+	  <td style="text-align:left;  font-size:11">× 要素の値に上限がある</td>
+	</tr>
+      </table>
+    </div>
+    <br/>
+
+    
+    <h2 class="chapter_title">21章  基本データ構造2</h2>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="連結リスト" class="icon_algorithm" src="../1.0/icons/algorithms/list_simulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">連結リスト </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/DA1D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">要素の挿入、検索、削除を行うデータ構造を実装してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="連結リスト | 入力" class="ioframe" src="../1.0/problems/sequence/input.svg" ></td>
+		<td><b class="icon_right"></b><br/><b class="icon_left"></b></td>
+		<td class="io"><img alt="連結リスト | 出力" class="ioframe" src="../1.0/problems/sequence/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/list_simulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/list_simulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/list_simulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/list_simulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="ハッシュ表" class="icon_algorithm" src="../1.0/icons/algorithms/hash_simulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">ハッシュ表 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/A1D.svg">
+	    <img class="icon_small" src="../icons/complexity/const.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">データの検索・追加・削除を行う、辞書の機能を提供するデータ構造を実装してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="辞書 | 入力" class="ioframe" src="../1.0/problems/dictionary/input.svg" ></td>
+		<td><b class="icon_right"></b><br/><b class="icon_left"></b></td>
+		<td class="io"><img alt="辞書 | 出力" class="ioframe" src="../1.0/problems/dictionary/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/hash_simulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/hash_simulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/hash_simulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/hash_simulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">22章　幅優先探索</h2>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="幅優先探索" class="icon_algorithm" src="../1.0/icons/algorithms/bfs_queue.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">幅優先探索 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/GR.svg">
+	    <img class="icon_small" src="../icons/complexity/quad.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/queue_simulation.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">適当な始点から出発し、グラフの全てのノードを体系的に訪問してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="幅優先探索 | 入力" class="ioframe" src="../1.0/problems/connectivity/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="幅優先探索 | 出力" class="ioframe" src="../1.0/problems/connectivity/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/bfs_queue/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/bfs_queue/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/bfs_queue/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/bfs_queue/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="BFSによる最短距離" class="icon_algorithm" src="../1.0/icons/algorithms/bfs_dp.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">BFSによる距離の計算 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/GR.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/bfs_queue.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></ -->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">各ノードについて、始点からの最短距離を求めてください。ここで、距離はエッジをたどる回数とします。</td></tr>
+	      <tr>
+		<td class="io"><img alt="BFSによる最短距離 | 入力" class="ioframe" src="../1.0/problems/shortest_step/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="BFSによる最短距離 | 出力" class="ioframe" src="../1.0/problems/shortest_step/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/bfs_dp/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/bfs_dp/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/bfs_dp/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/bfs_dp/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="Kahnのアルゴリズム" class="icon_algorithm" src="../1.0/icons/algorithms/bfs_tsort.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">Kahn のアルゴリズム </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/GR.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/bfs_queue.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">タスクと依存関係を表す有向グラフから、タスクを処理する順番を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="トポロジカルソート | 入力" class="ioframe" src="../1.0/problems/topological_sort/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="トポロジカルソート | 出力" class="ioframe" src="../1.0/problems/topological_sort/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/bfs_tsort/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/bfs_tsort/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/bfs_tsort/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/bfs_tsort/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="correction_01/error_bfs_tsort.html"><b class="icon_info" title="補足情報"></b></a></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">23章　深さ優先探索</h2>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="深さ優先探索" class="icon_algorithm" src="../1.0/icons/algorithms/dfs_stack.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">深さ優先探索 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/GR.svg">
+	    <img class="icon_small" src="../icons/complexity/quad.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/stack_simulation.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">適当な始点から出発し、グラフの全てのノードを体系的に訪問してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="深さ優先探索 | 入力" class="ioframe" src="../1.0/problems/connectivity/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="深さ優先探索 | 出力" class="ioframe" src="../1.0/problems/connectivity/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/dfs_stack/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/dfs_stack/anim_qr.svg">
+		    </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/dfs_stack/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/dfs_stack/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="連結成分分解" class="icon_algorithm" src="../1.0/icons/algorithms/dfs_repeat.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">DFSによる連結成分分解 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/GR.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/dfs_stack.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">グラフを連携成分に分解して、連結成分内のノードに同じ色を塗ってください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="連結成分分解 | 入力" class="ioframe" src="../1.0/problems/connected_components/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="連結成分分解 | 出力" class="ioframe" src="../1.0/problems/connected_components/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/dfs_repeat/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/dfs_repeat/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/dfs_repeat/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/dfs_repeat/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="DFSによる経路検知" class="icon_algorithm" src="../1.0/icons/algorithms/dfs_back_edge.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">DFSによる閉路検知 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/DGR.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/dfs_repeat.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">有向グラフに閉路があるかどうかチェックしてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="閉路検知 | 入力" class="ioframe" src="../1.0/problems/cycle_detection/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="閉路検知 | 出力" class="ioframe" src="../1.0/problems/cycle_detection/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/dfs_back_edge/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/dfs_back_edge/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/dfs_back_edge/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/dfs_back_edge/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="Tarjanのアルゴリズム" class="icon_algorithm" src="../1.0/icons/algorithms/dfs_tsort.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">Tarjanのアルゴリズム </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/DGR.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/dfs_stack.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">タスクと依存関係を表す有向グラフから、タスクを処理する順番を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="トポロジカルソート | 入力" class="ioframe" src="../1.0/problems/topological_sort/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="トポロジカルソート | 出力" class="ioframe" src="../1.0/problems/topological_sort/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/dfs_tsort/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/dfs_tsort/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/dfs_tsort/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/dfs_tsort/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">24章　Union-Find 木</h2>
+    <h5 class="update">2020/04/19</h5>
+    <div class="card">
+      <img alt="ランクによる合併" class="icon_algorithm" src="../1.0/icons/algorithms/union_by_rank.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">ランクによる合併 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/FRST.svg">
+	    <img class="icon_small" src="../icons/complexity/const.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">森とそれに含まれる木の根の組がいくつか与えられるので、それらの根で木を合併して森を再構築してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="木の合併 | 入力" class="ioframe" src="../1.0/problems/tree_union/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="木の合併 | 出力" class="ioframe" src="../1.0/problems/tree_union/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/union_by_rank/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/union_by_rank/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/union_by_rank/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/union_by_rank/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/04/19</h5>
+    <div class="card">
+      <img alt="経路圧縮" class="icon_algorithm" src="../1.0/icons/algorithms/path_compression.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">経路圧縮 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/FRST.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/dfs_stack.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">森の木を変型して、その高さを縮小してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="経路圧縮 | 入力" class="ioframe" src="../1.0/problems/path_compression/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="経路圧縮 | 出力" class="ioframe" src="../1.0/problems/path_compression/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/path_compression/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/path_compression/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/path_compression/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/path_compression/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/04/19</h5>
+    <div class="card">
+      <img alt="Union-Find 木" class="icon_algorithm" src="../1.0/icons/algorithms/disjoint_set_simulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">Union-Find 木 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/FRST.svg">
+	    <img class="icon_small" src="../icons/complexity/log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/union_by_rank.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/path_compression.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">互いに素な集合を管理するデータ構造を実装してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="Union-Find | 入力" class="ioframe" src="../1.0/problems/union_find/input.svg" ></td>
+		<td><b class="icon_right"></b><br/><b class="icon_left"></b></td>
+		<td class="io"><img alt="Union_Find | 出力" class="ioframe" src="../1.0/problems/union_find/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/disjoint_set_simulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/disjoint_set_simulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/disjoint_set_simulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/disjoint_set_simulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">25章　最小全域木を求めるアルゴリズム</h2>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="プリムのアルゴリズム" class="icon_algorithm" src="../1.0/icons/algorithms/prim_n2.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">プリムのアルゴリズム </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/GR.svg">
+	    <img class="icon_small" src="../icons/complexity/quad.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">重み付き無向グラフの最小全域木を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="最小全域木 | 入力" class="ioframe" src="../1.0/problems/minimum_spanning_tree_small/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="最小全域木 | 出力" class="ioframe" src="../1.0/problems/minimum_spanning_tree_small/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/prim_n2/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/prim_n2/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/prim_n2/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/prim_n2/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="クラスカルのアルゴリズム" class="icon_algorithm" src="../1.0/icons/algorithms/kruskal.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">クラスカルのアルゴリズム </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/GR.svg">
+	    <img class="icon_small" src="../icons/complexity/linear_log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/disjoint_set_simulation.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/quick_sort.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">重み付き無向グラフの最小全域木を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="最小全域木 | 入力" class="ioframe" src="../1.0/problems/minimum_spanning_tree/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="最小全域木 | 出力" class="ioframe" src="../1.0/problems/minimum_spanning_tree/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/kruskal/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/kruskal/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/kruskal/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/kruskal/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="correction_01/error_kruskal.html"><b class="icon_info" title="補足情報"></b></a></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">26章　最短経路を求めるアルゴリズム</h2>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="ダイクストラのアルゴリズム" class="icon_algorithm" src="../1.0/icons/algorithms/dijkstra_n2.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">ダイクストラのアルゴリズム </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/GR.svg">
+	    <img class="icon_small" src="../icons/complexity/quad.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">重み付きグラフと始点・終点が与えられたとき、始点から終点への最短経路を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="最短経路問題 | 入力" class="ioframe" src="../1.0/problems/shortest_distance_small/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="最短経路問題 | 出力" class="ioframe" src="../1.0/problems/shortest_distance_small/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/dijkstra_n2/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/dijkstra_n2/anim_qr.svg">
+		    </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/dijkstra_n2/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/dijkstra_n2/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="ダイクストラのアルゴリズム" class="icon_algorithm" src="../1.0/icons/algorithms/dijkstra.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">ダイクストラのアルゴリズム(優先度付きキュー) </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/GR.svg">
+	    <img class="icon_small" src="../icons/complexity/linear_log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/priority_queue_simulation.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">重み付きグラフと始点・終点が与えられたとき、始点から終点への最短距離を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="最短経路問題 | 入力" class="ioframe" src="../1.0/problems/shortest_distance/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="最短経路問題 | 出力" class="ioframe" src="../1.0/problems/shortest_distance/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/dijkstra/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/dijkstra/anim_qr.svg">
+		    </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/dijkstra/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/dijkstra/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="ベルマンフォードのアルゴリズム" class="icon_algorithm" src="../1.0/icons/algorithms/bellman_ford.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">ベルマンフォードのアルゴリズム </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/DGR.svg">
+	    <img class="icon_small" src="../icons/complexity/cube.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">重み付きグラフと始点・終点が与えられたとき、始点から終点への最短距離を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="最短経路問題（負の重み） | 入力" class="ioframe" src="../1.0/problems/shortest_distance_neg/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="最短経路問題（負の重み） | 出力" class="ioframe" src="../1.0/problems/shortest_distance_neg/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/bellman_ford/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/bellman_ford/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/bellman_ford/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/bellman_ford/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><a href="correction_01/error_bellman_ford.html"><b class="icon_info" title="補足情報"></b></a></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="ワーシャルフロイドのアルゴリズム" class="icon_algorithm" src="../1.0/icons/algorithms/warshall_floyd.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">ワーシャルフロイドのアルゴリズム </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/DGR.svg">
+	    <img class="icon_small" src="../icons/complexity/cube.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">重み付き有向グラフの隣接行列から、ノードの全ての組についての、最短距離を表す行列を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="全対点間最短経路 | 入力" class="ioframe" src="../1.0/problems/apsp/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="全対点間最短経路 | 出力" class="ioframe" src="../1.0/problems/apsp/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/warshall_floyd/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/warshall_floyd/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/warshall_floyd/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/warshall_floyd/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+
+
+    <!-- shortest path summary -->
+    <h2 class="chapter_title">最短経路のアルゴリズム：比較表</h2>
+
+    <div class="section">
+      <table class="summary">
+	<tr>
+	  <th colspan="2" width="280">アルゴリズム</th>
+	  <th width="60">計算量</th>
+	  <th width="280">距離</th>
+	  <th>テクニック</th>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="幅優先探索" class="symbol" src="../1.0/icons/algorithms/bfs_queue.svg">
+	  </td>
+	  <td style="text-align:left">
+	    幅優先探索
+	  </td>
+	  <td>
+	    <img alt="線形" class="icon_small" src="../icons/complexity/linear.svg">
+	  </td>
+	  <td style="text-align:left">
+	    単一始点から全てのノードへの最短経路（エッジ数）
+	  </td>
+	  <td>
+	    <img alt="キュー" class="icon_small" src="../1.0/icons/algorithms/queue_simulation.svg">
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt=" ダイクストラのアルゴリズム" class="symbol" src="../1.0/icons/algorithms/dijkstra_n2.svg">
+	  </td>
+	  <td style="text-align:left">
+	    ダイクストラのアルゴリズム<br>（線形探索）
+	  </td>
+	  <td>
+	    <img alt="二次関数" class="icon_small" src="../icons/complexity/quad.svg">
+	  </td>
+	  <td style="text-align:left">
+	    単一始点から全てのノードへの最短経路<br>※負の重みがあってはならない
+	  </td>
+	  <td>
+	    
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="ダイクストラのアルゴリズム" class="symbol" src="../1.0/icons/algorithms/dijkstra.svg">
+	  </td>
+	  <td style="text-align:left">
+	    ダイクストラのアルゴリズム
+	  </td>
+	  <td>
+	    <img alt="線形・対数" class="icon_small" src="../icons/complexity/linear_log.svg">
+	  </td>
+	  <td style="text-align:left">
+	    単一始点から全てのノードへの最短経路<br>※負の重みがあってはならない
+	  </td>
+	  <td>
+	    <img alt="優先度付きキュー" class="icon_small" src="../1.0/icons/algorithms/priority_queue_simulation.svg">
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="ベルマンフォードのアルゴリズム" class="symbol" src="../1.0/icons/algorithms/bellman_ford.svg">
+	  </td>
+	  <td style="text-align:left">
+	    ベルマンフォードのアルゴリズム
+	  </td>
+	  <td>
+	    <img alt="三次関数" class="icon_small" src="../icons/complexity/cube.svg">
+	  </td>
+	  <td style="text-align:left">
+	    単一始点から全てのノードへの最短経路<br>
+	    負の重みがあってもよい<br>
+	    負のサイクルを検出可能
+	  </td>
+	  <td>
+	    
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="ワーシャルフロイドのアルゴリズム" class="symbol" src="../1.0/icons/algorithms/warshall_floyd.svg">
+	  </td>
+	  <td style="text-align:left">
+ワーシャルフロイドのアルゴリズム
+	  </td>
+	  <td>
+	    <img alt="三次関数" class="icon_small" src="../icons/complexity/cube.svg">
+	  </td>
+	  <td style="text-align:left">
+	    全点対間の最短経路<br>
+	    負の重みがあってもよい<br>
+	    負のサイクルを検出可能
+	  </td>
+	  <td>
+	    
+	  </td>
+	</tr>
+      </table>
+    </div>
+    <br/>
+
+
+
+    
+    <h2 class="chapter_title">27章　計算幾何学</h2>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="ギフトラッピング" class="icon_algorithm" src="../1.0/icons/algorithms/gift_wrapping.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">ギフトラッピング </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/P2D.svg">
+	    <img class="icon_small" src="../icons/complexity/quad.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">与えられた点の集合の、凸包を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="凸包 | 入力" class="ioframe" src="../1.0/problems/convex_hull_small/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="凸包 | 出力" class="ioframe" src="../1.0/problems/convex_hull_small/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/gift_wrapping/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/gift_wrapping/anim_qr.svg">
+		    </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/gift_wrapping/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/gift_wrapping/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="グラハムスキャン" class="icon_algorithm" src="../1.0/icons/algorithms/graham_scan.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">グラハムスキャン </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/P2D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear_log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/stack_simulation.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/quick_sort.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">与えられた点の集合の、凸包を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="凸包 | 入力" class="ioframe" src="../1.0/problems/convex_hull/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="凸包 | 出力" class="ioframe" src="../1.0/problems/convex_hull/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/graham_scan/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/graham_scan/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/graham_scan/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/graham_scan/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="アンドリューのアルゴリズム" class="icon_algorithm" src="../1.0/icons/algorithms/andrew.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">アンドリューのアルゴリズム </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/P2D.svg">
+	    <img class="icon_small" src="../icons/complexity/linear_log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/stack_simulation.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/quick_sort.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">与えられた点の集合の、凸包を求めてください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="凸包 | 入力" class="ioframe" src="../1.0/problems/convex_hull/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="凸包 | 出力" class="ioframe" src="../1.0/problems/convex_hull/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/andrew/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/andrew/anim_qr.svg">
+		    </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/andrew/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/andrew/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">28章　セグメント木</h2>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="セグメント木:RMQ" class="icon_algorithm" src="../1.0/icons/algorithms/rmq_simulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">セグメント木: RMQ </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/CBT.svg">
+	    <img class="icon_small" src="../icons/complexity/log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/btree_postorder.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数の列に対して、１要素の更新と区間の最小値検索に対応するデータ構造を実装してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="Range Minimum Query | 入力" class="ioframe" src="../1.0/problems/rmq/input.svg" ></td>
+		<td><b class="icon_right"></b><br/><b class="icon_left"></b></td>
+		<td class="io"><img alt="Range Minimum Query | 出力" class="ioframe" src="../1.0/problems/rmq/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/rmq_simulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/rmq_simulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/rmq_simulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/rmq_simulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="セグメント木:RSQ" class="icon_algorithm" src="../1.0/icons/algorithms/rsq_simulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">セグメント木: RSQ </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/CBT.svg">
+	    <img class="icon_small" src="../icons/complexity/log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/btree_postorder.svg">
+	  </td>
+<!--  <td class="level"><b class="star">★★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">整数の列に対して、１要素に対する加算と区間の和の計算に対応するデータ構造を実装してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="Range Sum Query | 入力" class="ioframe" src="../1.0/problems/rsq/input.svg" ></td>
+		<td><b class="icon_right"></b><br/><b class="icon_left"></b></td>
+		<td class="io"><img alt="Range Sum Query | 出力" class="ioframe" src="../1.0/problems/rsq/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/rsq_simulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/rsq_simulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/rsq_simulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/rsq_simulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h2 class="chapter_title">29章　探索木</h2>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="二分探索木" class="icon_algorithm" src="../1.0/icons/algorithms/bst_simulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">二分探索木 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/DBT.svg">
+	    <img class="icon_small" src="../icons/complexity/linear.svg">
+	    <img class="icon_small" src="../icons/complexity/log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/btree_inorder.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">データの検索・追加・削除に加え、整列済みの要素の管理・提供を行う、辞書のデータ構造を実装してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="整列された辞書 | 入力" class="ioframe" src="../1.0/problems/sorted_dictionary/input.svg" ></td>
+		<td><b class="icon_right"></b><br/><b class="icon_left"></b></td>
+		<td class="io"><img alt="整列された辞書 | 出力" class="ioframe" src="../1.0/problems/sorted_dictionary/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/bst_simulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/bst_simulation/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/bst_simulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/bst_simulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="回転" class="icon_algorithm" src="../1.0/icons/algorithms/rotate.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">回転 </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/DBT.svg">
+	    <img class="icon_small" src="../icons/complexity/const.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">部分木を変型してください。ただし、変換前後で、中間順巡回で得られるノードの訪問順は変わらないものとします。</td></tr>
+	      <tr>
+		<td class="io"><img alt="回転 | 入力" class="ioframe" src="../1.0/problems/rotation/input.svg" ></td>
+		<td><b class="icon_right"></b></td>
+		<td class="io"><img alt="回転 | 出力" class="ioframe" src="../1.0/problems/rotation/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/rotate/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/rotate/anim_qr.svg">
+		  </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/rotate/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/rotate/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+    <h5 class="update">2020/05/17</h5>
+    <div class="card">
+      <img alt="トリープ" class="icon_algorithm" src="../1.0/icons/algorithms/treap_simulation.svg">
+      <table class="card_header">
+	<tr>
+	  <td class="title">トリープ </td>
+	  <td class="icon_box">
+	    <img class="icon_small" src="../1.0/icons/structures/DBT.svg">
+	    <img class="icon_small" src="../icons/complexity/log.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/bst_simulation.svg">
+	    <img class="icon_small" src="../1.0/icons/algorithms/rotate.svg">
+	  </td>
+<!--	  <td class="level"><b class="star">★★★★</b><b class="star_half">★</b></td>-->
+	</tr>
+      </table>
+      <table class="body">
+	<tr>
+	  <td><table class="problem">
+	      <tr><td colspan="3" class="pabstract">データの検索・追加・削除に加え、整列済みの要素の管理・提供を行う、辞書のデータ構造を実装してください。</td></tr>
+	      <tr>
+		<td class="io"><img alt="整列された辞書 | 入力" class="ioframe" src="../1.0/problems/sorted_dictionary/input.svg" ></td>
+		<td><b class="icon_right"></b><br/><b class="icon_left"></b></td>
+		<td class="io"><img alt="整列された辞書 | 出力" class="ioframe" src="../1.0/problems/sorted_dictionary/output.svg"></td>
+	  </tr></table></td>
+	  <td><table class="link">
+	      <tr>
+		<td class="qr_code">
+		  <a href="../1.0/algorithms/treap_simulation/anim.html">
+		    <div class="anim_caption">アニメーション</div>
+		    <img class="icon_qr" src="../1.0/algorithms/treap_simulation/anim_qr.svg">
+		    </a>
+		</td>
+		<td>
+		  <table class="material">
+		    <tr>
+		      <td><a href="../1.0/algorithms/treap_simulation/print.html"><b class="icon_frame" title="フレーム"></b><a/></td>
+		    </tr>
+		    <tr>
+		      <td><a href="pseudo_code/treap_simulation/code.html"><b class="icon_code" title="疑似コード"></b></a></td>
+		    </tr>
+		    <tr>
+		      <td><!--<b class="icon_info"></b><a href="">補足情報</a>--></td>
+		    </tr>
+		  </table>
+		</td>
+	      </tr>
+	  </table></td>
+	</tr>
+      </table>
+    </div>
+
+    <!-- dictionary summary -->
+    <h2 class="chapter_title">辞書のデータ構造：比較表</h2>
+
+    <div class="section">
+      <table class="summary">
+	<tr>
+	  <th colspan="2" width="220">データ構造</th>
+	  <th width="100">計算量</th>
+	  <th width="80">メモリ効率</th>
+	  <th width="80">順序付き</th>
+	  <th width="240">応用</th>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="リスト" class="symbol" src="../1.0/icons/algorithms/list_simulation.svg">
+	  </td>
+	  <td style="text-align:left">連結リスト</td>
+	  <td>
+	    <img alt="線形" class="icon_small" src="../icons/complexity/linear.svg">
+	  </td>
+	  <td>〇</td>
+	  <td>〇順序付き</td>
+	  <td style="text-align:left">リスト、辞書</td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="ハッシュ" class="symbol" src="../1.0/icons/algorithms/hash_simulation.svg">
+	  </td>
+	  <td style="text-align:left">ハッシュ表</td>
+	  <td>
+	    <img alt="定数" class="icon_small" src="../icons/complexity/const.svg">
+	  </td>
+	  <td>×</td>
+	  <td>×</td>
+	  <td style="text-align:left">辞書</td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="二分探索木" class="symbol" src="../1.0/icons/algorithms/bst_simulation.svg">
+	  </td>
+	  <td style="text-align:left">二分探索木</td>
+	  <td>
+	    <img alt="線形" class="icon_small" src="../icons/complexity/linear.svg">
+	    <img alt="対数" class="icon_small" src="../icons/complexity/log.svg">
+	  </td>
+	  <td>〇</td>
+	  <td>〇整列済み</td>
+	  <td style="text-align:left">辞書、集合、<br>優先度付きキュー、最大・最小</td>
+	</tr>
+	<tr>
+	  <td>
+	    <img width="64" alt="トリープ" class="symbol" src="../1.0/icons/algorithms/treap_simulation.svg">
+	  </td>
+	  <td style="text-align:left">トリープ</td>
+	  <td>
+	    <img alt="対数" class="icon_small" src="../icons/complexity/log.svg">
+	  </td>
+	  <td>〇</td>
+	  <td>〇整列済み</td>
+	  <td style="text-align:left">辞書、集合、<br>優先度付きキュー、最大・最小</td>
+	</tr>
+      </table>
+    </div>
+    <br/>
+    <br/>
+
+    <h2 class="chapter_title">本書に掲載できなかったアルゴリズム</h2>
+    <div class="description">
+      <ul>
+	<li>シェーカーソート(2020/05/13)</li>
+	<li>グリッド上の動的計画法(2020/06/07)</li>
+      </ul>
+    </div>
+
+
+    <br/>
+    <br/>
+    <br/>
+    <div class="description">
+      <p>
+	<b style="color:#ffaaaa">Last Update:</b></br>
+	<ul>
+	  <li>
+	    2021/12/26: iOS（一部のバージョン）で、アニメーション（トークンの動き）が表示されない不具合を修正いたしました。
+	  </li>
+	  <li>2021/05/10: カスタムフレームを生成できるようアニメーションコントローラを更新いたしました。詳しくは<a href="https://yutaka-watanobe.github.io/star-aida/1.1/quick_manual/ja/">クイックマニュアル</a>をご覧ください。</li>
+	  <li>2020/05/17: アニメーションコントローラを更新いたしました。詳しくは<a href="https://yutaka-watanobe.github.io/star-aida/1.1/quick_manual/ja/">クイックマニュアル</a>をご覧ください。</li>
+	  <li>2020/03/27: アニメーションコントローラのサイズが自動調整されるよう、プログラムを更新いたしました（横画面に対応いたしました）。</li>
+	</ul>
+      </p>
+    </div>
+    
+  </div>
+
+
+  
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+</body>
+</html>

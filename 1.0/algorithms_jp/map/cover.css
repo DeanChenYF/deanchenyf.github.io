@@ -1,0 +1,180 @@
+
+body{
+    font-size:12pt;
+}
+td{
+    font-size:12pt;
+}
+
+table.how td{
+    vertical-align: top;
+}
+
+div.center{
+    text-align:center;
+}
+
+div.section{
+    margin: 8px;
+    background-color:#ffffff;
+    border: 1px solid #dddddd;
+
+}
+
+div.icon{
+/*    background-color:#ffffff;*/
+    height: 80px;
+    width: 80px;
+/*    border: 2px solid #888888;*/
+    padding:0px;
+    font-size:8pt;
+}
+
+div.scene_icon{
+    background-color:#ffffff;
+    height: 80px;
+    width: 80px;
+    border: 2px solid #888888;
+    padding:0px;
+    font-size:8pt;
+}
+
+div.smallicon{
+    background-color:#ffffff;
+    height: 40px;
+    width: 40px;
+    border: 2px solid #888888;
+    padding:8px;
+    font-size:7pt;
+}
+
+td.symbol{
+    text-align:center;
+}
+
+div.title{
+    background-color:#ffffff;
+    border: 1px solid #888888;
+    height: 40px;
+    line-height: 40px;
+    padding:8px;
+    font-size:18pt;
+}
+
+div.level{
+    background-color:#ffffff;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #888888;
+    padding:8px;
+    font-size:18pt;
+}
+
+div.cover{
+    background-color:#e0f0ff;
+    width:1024px;
+    height:1540px;
+    padding:16px;
+}
+
+div.code{
+    background-color:#f0f0f0;
+    width:1000;
+    height:700;
+}
+
+div.column{
+    background-color:#ffffff;
+    width:1000;
+    height:700;
+}
+
+div.io{
+    background-color:#ffffff;
+    border: 1px solid #aaaaaa;
+    width:460px;
+    height:340px;
+    line-height: 340px;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+div.abstract{
+    background-color:#ffffff;
+/*    height:80px;*/
+    padding:8px;
+    width: 980px;
+}
+
+div#structure{
+    background-color:#ffffff;
+    width:640px;
+    height:380px;
+}
+
+div#variable{
+    background-color:#ffffff;
+    width:300px;
+    height:300px;
+}
+
+div#scheme{
+    background-color:#ffffff;
+    width:640px;
+    height:380px;
+}
+
+div#formula{
+    background-color:#ffffff;
+    width:300px;
+    height:300px;
+}
+
+table.items {
+    border: 1px solid #888888;
+}
+
+table.items td{
+    background:#ffffff;
+    border: 1px solid #888888;
+    padding:4px;
+    font-size:11pt;
+}
+table.items th{
+    background:#ffffff;
+    border: 1px solid #888888;
+    padding:4px;
+    font-size:9pt;
+}
+
+td.caption{
+    text-align:center;
+}
+
+td.frame{
+    line-height:200px;
+    height:200px;
+    vertical-align:middle;
+    text-align:center;
+}
+
+td.frame img{
+    vertical-align:middle;
+    text-align:center;
+}
+
+#content {
+    max-width: 1200px;
+    margin: auto;
+}
+
+#content svg{
+    width: 100%;
+    height; auto;
+}
+
+

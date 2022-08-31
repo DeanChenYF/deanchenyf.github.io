@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "動態資料集的管理";
+document.getElementById('ptitle_en').innerHTML = "Management of Dynamic Set";
+document.getElementById('input_comment').innerHTML = "插入、搜尋與刪除資料<ul><li>操作或提問的次數 Q  &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "回應搜尋的結果";
+document.getElementById('motivation').innerHTML = "動態資料結構可以根據需求進行記憶體的配置或釋放，並同時進行資料的插入與刪除，因此要有效地利用電腦資源執行程式，就必須使用動態資料結構。";
+document.getElementById('description').innerHTML = "請實作一個可以插入、搜尋及刪除元素的資料結構。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sequence/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sequence/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/list_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "雙向鏈結串列";
+document.getElementById('atitle_en').innerHTML = "Doubly Linked List";
+document.getElementById('abstract').innerHTML = "鏈結串列（Linked List）是管理動態資料集最基本的資料結構，本節將利用鏈結串列進行資料的插入、搜尋與刪除資料結構的實作。";
+document.getElementById('explanation').innerHTML = "雙向鏈結串列中會有 1 個稱為「哨兵」的特殊節點。我們在虛擬碼中使用 sentinel來代表哨兵。sentinel 並不包含在實際處理的資料中，但節點會以它為起點進行連接。每一個節點（包括 sentinel）內都含有 2 個指標，分別是指向前一個節點的 prev 和指向後一個節點的 next。本節在實作中以變數 key 來表示節點中的資料。當串列為空串列時，哨兵的 next 和 prev 都會指向自己（初始狀態）。<br/><br/>插入資料時，元素會新增在串列的最前端，也就是 sentinel 的正後方。若串列在進行插入處理前的最前端為 y，則新增的元素將位於 sentinel 及 y 的中間。資料插入的第一步是建立 1 個新節點（假設為 x）並設定給定的資料。第二步是設定 x 的指標。將 x 的prev 指向 sentinel，x 的 next 指向 sentinel 的 next（也就是 y）。第三步則是重新設定sentinel 及 y 的指標。首先將 sentinel 的 next 的 prev（也就是 y 的 prev）變更成 x，再將 sentinel 的 next 變更成 x。這些指標指向的變更順序非常重要，請務必留意。<br/><br/>刪除資料時，第一步是利用搜尋找出帶有指定值的節點。假設此節點為 t，第二步是先更新 t 的前、後節點的指標，再將 t 從串列中刪除（無法再透過指標追蹤到 t）。第三步則是將 t 的 prev 的 next 變更成 t 的 next，t 的 next 的 prev 變更成 t 的 prev。";
+document.getElementById('note').innerHTML = "在雙向鏈結串列最前端插入元素的操作，時間複雜度為 O(1)。搜尋指定元素的操作因為必須從最前端開始追蹤節點，因此時間複雜度為 O(N)。<br/></br>單純刪除元素的時間複雜度為 O(1)，但因為刪除之前必須先搜尋元素，因此刪除元素的整體時間複雜度為 O(N)。<br><br>本節雖然只有講解將資料新增到串列最前端的演算法，但一般在實作上也可以使用其他不同的做法，例如將資料插入串列的最尾端或插入指定的位置等。";
+document.getElementById('application').innerHTML = "鏈結串列（Linked List）是管理動態資料集最基本的資料結構。可以應用在不需要隨機存取資料的元素，也不會受到追蹤串列的成本影響的應用程式上。例如圖形中各節點的相鄰節點就可以使用串列儲存。此外，必須在新增資料時維持原有資料順序的資料結構，也會使用鏈結串列做為實作的基礎。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/DA1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">鏈結串列</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_key.svg" /></td><td>串列的元素</td><td class="code">key</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">插入與刪除資料</th></tr><tr><td class="symbol"><img src="formula_create.svg" /></td><td>產生節點並設定其資料與指標。</td><td class="code">insert(data):的前半段</td></tr><tr><td class="symbol"><img src="formula_link.svg" /></td><td>改變指標的指向，將節點連接起來。</td><td class="code">insert(data):的後半段</td></tr><tr><td class="symbol"><img src="formula_delete.svg" /></td><td>改變指標的指向，將節點刪除。</td><td class="code">deleteNode(Node *t)</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">產生節點並設定其指向前、後節點的指標。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">插入節點後，改變其前、後節點的指標指向。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step3.svg" /><p class="caption">刪除節點後，改變其前、後節點的指標指向。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">插入與刪除資料</b><br/><img src="scene_0.svg" alt="雙向鏈結串列 | 插入與刪除資料" title="雙向鏈結串列 | 插入與刪除資料"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

@@ -1,0 +1,13 @@
+<pre>
+# ２次元点群PointGroup pg
+giftWrapping(pg):
+    head &larr; pg.pointsの最も左の点の番号
+    f &larr; head # 最終点をメモ
+    
+    while True:
+        t &larr; pg.pointsの中で点headを起点として最も反時計回りの位置にある点の番号
+        点tを凸法に追加する
+        head &larr; t;
+        if head = f:
+            break #　始点に戻ってきたら終了
+</pre>

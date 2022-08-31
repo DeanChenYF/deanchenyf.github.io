@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; ";
+document.getElementById('ptitle').innerHTML = "區間反轉";
+document.getElementById('ptitle_en').innerHTML = "(Reverse of Segment)";
+document.getElementById('input_comment').innerHTML = "整數序列<ul><li>元素數N &le; 1,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "整數序列中的元素已按照反序排列";
+document.getElementById('motivation').innerHTML = "反轉（reverse）是很基本的操作，它會調換（顛倒）陣列內的元素順序，使陣列或指定範圍內的元素按照反序排列。";
+document.getElementById('description').innerHTML = "將整數序列中的元素以反序排列。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/reverse/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/reverse/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/reverse.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "反轉";
+document.getElementById('atitle_en').innerHTML = "Reverse";
+document.getElementById('abstract').innerHTML = "反轉處理若是利用互換（swap）函式進行，就只需要 1 個儲存資料的陣列。只要以陣列的中心為軸，將對應的元素兩兩互換，就可以讓陣列元素以反序排列。";
+document.getElementById('explanation').innerHTML = "以陣列中心為軸，將對應的元素兩兩互換，即可使陣列元素重新以反序排列。假設要互換的 2 個元素索引分別為 i 與 j，則當 i = 0, 1, 2, ..., N/2 -1 時，對應的 j 可用 i 求出為  j  = N-(i+1) = N-i-1。";
+document.getElementById('note').innerHTML = "反轉過程中的互換次數為陣列大小的一半，也就是 N/2 次。因此反轉的時間複雜度為 O(N)。反轉處理可實作成反轉區間 [ ll ,r) 的通用函式 reverse(A,  ll , r) 函式。";
+document.getElementById('application').innerHTML = "反轉處理可將升冪（由小到大）排列的序列轉為降冪（由大到小），將降冪排列的序列轉為升冪。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">一維陣列</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">資料</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整數序列</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">輸入與初始化</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>載入整數序列。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">反轉</th></tr><tr><td class="symbol"><img src="formula_p.svg" /></td><td>將 2 個元素互換。</td><td class="code">swap(A[i], A[j])</td></tr><tr><td class="symbol"><img src="formula_passedF.svg" /></td><td>擴大已重新排序的元素範圍。</td><td class="code">區間[0, i]與區間[j, N)</td></tr><tr><th class="scene_desc" colspan="3">輸出</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>輸出整數序列。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption"></p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">輸入</b><br/><img src="scene_0.svg" alt="反轉 | 輸入" title="反轉 | 輸入"/></p></div><div><p><b class="scene_desc">反轉</b><br/><img src="scene_1.svg" alt="反轉 | 反轉" title="反轉 | 反轉"/></p></div><div><p><b class="scene_desc">輸出</b><br/><img src="scene_2.svg" alt="反轉 | 輸出" title="反轉 | 輸出"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/swap.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

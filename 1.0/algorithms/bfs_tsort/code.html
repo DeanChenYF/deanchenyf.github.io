@@ -1,0 +1,23 @@
+<pre>    
+# 對圖形 g 進行拓撲排序
+topologicalSort(g):
+    Queue que
+    
+    # 計算入分支度
+    for u &larr; 0 to g.N - 1:
+        for v in g.adjLists[u]:
+            deg[v]++
+
+    for v &larr; 0 to g.N - 1:
+        if deg[v] = 0:
+            que.enqueue(v)
+
+    t &larr; 1
+    while not que.empty():
+        u &larr; que.dequeue()
+        order[u] &larr; t++
+        for v in g.adjLists[u]:
+            deg[v]--
+            if deg[v] = 0:
+                q.enqueue(v)
+</pre>

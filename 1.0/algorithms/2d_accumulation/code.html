@@ -1,0 +1,24 @@
+<pre>
+rects &larr; 矩形序列
+
+# 新增矩形
+for rect in rects:
+    x1 = rect.左上角的頂點.x
+    y1 = rect.左上角的頂點.y
+    x2 = rect.右下角的頂點.x
+    y2 = rect.右下角的頂點.y
+    A[x1][y1]++  #將對應於左上角的元素加1
+    A[x2][y2]++  #將對應於右下角的元素加1
+    A[x1][y2]--  #將對應於左下角的元素減1
+    A[x2][y1]--  #將對應於右上角的元素減1
+
+# 水平方向的累積和
+for x &larr; 1 to N-1:
+    for y &larr; 0 to M-1:
+        A[x][y] &larr; A[x][y] + A[x-1][y]  #加上前一欄的元素
+
+# 垂直方向的累積和
+for y &larr; 1 to M-1:
+    for x &larr; 0 to N-1:
+        A[x][y] &larr; A[x][y] + A[x][y-1]  #加上前一列的元素
+</pre>

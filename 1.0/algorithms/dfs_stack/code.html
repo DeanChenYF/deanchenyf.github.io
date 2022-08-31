@@ -1,0 +1,22 @@
+<pre>    
+# 圖形 g 與起點節點 s
+depthFristSearch(g, s):
+    Stack st
+    st.push(s)
+
+    for i &larr; 0 to g.N-1:
+        color[i] &larr; WHITE
+
+    color[s] &larr; GRAY
+    
+    while not st.empty():
+        u &larr; st.peak() # 查看堆疊頂端
+        v = g.next(u)      # 依序取出與節點 u 相鄰的節點 v
+        if v &ne; NIL:     # 有相鄰的節點
+            if color[v] = WHITE:
+                color[v] &larr; GRAY
+                st.push(v)
+        else:              # 已調查完所有相鄰的節點
+            color[u] &larr; BLACK
+            st.pop()
+</pre>

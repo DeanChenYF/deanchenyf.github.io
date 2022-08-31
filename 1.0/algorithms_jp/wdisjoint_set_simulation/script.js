@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "互いに素な集合の管理";
+document.getElementById('ptitle_en').innerHTML = "Disjoint Set";
+document.getElementById('input_comment').innerHTML = "互いに素な集合に対する合併<ul><li>ノードの数N &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "互いに素な集合に対する問い合わせ";
+document.getElementById('motivation').innerHTML = "１つの要素が複数の集合に属さないような集合を互いに素な集合と言います。互いに素な集合において、集合を合併したり、指定要素が含まれる集合の特定を行うデータ構造はいつくかのアルゴリズムに応用されます。";
+document.getElementById('description').innerHTML = "互いに素な集合を管理するデータ構造を実装してください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/union_find/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/union_find/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/wdisjoint_set_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "Union-Find Tree";
+document.getElementById('atitle_en').innerHTML = "Union-Find Tree";
+document.getElementById('abstract').innerHTML = "";
+document.getElementById('explanation').innerHTML = "";
+document.getElementById('note').innerHTML = "";
+document.getElementById('application').innerHTML = "";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/FRST.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">森</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><td class="symbol"><img src="variable_rank.svg" /></td><td>ランク</td><td class="code">rank</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">Update diff relations</th></tr><tr><td class="symbol"><img src="formula_comp.svg" /></td><td>指定された２つのノードのそれぞれの根（代表）を求めます。</td><td style="width:100px" class="code">root1 &larr; findSet(x)<br>root2 &larr; findSet(y)</td></tr><tr><td class="symbol"><img src="formula_target.svg" /></td><td>合併する根（代表）を指します。</td><td style="width:100px" class="code">root1, root2</td></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>根のランクを比較します。</td><td style="width:100px" class="code">if rank[x] > rank[y]:</td></tr><tr><td class="symbol"><img src="formula_decision.svg" /></td><td>選ばれた新しい根（代表）を指します。</td><td style="width:100px" class="code">xまたはy</td></tr><tr><td class="symbol"><img src="formula_update_rank.svg" /></td><td>ランクを１増やします。</td><td style="width:100px" class="code">rank[y]++</td></tr><tr><td class="symbol"><img src="formula_p.svg" /></td><td>親を書き換えます。</td><td style="width:100px" class="code">parent[?] &larr; ?</td></tr><tr><td class="symbol"><img src="formula_path.svg" /></td><td>経路圧縮を行います。</td><td style="width:100px" class="code">parent[x] &larr; findSet(parent[x]):</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">合併する２つのノードを指定します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">経路圧縮しつつ、それぞれの根（代表）を見つけます。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step3.svg" /><p class="caption">ランクに基づいてどちらかの親を更新し、２つの根を合併します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b>Update diff relations</b><br/><img src="scene_0.svg" /></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/union_by_rank.svg" width="60"/><img src="../../icons/algorithms/path_compression.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

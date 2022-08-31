@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "パスの数";
+document.getElementById('ptitle_en').innerHTML = "The number of path";
+document.getElementById('input_comment').innerHTML = "";
+document.getElementById('output_comment').innerHTML = "";
+document.getElementById('motivation').innerHTML = "";
+document.getElementById('description').innerHTML = "";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/path_on_grid/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/path_on_grid/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/path_on_grid.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "動的計画法";
+document.getElementById('atitle_en').innerHTML = "Dynamic Programming";
+document.getElementById('abstract').innerHTML = "";
+document.getElementById('explanation').innerHTML = "";
+document.getElementById('note').innerHTML = "";
+document.getElementById('application').innerHTML = "";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/G2D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_s.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">２次元グリッド</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_P.svg" /></td><td>始点からの経路の数</td><td class="code">P</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">入力</th></tr><tr><td class="symbol"><img src="formula_inp.svg" /></td><td>始点から始点までの経路の数を初期化します。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">整列</th></tr><tr><td class="symbol"><img src="formula_cur.svg" /></td><td>現在の点までの経路の数を、北側の点までの経路の数と西側の点までの経路の数の和とします。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">出力</th></tr><tr><td class="symbol"><img src="formula_outp.svg" /></td><td>終点までの経路の数を出力します。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption"></p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption"></p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">入力</b><br/><img src="scene_0.svg" alt="動的計画法 | 入力" title="動的計画法 | 入力"/></p></div><div><p><b class="scene_desc">整列</b><br/><img src="scene_1.svg" alt="動的計画法 | 整列" title="動的計画法 | 整列"/></p></div><div><p><b class="scene_desc">出力</b><br/><img src="scene_2.svg" alt="動的計画法 | 出力" title="動的計画法 | 出力"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/quad.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

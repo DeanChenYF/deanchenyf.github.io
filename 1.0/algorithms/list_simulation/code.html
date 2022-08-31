@@ -1,0 +1,44 @@
+<pre>
+class Node:
+    Node *prev
+    Node *next
+    key
+
+class LinkedList:
+    Node *sentinel  # 哨兵
+
+    # 初始化為空串列
+    init():
+        sentinel &larr; 產生節點
+        sentinel.next &larr; sentinel  # 指向自己
+        sentinel.prev &larr; sentinel  # 指向自己
+
+    # dataを挿入
+    insert(data):
+        # 生成節點並設定其資料與指標
+        Node *x &larr; 產生節點
+        x.key &larr; data # 設定資料內容
+        x.next &larr; sentinel.next
+        x.prev &larr; sentinel
+        # 設定哨兵即原本位於為前端的節點指標
+        sentinel.next.prev &larr; x
+        sentinel.next &larr; x
+
+    # 尋找資料內容為 k 的節點
+    listSearch(k):
+        Node *cur &larr; sentinel.next # 從哨兵正後方的元素開始追蹤
+        while cur &ne; sentinel and cur.key &ne; k:
+            cur &larr; cur.next
+        return cur
+
+    deleteNode(Node *t):
+        if t = sentinel: return # 若 t 為哨兵則不進行處理
+        t.prev.next &larr; t.next
+        t.next.prev &larr; t.prev
+        釋放 t 的記憶體
+
+    # 將資料內容為 k 的節點刪除
+    deleteKey(k):
+        deleteNode(listSearch(k)) # 將取得的節點刪除
+
+</pre>

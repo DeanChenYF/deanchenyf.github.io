@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "動的なデータ集合の管理";
+document.getElementById('ptitle_en').innerHTML = "Management of Dynamic Set";
+document.getElementById('input_comment').innerHTML = "データの挿入、検索、削除<ul><li>操作・問い合わせの数Q &le; 10,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "検索に対する回答";
+document.getElementById('motivation').innerHTML = "必要とされるメモリを確保し、不必要なメモリを解放しながら、データの挿入・削除を行う動的なデータ構造は、コンピュータの資源を効率よく使いながらプログラムを実行するためには欠かせません。";
+document.getElementById('description').innerHTML = "要素の挿入、検索、削除を行うデータ構造を実装してください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sequence/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sequence/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/list_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "双方向連結リスト";
+document.getElementById('atitle_en').innerHTML = "Doubly Linked List";
+document.getElementById('abstract').innerHTML = "ここでは、動的な集合を管理する最も基本的な構造である、連結リストでデータの挿入、検索、削除を行うデータ構造を実装します。";
+document.getElementById('explanation').innerHTML = "双方向連結リストは「番兵」と呼ばれる特別なノードを１つ持ちます。ここでは番兵をsentinelとします。sentinelは実際扱うデータには含めませんが、sentinelを起点にノードが繋がっていきます。各ノードは（sentinelを含め）、次のノードへのポインタnextと、前のノードへのポインタprevを持ちます。この解説では、データの本体として変数keyを持ちます。リストが空の場合、番兵のnextとprevはそれぞれ自分自身を指している状態になります（初期状態）。<br/><br/>データの挿入では、リストの先頭、つまりsentinelの直後に要素を追加します。挿入処理前のリストの先頭をyとするとsentinelとyの間に要素を追加することになります。まず新たなノードを１つ作成し（これをxとします）与えられたデータを設定します。次に、xのポインタを設定します。xのprevがsentinelを指し、xのnextがsentinelのnext（つまりy）を指すように設定します。次に、sentinelとyのポインタを書き換えます。まず、sentinelのnextのprev（つまりyのprev）をxに変更してから、sentinelのnextをxに変更します。この繋ぎ変えの順番は重要なので注意が必要です。<br/><br/>データの削除では、まず探索によって指定された値を持つノードを見つけます。これをtとします。tの前後にあるノードのポインタを更新してt をリストから削除します（たどれなくします）。tのprevのnextを、tのnextに書き換え、tのnextのprevを、tのprevに書き換えます。";
+document.getElementById('note').innerHTML = "双方向連結リストの先頭へ要素を挿入する操作の計算量はO(1)です。指定された要素を検索するには、先頭からノードをたどる必要があるため、そのオーダーはO(N)です。<br/></br>要素の削除のオーダーはO(1)ですが、削除する要素を探索する必要があるため、探索を含めるとオーダーはO(N)となります。<br><br>ここでは、主にリストの先頭にデータを追加するアルゴリズムを解説しましたが、一般的にはリストの末尾にデータを挿入したり、指定した位置に挿入する操作など、その他の様々な操作が実装されます。";
+document.getElementById('application').innerHTML = "連結リストは動的な集合を扱う最も基本的なデータ構造です。データの要素へランダムにアクセスする必要がなく、リストをたどるコストが影響しないようなアプリケーションに活用できます。例えば、グラフの各ノードに隣接するノードをリストで保持するために使われます。一方、順序を保ちながらデータの追加・検索・削除を行う必要のあるアプリケーションに使われます。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/DA1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">連結リスト</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_key.svg" /></td><td>リストの要素</td><td class="code">key</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">データの挿入と削除</th></tr><tr><td class="symbol"><img src="formula_create.svg" /></td><td>ノードを生成し、データとポインタを設定します。</td><td class="code">insert(data):の前半</td></tr><tr><td class="symbol"><img src="formula_link.svg" /></td><td>ポインタを繋ぎ換え、ノードを連結します。</td><td class="code">insert(data):の後半</td></tr><tr><td class="symbol"><img src="formula_delete.svg" /></td><td>ポインタを繋ぎ換え、ノードを削除します。</td><td class="code">deleteNode(Node *t)</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">ノードを生成し、前方と後方のポインタを設定します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">挿入されたノードの前後のノードのポインタを繋ぎ変えます。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step3.svg" /><p class="caption">削除するノードの前後のノードのポインタを繋ぎ変えます。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">データの挿入と削除</b><br/><img src="scene_0.svg" alt="双方向連結リスト | データの挿入と削除" title="双方向連結リスト | データの挿入と削除"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

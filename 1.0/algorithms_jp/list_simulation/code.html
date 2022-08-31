@@ -1,0 +1,44 @@
+<pre>
+class Node:
+    Node *prev
+    Node *next
+    key
+
+class LinkedList:
+    Node *sentinel  # 番兵
+
+    # 空のリストとして初期化
+    init():
+        sentinel &larr; ノードを生成
+        sentinel.next &larr; sentinel  # 自分自身を指す
+        sentinel.prev &larr; sentinel  # 自分自身を指す
+
+    # dataを挿入
+    insert(data):
+        # ノードを生成してデータとポインタを設定
+        Node *x &larr; ノードを生成
+        x.key &larr; data # データ本体を設定
+        x.next &larr; sentinel.next
+        x.prev &larr; sentinel
+        # 番兵と、元の先頭ノードのポインタを設定
+        sentinel.next.prev &larr; x
+        sentinel.next &larr; x
+
+    # kを持つノードを探す
+    listSearch(k):
+        Node *cur &larr; sentinel.next # 番兵の次の要素から辿る
+        while cur &ne; sentinel and cur.key &ne; k:
+            cur &larr; cur.next
+        return cur
+
+    deleteNode(Node *t):
+        if t = sentinel: return # t が番兵の場合は処理しない
+        t.prev.next &larr; t.next
+        t.next.prev &larr; t.prev
+        tのメモリを解放
+
+    # kを持つノードを削除する
+    deleteKey(k):
+        deleteNode(listSearch(k)) # 取得したノードを削除
+
+</pre>

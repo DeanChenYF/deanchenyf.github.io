@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9733; ";
+document.getElementById('ptitle').innerHTML = "點的凸包";
+document.getElementById('ptitle_en').innerHTML = "Convex Hull";
+document.getElementById('input_comment').innerHTML = "平面上的點群<ul><li>點數 N  &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "包含所有點且面積最小的凸多邊形";
+document.getElementById('motivation').innerHTML = "從一個規模較大的點集合，求出其凸包。";
+document.getElementById('description').innerHTML = "從一個點集合，求出凸包。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/convex_hull/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/convex_hull/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/graham_scan.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "葛立恆掃描法";
+document.getElementById('atitle_en').innerHTML = "Graham Scan";
+document.getElementById('abstract').innerHTML = "葛立恆掃描法利用堆疊的特性，從起點開始以逆時針方向逐步決定凸包邊上的點。";
+document.getElementById('explanation').innerHTML = "　葛立恆掃描法可分為預處理及掃描操作 2 個階段。預處理階段會決定之後掃描所使用的起點，並以起點為基準對其餘點進行排序。本節的做法是以 y 座標最小的點（最左邊的點）為起點，若同時有多點符合此條件，則選擇其中 x 座標最小的點。之後按照各點與起點間的極角（polar angle）大小進行排序。若極角相同，則以距離起點較近者為優先。接著將包含起點在內的最初 3 點新增至凸包中，並依序將此 3 點放入堆疊中。<br></br>　描操作階段會將各點視為加入凸包的候選點並逐一放入堆疊中，最後篩選完仍留在堆疊中的點，即為構成凸包的點。凸包的候選點會以預處理階段的極角排序結果依序進行篩選。假設目前檢視的點為 head。在決定是否要將 head 新增到凸包之前，必須先調查 head 與堆疊頂端數來的第 2 個點 top2 及第 1 個點 top 之間的位置關係。若 head的位置在 top2 → top 的順時針方向，則將 top 從堆疊中刪除。反之，若 head 位於逆時針方向，也就是可以形成凸包，則將 head 放入堆疊並新增至凸包當中。";
+document.getElementById('note').innerHTML = "　由於葛立恆掃描法在選擇凸包的點時，每個點頂多只會被插入堆疊 1 次，因此這部分的時間複雜度為 O(N)。但影響最多的其實是利用極角排序的部分，因此葛立恆掃描法整體的時間複雜度取決於排序演算法，為 O(N log N)。";
+document.getElementById('application').innerHTML = "　計算幾何、影像處理、電腦視覺（computer vision）、圖學（graphics）及遊戲等領域，都有許多應用程式使用葛立恆掃描法來建立點的凸包。它可做為物體辨識、物體碰撞偵測（collision detection）處理，以及地圖路線規劃等的預處理使用。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/P2D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_p2d.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">二維點群</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">將各點排序並決定起點</th></tr><tr><td class="symbol"><img src="formula_source.svg" /></td><td>找到最左下角的點。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_leftmost.svg" /></td><td>指向最左下角的點。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_all.svg" /></td><td>以最左下角的點為參考點 ( 基準 )，將其餘的點按「極角」（polar angle）大小排序。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">建立凸包</th></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>檢查 3 個點的走向是否為逆時針。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_head.svg" /></td><td>將點的編號新增到堆疊中。</td><td class="code">st.push(head)</td></tr><tr><td class="symbol"><img src="formula_trace.svg" /></td><td>逐步決定凸包的邊。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">確認點與點之間的位置關係。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">將點從凸包的候選點中排除。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step3.svg" /><p class="caption">將點新增至凸包的候選點中。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">將各點排序並決定起點</b><br/><img src="scene_0.svg" alt="葛立恆掃描法 | 將各點排序並決定起點" title="葛立恆掃描法 | 將各點排序並決定起點"/></p></div><div><p><b class="scene_desc">建立凸包</b><br/><img src="scene_1.svg" alt="葛立恆掃描法 | 建立凸包" title="葛立恆掃描法 | 建立凸包"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear_log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/stack_simulation.svg" width="60"/><img src="../../icons/algorithms/quick_sort.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

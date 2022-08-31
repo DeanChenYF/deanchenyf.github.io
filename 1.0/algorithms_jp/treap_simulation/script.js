@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "整列された辞書";
+document.getElementById('ptitle_en').innerHTML = "Sorted Dictionary";
+document.getElementById('input_comment').innerHTML = "整列された辞書に対する検索・追加・削除操作<ul><li>操作・問い合わせの数Q &le; 100,000</li><li>0 &le; キー &le; 1,000,000,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "問い合わせへの回答と整列された要素の出力";
+document.getElementById('motivation').innerHTML = "辞書の内容を常に整列して管理しておくことで、より柔軟に、様々な問い合わせに答えることができるようになります。";
+document.getElementById('description').innerHTML = "データの検索・追加・削除に加え、整列済みの要素の管理・提供を行う、辞書のデータ構造を実装してください。ここでは、キーと値をまとめ、データの実態としてキーのみを扱うものとします。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sorted_dictionary/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sorted_dictionary/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/treap_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "トリープ";
+document.getElementById('atitle_en').innerHTML = "Treap";
+document.getElementById('abstract').innerHTML = "トリープ(Treap)は、以下の二分探索木とヒープの両方の条件を維持する探索木です。<ul><li>xを探索木に属するノード、yをxの左部分木に属するノード、zをxの右部分木に属するノードとすると、yのキー &le; xのキー &le; zのキー</li><li>xを探索木に属するノード、cをxの子とすると、cの優先度 &lt; xの優先度</li></ul>トリープは、優先度を考慮した回転操作によって木のバランスを保ちます。ここでは、主にデータの挿入と削除を行うアルゴリズムについてそれぞれ解説します。";
+document.getElementById('explanation').innerHTML = "トリープの各要素は、(キー、優先度)の組から構成されますが、データの実体はキーのみで、これらのキーが二分探索木条件を常に満たします。一方、優先度がヒープ条件（最大）を満たします。バランスの良い木を保つために、優先度はランダムに分布していることが望ましいです。<br><br>トリープに新しい要素を追加するときは、与えられたキーとランダムに生成された優先度を組にした要素を、通常の二分探索木の挿入操作と同じ方法で挿入します。挿入後は、二分探索木の条件は満たされますが、優先度におけるヒープ条件は崩れる可能性があります。そこで、ヒープ条件を満たすまで、回転によって挿入された要素を根に向かって持ち上げていきます。<br><br>トリープから指定されたキーを持つ要素を削除するには、まずそのノードを通常の二分探索木と同様に探索し、見つかったら回転によって葉まで下ろします。回転を行うときは、より優先度が高いものが持ち上がるように、子を選んでいきます。対象を葉まで移動すれば、後は簡単に削除を行うことができます。";
+document.getElementById('note').innerHTML = "トリープに対するデータの検索・挿入・削除の計算量は木の高さによって変わってきます。木の高さは、与えられる操作とキー、生成される優先度に依存しますが、優先度をランダムに生成することで木のバランスは保たれ、トリープに対する操作はO(log N)で行えることが十分期待できます。";
+document.getElementById('application').innerHTML = "整列された辞書を提供する優れたアルゴリズムはいくつか考案されていますが、トリープはその中でも比較的シンプルに実装ができる強力なデータ構造です。辞書は、多くのプログラミング言語で標準化されているように、情報処理には欠かせない概念です。また、整列された辞書は、ハッシュ表では提供できません。トリープのような優れた二分探索木では、キーの順序が保たれるため、要素をリスト化したり、指定範囲の要素を列挙するなど、様々な操作が可能になります。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/DBT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">動的な二分木</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_key.svg" /></td><td>辞書のキー</td><td class="code">key</td></tr><tr><td class="symbol"><img src="variable_pri.svg" /></td><td>優先度</td><td class="code">pri</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">データの検索・挿入・削除</th></tr><tr><td class="symbol"><img src="formula_inp.svg" /></td><td>要素を挿入します。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_inpMarker.svg" /></td><td>挿入するノードを指します。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_del.svg" /></td><td>要素を削除します。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_delMarker.svg" /></td><td>削除するノードを指します。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_rotate.svg" /></td><td>回転を行います。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_insert.svg" /><p class="caption">要素を追加します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_delete.svg" /><p class="caption">要素を削除します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_rotate.svg" /><p class="caption">要素の追加、削除にはそれぞれ一連の回転操作がともないます。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">データの検索・挿入・削除</b><br/><img src="scene_0.svg" alt="トリープ | データの検索・挿入・削除" title="トリープ | データの検索・挿入・削除"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/bst_simulation.svg" width="60"/><img src="../../icons/algorithms/rotate.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

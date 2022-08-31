@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "区間最小値クエリ";
+document.getElementById('ptitle_en').innerHTML = "Range Minimum Query";
+document.getElementById('input_comment').innerHTML = "列に対する単一要素の更新<ul><li>整数の数N &le; 100,000</li><li>質問の数Q &le; 100,000</li><li>0 &le; x, $a_i$ &le; 1,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "区間に対する最小値クエリへの回答";
+document.getElementById('motivation').innerHTML = "整数の列における区間に関する操作と問い合わせ（クエリ）には、様々な組み合わせがあり、応用問題も数多く存在します。ここでは、最も基本的な問題のひとつである区間最小値クエリに答える問題を解決します。";
+document.getElementById('description').innerHTML = "整数の列$a_0, a_1, ..., a_{N-1}$に対して、以下の操作・質問に対応してください。<ul><li>$a_i$をxに更新する</li><li>区間[a, b)の最小値を報告する</li></ul>";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/rmq/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/rmq/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/rmq_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "セグメント木: RMQ";
+document.getElementById('atitle_en').innerHTML = "Segment Tree: RMQ";
+document.getElementById('abstract').innerHTML = "完全二分木は区間を管理するセグメント木として応用することができます。ここでは主に、セグメント木に対して区間の最小値を保持する変数を割り当てます。";
+document.getElementById('explanation').innerHTML = "セグメント木は完全二分木です。完全二分木の葉を順番に列の要素と対応させます。木の内部ノードは、その子孫の葉を含む区間に対応します。例えば、根は列全体の区間、その左の子は列の前半、右の子は後半の区間を表します。セグメント木は、答えるクエリの種類によって、各ノードに値を保持します。１要素の更新と区間最小値クエリ(RMQ: Range Minimum Query)に答えるためには、各ノードにその区間における最小値minvを保持し、更新が行われた後も維持します。<br/>1要素の更新クエリでは、列の指定された要素に対応する葉を起点に、根に向かってminvを更新していきます。現在のノードkの左の子と右の子の値のうち小さい方に更新します。<br/>区間最小値クエリでは、内部ノードの値を用いて（利用できればその子孫を調べることなく）指定された区間の値を高速に求めます。答えを求めるための探索は根から開始し、二分木の後行順巡回の要領でノードを訪問します。クエリの区間を[a, b)、現在探索中の区間を[l, r)とすると、以下の３つの場合に分けて答えの探索を行います：<ol><li>[l, r)と[a, b)が交わらない</li><li>[l, r)が[a, b)に完全に含まれる</li><li>それ以外</li></ol>1. の場合は、RMQの答えに影響しない値としてINF（大きな値）を返します。2. の場合は、その区間の最小値が確定できるので、値をそのまま返します。3. の場合は、左の子と右の子に対してそれぞれ再帰的に答えを求め、小さい方を返します（同じ場合はその値）。";
+document.getElementById('note').innerHTML = "セグメント木に対する更新は、葉から根に向かってノードを辿るので、オーダーはO(log N)となります。区間最小値クエリに対する計算回数も木の高さで決まるため、オーダーはO(log N)となります。";
+document.getElementById('application').innerHTML = "";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/CBT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">完全二分木</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_minv.svg" /></td><td>区間の最小値</td><td class="code">minv</td></tr><tr><td class="symbol"><img src="variable_res.svg" /></td><td>指定区間の最小値として返される値（※表示用のため配列にする必要はありません）</td><td class="code">res</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">質問に対する処理</th></tr><tr><td class="symbol"><img src="formula_update.svg" /></td><td>区間最小値を更新します。</td><td class="code">minv[k] &larr; ?</td></tr><tr><td class="symbol"><img src="formula_query.svg" /></td><td>指定区間の最小値を決定します。</td><td class="code">res &larr; ?</td></tr><tr><td class="symbol"><img src="formula_updated.svg" /></td><td>更新クエリにより更新済みの区間</td><td class="code">kの軌跡</td></tr><tr><td class="symbol"><img src="formula_outside.svg" /></td><td>探索区間とクエリ区間がが交わらない区間</td><td class="code">if r &le; a or b &le; l:</td></tr><tr><td class="symbol"><img src="formula_contain.svg" /></td><td>探索区間がクエリ区間に完全に含まれる区間</td><td class="code">else if a &le; l and r &le; b:</td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>探索区間がクエリ区間とクエリ区間外を含む区間</td><td class="code">else:</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">クエリ１：区間の最小値を更新します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">クエリ２：指定区間の最小値を取得します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">質問に対する処理</b><br/><img src="scene_0.svg" alt="セグメント木: RMQ | 質問に対する処理" title="セグメント木: RMQ | 質問に対する処理"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/btree_postorder.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

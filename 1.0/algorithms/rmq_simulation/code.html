@@ -1,0 +1,49 @@
+<pre>
+# Segment Tree for RQM
+class RMQ:
+    N    # 完整二元樹的節點數
+    n    # 序列的元素數 = 葉節點數
+    minv # 儲存最小值的陣列
+
+    # 初始化為最低所需的元素數
+    init(len): 
+        n &larr; 1
+        while n < len:
+            n &larr; n*2  # 將葉節點數 n 調整為 2 的冪次方
+        N &larr; 2*n - 1  # 調整完整二元樹的節點數 
+        for i &larr; 0 to N-1:
+            minv[i] &larr; INF
+
+    findMin(a, b):
+        return query(a, b, 0, 0, n)
+
+    query(a, b, k, l, r):
+        if r &le; a or b &le; l:
+            res &larr; INF
+        else if a &le; l and r &le; b:
+            res &larr; minv[k]
+        else:
+            vl &larr; query(a, b, left(k), l, (l+r)/2)
+            vr &larr; query(a, b, right(k), (l+r)/2, r)
+            res &larr; min(vl, vr)
+
+        return res
+
+    # 將第 k 個元素改寫為 x
+    update(k, x):
+        k &larr; k + n - 1
+        minv[k] &larr; x
+
+        while  k &gt; 0:
+            k &larr; parent(k)
+            minv[k] &larr; min(minv[left(k)], minv[right(k)])
+
+    left(k):
+        return 2*k + 1
+
+    right(k):
+        return 2*k + 2
+
+    parent(k):
+        return (k - 1)/2
+</pre>

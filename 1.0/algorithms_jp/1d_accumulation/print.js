@@ -1,0 +1,5 @@
+window.onload = function () {
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>重なりの数</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">線分を追加する</th></tr><tr><td class="symbol"><img src="formula_bw.svg" /></td><td>線分の始点に対応する要素に１を加えます。</td><td class="code">A[b]++</td></tr><tr><td class="symbol"><img src="formula_ew.svg" /></td><td>線分の終点に対応する要素から１を引きます。</td><td class="code">A[e]--</td></tr><tr><th class="scene_desc" colspan="3">累積和をとる</th></tr><tr><td class="symbol"><img src="formula_cur.svg" /></td><td>前方の要素を加算していきます。</td><td class="code">A[i] &larr; A[i] + A[i-1]</td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">線分を追加する</b><br/><img src="scene_0.svg" alt="１次元累積和 | 線分を追加する" title="１次元累積和 | 線分を追加する"/></p></div><div><p><b class="scene_desc">累積和をとる</b><br/><img src="scene_1.svg" alt="１次元累積和 | 累積和をとる" title="１次元累積和 | 累積和をとる"/></p></div>';
+};

@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; ";
+document.getElementById('ptitle').innerHTML = "ランダムな整数列に対する探索";
+document.getElementById('ptitle_en').innerHTML = "Search from Sequence";
+document.getElementById('input_comment').innerHTML = "整数の列と１つの目的の値<ul><li>要素数N &le; 1,000,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "最初に見つかった目的の値の位置";
+document.getElementById('motivation').innerHTML = "順序のあるデータの列の中から、目的のデータを探し出すことを探索と言います。探索のアルゴリズムは情報処理の基本で、様々なアプリケーションに使われています。";
+document.getElementById('description').innerHTML = "配列の中から、指定された値を探してください。指定された値が存在しない場合は、そのことを報告し、存在すれば最初に見つかった位置を求めてください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/search/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/search/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/linear_search.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "線形探索";
+document.getElementById('atitle_en').innerHTML = "Linear Search";
+document.getElementById('abstract').innerHTML = "配列の先頭の要素から漏れなく順番に見ていき、目的の値と等しいかどうか比較していきます。";
+document.getElementById('explanation').innerHTML = "線形探索は配列の先頭の要素から漏れなく順番に比較していき、目的の値と等しい値が見つかったとき、あるいは全ての要素を調べつくしたときに終了します。見つかったときはその位置を返して終了します。すべての要素を調べて一致しなかった場合は、存在しないと判断します。";
+document.getElementById('note').innerHTML = "配列の中に目的の値が存在しない場合は、すべての要素をチェックすることになります。よって線形探索のオーダーはO(N)になります。単一のクエリに対しては、実用的なオーダーですが、探索の回数がM回必要な場合はオーダーがO(MN)となるので、複数回のクエリを処理する場合は、効率の悪いアルゴリズムに分類されます。";
+document.getElementById('application').innerHTML = "線形探索は、対象となる配列の要素の並びに制約がありません。計算効率は優れていませんが、あらゆるデータの列に対して適用することができます。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/><img src="../../icons/structures/A0D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">一次元配列とシングルノード</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>探索対象となる整数の列</td><td class="code">A</td></tr><tr><td class="symbol"><img src="variable_key.svg" /></td><td>目的の値</td><td class="code">key</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">入力</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>探索対象となる数列を読み込みます。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_ink.svg" /></td><td>目的の値を読み込みます。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">探索</th></tr><tr><td class="symbol"><img src="formula_comp.svg" /></td><td>目的の値と等しいか比較します。</td><td class="code">if A[i] = key:</td></tr><tr><td class="symbol"><img src="formula_cp.svg" /></td><td>目的の値と一致する最初の要素の位置を指します。</td><td class="code">i</td></tr><tr><td class="symbol"><img src="formula_finished.svg" /></td><td>探索済みの要素を拡張していきます。</td><td class="code">区間[0, i]</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">現在の位置の値と目的の値を比較します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">目的の値と一致する最初の要素の位置を返します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">入力</b><br/><img src="scene_0.svg" alt="線形探索 | 入力" title="線形探索 | 入力"/></p></div><div><p><b class="scene_desc">探索</b><br/><img src="scene_1.svg" alt="線形探索 | 探索" title="線形探索 | 探索"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

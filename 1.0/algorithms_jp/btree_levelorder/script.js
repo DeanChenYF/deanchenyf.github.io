@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "二分木の巡回：距離優先";
+document.getElementById('ptitle_en').innerHTML = "Traversal on Binary Tree: Distance First";
+document.getElementById('input_comment').innerHTML = "二分木<ul><li>ノード数N &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "深さが浅いノードを優先した巡回の訪問順";
+document.getElementById('motivation').innerHTML = "先行順巡回は親を優先した巡回アルゴリズムですが、ノードの深さに関する条件はありません。一方、根から近い順に訪問すれば、親を優先した巡回も達成できますが、根からの距離（深さ）に関する興味深い性質が得られます。";
+document.getElementById('description').innerHTML = "二分木のノードを次の条件を満たすように訪問してください：深さがkのノードを訪問する前に、深さがk-1の全てのノードが訪問されている。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/btree_levelorder/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/btree_levelorder/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/btree_levelorder.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "レベル順巡回";
+document.getElementById('atitle_en').innerHTML = "Level-order Traversal";
+document.getElementById('abstract').innerHTML = "レベル順巡回アルゴリズムでは、根から近い順にノードを訪問します。二分木の各ノードに、レベル順巡回で訪問した順番を印字していきます。";
+document.getElementById('explanation').innerHTML = "レベル順巡回は、根からノードの深さが浅い順に訪問します。つまり深さがk+1のノードを訪問する前に、深さkのノードは全て訪問済みになるように巡回します。この巡回は、キューでノードを管理することによって実現することができます。最初に根の番号をキューに入れておき、キューが空になるまで、キューから取り出したノードの子をキューに入れる操作を繰り返します。";
+document.getElementById('note').innerHTML = "二分木の巡回では、各ノードが一度訪問されるので、オーダーはO(N)となります。";
+document.getElementById('application').innerHTML = "レベル順巡回では、親を優先するだけでなく、ノードを浅い順、つまり根からの距離（エッジの数）が近い順に訪問することができます。この性質から、根からの距離が重要な問題やアプリケーションに応用されます。レベル順巡回は、幅優先探索とも呼ばれ、グラフに対して一般化することができます。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/BT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_t.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">二分木</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_L.svg" /></td><td>訪問した順番</td><td class="code">L</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">二分木の巡回</th></tr><tr><td class="symbol"><img src="formula_visit.svg" /></td><td>ノードを訪問して順番のラベルをつけます。</td><td class="code">L[u] &larr; time++</td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>訪問済みのノードを拡張していきます。</td><td class="code">L[u]が設定されたノード</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">ノードを訪問します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">二分木の巡回</b><br/><img src="scene_0.svg" alt="レベル順巡回 | 二分木の巡回" title="レベル順巡回 | 二分木の巡回"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/queue_simulation.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

@@ -1,0 +1,24 @@
+<div style="border: 1px solid #808080">
+<pre>
+A &larr; 整数の列
+
+for i &larr; 0 to N/2 - 1:
+    j &larr; N-i-1   
+    swap(A[i], A[j])
+
+A を出力
+</pre>
+</div>
+
+<p>
+一般化した関数として実装する場合。
+</p>
+
+<div style="border: 1px solid #808080">
+<pre>
+#配列Aの区間[l, r)を反転する
+reverse(A, l, r): 
+    for i &larr; l to l + (r-l)/2 - 1:
+        j &larr; r - (i-l) - 1
+        swap(A[i], A[j])
+</pre>

@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; ";
+document.getElementById('ptitle').innerHTML = "木の結合";
+document.getElementById('ptitle_en').innerHTML = "Union of Trees";
+document.getElementById('input_comment').innerHTML = "森と根の組<ul><li>森のノードの数N &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "指定された根で木を合併した森";
+document.getElementById('motivation').innerHTML = "森を構成する木は、集合として扱うことができます。木の合併によって、集合の合併を行います。このとき、新たに生成された木の高さがその後の計算量に影響するため、工夫をする必要があります。";
+document.getElementById('description').innerHTML = "森とそれに含まれる木の根の組がいくつか与えられるので、それらの根で木を合併して森を再構築してください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/tree_union/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/tree_union/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/union_by_rank.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "ランクによる合併";
+document.getElementById('atitle_en').innerHTML = "Union by Rank";
+document.getElementById('abstract').innerHTML = "木の高さ（ランク）を考慮して、２つの木を合併します。";
+document.getElementById('explanation').innerHTML = "２つの木を、それらの根で合併する場合は２つのケースを考慮します。２つの木の高さが異なる場合は、高さが低い方の木の根の親を、高さが高い木の根として書き換え、木を合併します。低い方の木を高い方の木に合併することによって、合併後の木の高さを維持します。２つの木の高さが同じ場合は、同様に根の親を変更することで、どちらか一方の木を他方へ合併します。この場合は合併後の木の高さは１つ増えます。";
+document.getElementById('note').innerHTML = "合併の処理は、木の根に対してのみ読み書きが行われるため、オーダーはO(1)となります。";
+document.getElementById('application').innerHTML = "互いに素な集合の基本操作に応用されます。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/FRST.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">森</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_rank.svg" /></td><td>ランク（ノードの高さ）</td><td class="code">rank</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">合併</th></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>ランクを比較します。</td><td class="code">rank[x] &gt; rank[y]:</td></tr><tr><td class="symbol"><img src="formula_update_rank.svg" /></td><td>ランクを１つ増やします。</td><td class="code">rank[y]++</td></tr><tr><td class="symbol"><img src="formula_update.svg" /></td><td>親を更新します。</td><td class="code">parent[y] &larr; ?</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">根のランクを比較します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">親を更新して合併します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">合併</b><br/><img src="scene_0.svg" alt="ランクによる合併 | 合併" title="ランクによる合併 | 合併"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/const.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

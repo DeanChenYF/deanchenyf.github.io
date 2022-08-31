@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "連結成分分解";
+document.getElementById('ptitle_en').innerHTML = "Connected Components";
+document.getElementById('input_comment').innerHTML = "連結とは限らないグラフ<ul><li>ノードの数N &le; 100,000</li><li>エッジの数M &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "ノードに色が塗られた連結成分";
+document.getElementById('motivation').innerHTML = "無向グラフにおいて、任意の２つのノードの間にパスがあるかどうかを示す接続性は、グラフのアプリケーションの中でも最も興味深い性質のひとつです。";
+document.getElementById('description').innerHTML = "グラフを連携成分に分解して、連結成分内のノードに同じ色を塗ってください。ただし、それぞれの連結成分のノードの色は異なるものとします。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/connected_components/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/connected_components/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/dfs_repeat.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "DFSによる連結成分分解";
+document.getElementById('atitle_en').innerHTML = "DFS for Connected Components";
+document.getElementById('abstract').innerHTML = "連結成分ごとに深さ優先探索を行います。";
+document.getElementById('explanation').innerHTML = "このアルゴリズムでは、各ノードの色を調べるループの中に、深さ優先探索の起点を含めます。各ノードを対象に、それに色がついているか（訪問済みか）をチェックし、色が付いていなければ、そのノードを起点として深さ優先探索を行います。つまり、新しい連結成分をみつけたらパレットの色を更新し、その連結成分をパレットの色で塗りつぶして（訪問して）いきます。<br><br>疑似コードでは、再帰関数によって深さ優先探索を実装しています。再帰関数dfs(g, u)はuを訪問する操作ですが、uに隣接するノードvを起点として再びdfsを呼び出しています。このとき、vの色をチェックし、再帰関数を実行するかどうかを判断しています。";
+document.getElementById('note').innerHTML = "このアルゴリズムが終了すると、同じ連結成分内のノードは同じ色でぬられていることから、色を見ることで、２つのノードが同じ成分内にあるかどうかをO(1)で判定することができるようになります。<br/><br/>連結成分分解は、幅優先探索でも同様に効率よく求めることができます。ここでは、グラフのサイズが大きいため、隣接リストを用いた実装を行う必要があります。隣接リストを用いれば、深さ優先探索（または幅優先探索）のオーダーはO(N + M)となります。";
+document.getElementById('application').innerHTML = "任意の２つのノードの接続性が必要なアプリケーションは数多くあります。グラフを人間関係と考えれば、ある人とある人がコンタクトをとれるか、グラフをコンピュータのネットワークとすれば、２つのコンピュータが通信できるか、など様々なアプリケーションが考えられます。また、塗りつぶしから想像できるように、二次元配列構造やピクセルの領域を訪問する（塗りつぶす）アルゴリズムとしても使われます。今回の問題では、グラフを構築した後は、その形状が変型しないため、１度の深さ優先探索で接続性の質問に答えることができますが、接続性が動的に変わる場合は、別なデータ構造が必要になります（２４章の「互いに素な集合」のデータ構造で解決することができます）。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/GR.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">無向グラフ</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_color.svg" /></td><td>連結成分の色</td><td class="code">color</td></tr><tr><td class="symbol"><img src="variable_palette.svg" /></td><td>パレットの色</td><td class="code">palette</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">深さ優先探索</th></tr><tr><td class="symbol"><img src="formula_oi.svg" /></td><td>色を更新します。</td><td class="code">palette &larr; 新しい色</td></tr><tr><td class="symbol"><img src="formula_ui.svg" /></td><td>ノードを訪問して色をつけます。</td><td class="code">color[u] &larr; palette</td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>訪問したノードのグループを拡張していきます。</td><td class="code">colorがWHITEではないノード</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_update.svg" /><p class="caption">色を更新します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_visit.svg" /><p class="caption">ノードを訪問して色を塗ります。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">深さ優先探索</b><br/><img src="scene_0.svg" alt="DFSによる連結成分分解 | 深さ優先探索" title="DFSによる連結成分分解 | 深さ優先探索"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/dfs_stack.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

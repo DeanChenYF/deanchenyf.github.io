@@ -1,0 +1,26 @@
+<pre>
+# T: 最短経路木
+# グラフgと始点s
+dijkstra(g, s):
+    PriorityQueue que     #(暫定距離, ノード番号)を要素とした優先度付きキュー
+
+    for v &larr; 0 to g.N-1:
+        dist[v] &larr; INF
+
+    dist[s] &larr; 0
+    queに(0, s)を挿入する
+
+    while queが空ではない:
+        cost, u &larr; que.extractMin() # 得られた組の要素をそれぞれcost, uに代入
+
+        if dist[u] < cost: continue
+
+        Tにuを含める
+  
+        for e in g.adjLists[u]:
+            if e.v がTに含まれる: continue
+            if dist[e.v] > dist[u] + e.weight
+                dist[e.v] &larr; dist[u] + e.weight
+                queに(dist[e.v], e.v)を挿入する
+                parent[e.v] &larr; u
+</pre>

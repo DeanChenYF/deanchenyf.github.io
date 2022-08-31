@@ -1,0 +1,23 @@
+<pre>
+# 二維點群 PointGroup pg
+andrewScan(pg):
+    Stack st
+    orderedIndex &larr; 以 x 為基準對 pg.points 進行排序後的索引序列
+                        若多點相同再以 y 為基準
+
+    st.push(orderedIndex[0])
+    st.push(orderedIndex[1])
+
+    for i &larr; 2 to pg.N-1:
+        head = orderedIndex[i]
+      
+        while st.size() &ge; 2:
+            top2 &larr; st 頂端數來第 2 個值
+            top1 &larr; st 頂端數來第 1 個值
+            if p[top2] 對於 pg.points[top2] 與 pg.points[top] 形成的直線而言
+                            pg.points[head] 位於左側（逆時針方向）:
+                st.pop()
+            else:
+                break
+        st.push(head)
+</pre>

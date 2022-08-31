@@ -1,0 +1,5 @@
+window.onload = function () {
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_S.svg" /></td><td>スタックの要素</td><td class="code">S</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">データの挿入と取り出し</th></tr><tr><td class="symbol"><img src="formula_push.svg" /></td><td>スタックの頂点にデータを追加します。</td><td class="code">S[++top] &larr; x</td></tr><tr><td class="symbol"><img src="formula_pop.svg" /></td><td>スタックの頂点からデータを取り出し削除します。</td><td class="code">return S[top--]</td></tr><tr><td class="symbol"><img src="formula_top.svg" /></td><td>スタックの頂点を指します。</td><td class="code">top</td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">データの挿入と取り出し</b><br/><img src="scene_0.svg" alt="スタック | データの挿入と取り出し" title="スタック | データの挿入と取り出し"/></p></div>';
+};

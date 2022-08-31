@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "拓撲排序";
+document.getElementById('ptitle_en').innerHTML = "Topological Sort";
+document.getElementById('input_comment').innerHTML = "有向圖<ul><li>節點數 N &le; 100,000</li><li>邊數 M &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "各節點的執行順序";
+document.getElementById('motivation').innerHTML = "在處理具有依賴關係的多個任務時，必須先找出任務之間的處理順序，才能確保執行任務時，所有必須在該任務執行前先完成的任務皆已完成。";
+document.getElementById('description').innerHTML = "請從表示任務及其依賴關係的有向圖中，找出處理任務的順序。處理任務時，必須先完成該任務所依賴的所有任務。有向圖的邊 (u, v) 表示 v 依賴於 u。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/topological_sort/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/topological_sort/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/bfs_tsort.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "卡恩演算法";
+document.getElementById('atitle_en').innerHTML = "Kahn's Algorithm";
+document.getElementById('abstract').innerHTML = "有拓撲排序是一種排列有向圖節點的方式，它會使任一節點的位置皆排在其邊所指向的節點之前。卡恩演算法是一種以廣度優先搜尋為基礎，利用佇列管理入分支度（可參考4-7 頁的說明）為 0 的節點，來對有向圖進行拓撲排序的演算法。";
+document.getElementById('explanation').innerHTML = "在給定圖形中，若節點的入分支度為 0，則表示必須在該任務執行前先完成的任務數為 0。因此若有節點（任務）的入分支度為 0，即表示已可執行該任務。當節點 u（任務）執行完畢時，直接依賴於節點 u 的節點 v 就少了一項必須在其之前先完成的任務，因此可以將其入分支度減 1。<br><br>本節將儲存各節點的入分支度，並利用廣度優先搜尋模擬任務的執行。首先將入分支度為 0 的節點，意即依賴任務為 0 的節點，新增至佇列中。接著從佇列中取出已可執行的任務，並在執行後將直接依賴於該任務的節點的入分支度減 1。模擬過程中，每當有節點的入分支度被減至為 0，便將其新增至佇列中，並重複上述步驟，直到佇列被清空為止。";
+document.getElementById('note').innerHTML = "若使用相鄰串列進行廣度優先搜尋，則拓撲排序的時間複雜度為 O(N+M)。";
+document.getElementById('application').innerHTML = "拓撲排序可以將有依賴關係的處理排列成適當的順序，因此被廣泛應用於工作排程等領域當中。例如決定具依賴關係之程式的編譯順序等演算法。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/GR.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_g.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">有向圖</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_deg.svg" /></td><td>節點的入分支度</td><td class="code">deg</td></tr><tr><td class="symbol"><img src="variable_order.svg" /></td><td>排序完成的順序</td><td class="code">order</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">初始化入分支度</th></tr><tr><td class="symbol"><img src="formula_all.svg" /></td><td>計算入分支度。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">排序</th></tr><tr><td class="symbol"><img src="formula_tail.svg" /></td><td>將入分支度為 0 的節點插入佇列。</td><td class="code">que.enqueue(v)</td></tr><tr><td class="symbol"><img src="formula_ui.svg" /></td><td>從佇列中取出入分支度為 0 的節點，並固定其順序。</td><td class="code">u &larr; que.dequeue()<br/>order[u] &larr; t++</td></tr><tr><td class="symbol"><img src="formula_vi.svg" /></td><td>將相鄰節點的入分支度減 1。</td><td class="code">deg[v]--</td></tr><tr><td class="symbol"><img src="formula_finished.svg" /></td><td>擴大已排序完成的節點群組。</td><td class="code">order 已確定的節點</td></tr><tr><th class="scene_desc" colspan="3">輸出排序結果</th></tr><tr><td class="symbol"><img src="formula_all_out.svg" /></td><td>輸出節點的順序。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">從佇列中取出入分支度為 0 的節點。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">將相鄰節點的入分支度減 1，若被減至為 0 則插入佇列當中。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">初始化入分支度</b><br/><img src="scene_0.svg" alt="卡恩演算法 | 初始化入分支度" title="卡恩演算法 | 初始化入分支度"/></p></div><div><p><b class="scene_desc">排序</b><br/><img src="scene_1.svg" alt="卡恩演算法 | 排序" title="卡恩演算法 | 排序"/></p></div><div><p><b class="scene_desc">輸出排序結果</b><br/><img src="scene_2.svg" alt="卡恩演算法 | 輸出排序結果" title="卡恩演算法 | 輸出排序結果"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/bfs_queue.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

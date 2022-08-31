@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; ";
+document.getElementById('ptitle').innerHTML = "合併樹狀結構";
+document.getElementById('ptitle_en').innerHTML = "Union of Trees";
+document.getElementById('input_comment').innerHTML = "森林與樹的根節點<ul><li>森林內的節點數 N &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "以指定根節點將樹合併後的森林";
+document.getElementById('motivation').innerHTML = "森林中的樹可以被視為集合。合併樹，便能合併集合。由於合併時新產生的樹高度會影響之後的時間複雜度，因此必須要準備好適當的調整方式。";
+document.getElementById('description').innerHTML = "給定一座森林及森林內所有樹的根節點，請利用這些根節點將樹合併，重新調整成一座森林。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/tree_union/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/tree_union/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/union_by_rank.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "按秩合併";
+document.getElementById('atitle_en').innerHTML = "Union by Rank";
+document.getElementById('abstract').innerHTML = "在將樹的高度（秩）納入考量的情況下，合併 2 棵樹。";
+document.getElementById('explanation').innerHTML = "以根節點合併 2 棵樹時，會有 2 種情況需要考慮。當 2 棵樹的高度不同時，需將高度較低的樹合併到高度較高的樹中，並將前者樹根的父節點改寫成後者的樹根。由於是較低的樹被合併到較高的樹中，因此合併後的樹高不會改變。當 2 棵樹的高度相同時，一樣透過改寫樹根的父節點，將其中一棵樹合併到另一棵樹中。此時，合併後的樹高將會加 1。";
+document.getElementById('note').innerHTML = "合併處理只會對樹的根節點進行讀取與寫入，因此時間複雜度為 O(1)。";
+document.getElementById('application').innerHTML = "可應用在互不相交的集合（Disjoint Sets）的基本操作中。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/FRST.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">森林</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_rank.svg" /></td><td>秩（節點的高度）</td><td class="code">rank</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">合併</th></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>比較秩。</td><td class="code">rank[x] &gt; rank[y]:</td></tr><tr><td class="symbol"><img src="formula_update_rank.svg" /></td><td>將秩加 1。</td><td class="code">rank[y]++</td></tr><tr><td class="symbol"><img src="formula_update.svg" /></td><td>更新父節點。</td><td class="code">parent[y] &larr; ?</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">比較根節點的秩。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">更新父節點並進行合併。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">合併</b><br/><img src="scene_0.svg" alt="按秩合併 | 合併" title="按秩合併 | 合併"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/const.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

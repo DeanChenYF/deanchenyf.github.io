@@ -1,0 +1,23 @@
+<pre>
+Graph g &larr; 建立圖形
+List list &larr; 空串列
+
+# 對圖形 g 進行拓撲排序
+# 利用串列 list 記錄節點順序
+topologicalSort():
+    for v &larr; 0 to g.N-1:
+        color[v] &larr; WHITE
+    
+    for v &larr; 0 to g.N-1:
+        if color[v] = WHITE:
+            dfs(v)
+
+dfs(u):
+    color[u] &larr; GRAY
+    for v in g.adjLists[u]:
+        if color[v] = WHITE:
+            dfs(v)
+
+    color[u] &larr; BLACK
+    list.insert(u) # 將 u 新增至串列最前端
+</pre>

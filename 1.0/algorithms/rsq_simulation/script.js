@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "區間和";
+document.getElementById('ptitle_en').innerHTML = "Range Sum Query";
+document.getElementById('input_comment').innerHTML = "序列中的單一元素的加法計算<ul><li>整數的數量 N  &le; 100,000</li><li>提問的次數 Q &le; 100,000</li><li>-1,000 &le; x, $a_i$ &le; 1,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "查詢區間和";
+document.getElementById('motivation').innerHTML = "　整數序列區間的操作與查詢除了有各種不同的搭配組合之外，還有許多相關的應用問題。本節將從最基本的問題開始，說明如何回答區間和的查詢。";
+document.getElementById('description').innerHTML = "請針對整數序列 {a0, a1, ..., a N-1} 回應以下的操作與提問。<ul><li>將 $a_i$ 加上 x</li><li>回報區間 [a, b) 的總和</li></ul>";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/rsq/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/rsq/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/rsq_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "線段樹: RSQ";
+document.getElementById('atitle_en').innerHTML = "Segment Tree: RSQ";
+document.getElementById('abstract').innerHTML = "　本節會以線段樹的元素代表儲存區間和的變數。";
+document.getElementById('explanation').innerHTML = "　為了回應單一元素的加法、減法計算與區間和的查詢（RSQ：Range Sum Query），各節點內會儲存對應區間內的總和 sum，並會在單點更新之後重新計算。<br/>　1單點更新查詢的回應方式，是找出指定序列元素所對應的葉節點，再以其為起點，往根節點方向逐一進行 sum 的更新。假設目前要更新的是節點 k，則其 sum 應以左、右子節點值的和進行更新。<br/>　回應區間和的查詢時，則可利用內部節點的值（若可直接利用，就不需要確認其子孫節點）快速查找出指定區間的最小值。若 [l, r) 與 [a, b) 不相交，傳回一個不影響 RSQ 答案的值 0 即可。若 [l, r) 完全包含於 [a, b) ，則由於該區間的總和已經確定，因此直接傳回其值即可。除此之外的情況，則需分別針對其左、右子節點以遞迴方式查找答案，並傳回兩者總和。";
+document.getElementById('note').innerHTML = "　與前一節求 RMQ 的線段樹相同，單點更新與區間和查詢的時間複雜度皆為 O(log N)。";
+document.getElementById('application').innerHTML = "";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/CBT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">完整二元樹</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_sum.svg" /></td><td>區間和</td><td class="code">sum</td></tr><tr><td class="symbol"><img src="variable_res.svg" /></td><td>代表指定區間和的傳回值（ ※ 僅供顯示用，不需設為陣列）</td><td class="code">res</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">針對提問進行處理</th></tr><tr><td class="symbol"><img src="formula_update.svg" /></td><td>更新區間和。</td><td class="code">sum[k] &larr; ?</td></tr><tr><td class="symbol"><img src="formula_query.svg" /></td><td>決定指定區間的總和。</td><td class="code">res &larr; ?</td></tr><tr><td class="symbol"><img src="formula_updated.svg" /></td><td>已經因應查詢完成更新的區間</td><td class="code">k 的軌跡</td></tr><tr><td class="symbol"><img src="formula_outside.svg" /></td><td>搜尋區間與查詢區間不相交的區間</td><td class="code">if r &le; a or b &le; l:</td></tr><tr><td class="symbol"><img src="formula_contain.svg" /></td><td>搜尋區間被查詢區間完全包含的區間</td><td class="code">else if a &le; l and r &le; b:</td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>搜尋區間與查詢區間相交但不包含的區間</td><td class="code">else:</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">查詢 1：更新區間和。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">查詢 2：取得指定區間和。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">針對提問進行處理</b><br/><img src="scene_0.svg" alt="線段樹: RSQ | 針對提問進行處理" title="線段樹: RSQ | 針對提問進行處理"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/btree_postorder.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

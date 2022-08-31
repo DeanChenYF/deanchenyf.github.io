@@ -1,0 +1,29 @@
+<pre>
+class HashTable:
+    key #  雜湊表的大小
+
+    h1(k):
+        return k mod N    # key 除以 N 的餘數
+
+    h2(k):
+        return 1 + (k mod (N-1))
+
+    #  雜湊函數
+    hash(k, i):
+        return (h1(k) + i*h2(k)) mod N
+
+    # 插入鍵值 k
+    insert(k):
+        i &larr; 0 # 碰撞次數
+        while True:
+            pos &larr; hash(k, i)
+            if key[pos]為空白區域 :
+                key[pos] &larr; k
+                return pos # 傳回位置並結束 
+            else:
+                i++        # 若未找到空白區域則將碰撞次數加 1 再執行一次
+</pre>
+
+
+  
+

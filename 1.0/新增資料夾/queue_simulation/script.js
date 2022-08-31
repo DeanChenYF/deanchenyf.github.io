@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr; <br/>&larr;";
+document.getElementById('level').innerHTML = "&#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "先進先出 (FIFO)";
+document.getElementById('ptitle_en').innerHTML = "First-In-First-Out";
+document.getElementById('input_comment').innerHTML = "在佇列尾端新增資料";
+document.getElementById('output_comment').innerHTML = "根據 FIFO 原則從佇列前端取出資料";
+document.getElementById('motivation').innerHTML = "許多演算法都會優先處理最早抵達的資料，就像店家會按照排隊順序幫收銀機前的人潮結帳一樣，像這樣從前端開始取出資料進行處理，就叫做先進先出（FIFO，First-In-First-Out）。";
+document.getElementById('description').innerHTML = "請實作一個採取先進先出（FIFO）原則，優先取出最早插入資料的資料結構。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/fifo/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/fifo/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/queue_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "佇列";
+document.getElementById('atitle_en').innerHTML = "Queue";
+document.getElementById('abstract').innerHTML = "佇列（queue）就是一列資料，我們可以對佇列進行 enqueue 與 dequeue 的操作。enqueue 是將元素新增到佇列尾端，dequeue 則是從佇列前端取出並刪除元素，本節使用陣列來實作佇列。";
+document.getElementById('explanation').innerHTML = "本節使用一維陣列來實作佇列，並且用箭頭 head 和 tail 分別指向佇列的前端與尾端。enqueue 操作是先將給定的資料插入 tail 的位置，再將 tail 加 1。dequeue 操作則是先傳回 head 指向的元素，再將 head 加 1。以這種方式實作時，當 head 與 tail 相等，即表示佇列是空的。";
+document.getElementById('note').innerHTML = "enqueue 操作與 dequeue 操作的時間複雜度皆與元素數無關，因此為 O(1)。實作時與堆疊相同，都要避免對空的佇列（head 與 tail 相同時）進行 dequeue 操作，或在佇列已滿時（滿足 tail+1=head 時）進行 enqueue 操作。";
+document.getElementById('application').innerHTML = "其實日常生活中也可以看到許多佇列的例子，比如餐廳的排隊隊伍等。佇列在計算機系統與演算法中的應用也相當廣泛，當希望按照抵達順序處理任務等情形時，即可利用佇列來管理。而廣度優先搜尋（Breadth First Search，第 22 章）演算法，就是用佇列來實作的。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">一維陣列</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">資料</th></tr><tr><td class="symbol"><img src="variable_Q.svg" /></td><td>佇列的元素</td><td class="code">Q</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">插入與刪除資料</th></tr><tr><td class="symbol"><img src="formula_tail.svg" /></td><td>新增資料到佇列尾端。</td><td class="code">Q[tail++] &larr; x</td></tr><tr><td class="symbol"><img src="formula_head.svg" /></td><td>從佇列前端取出資料。</td><td class="code">return Q[head++]</td></tr><tr><td class="symbol"><img src="formula_p_head.svg" /></td><td>指向佇列前端。</td><td class="code">head</td></tr><tr><td class="symbol"><img src="formula_p_tail.svg" /></td><td>指向佇列尾端。</td><td class="code">tail</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_enqueue.svg" /><p class="caption">新增資料到佇列中。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_dequeue.svg" /><p class="caption">從佇列中取出資料。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">插入與刪除資料</b><br/><img src="scene_0.svg" alt="佇列 | 插入與刪除資料" title="佇列 | 插入與刪除資料"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/const.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

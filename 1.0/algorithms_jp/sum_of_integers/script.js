@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; ";
+document.getElementById('ptitle').innerHTML = "整数の和";
+document.getElementById('ptitle_en').innerHTML = "Sum of Integers";
+document.getElementById('input_comment').innerHTML = "N個の整数の列";
+document.getElementById('output_comment').innerHTML = "全ての整数の合計値";
+document.getElementById('motivation').innerHTML = "データの集合に対する最も基本的な要求は、全ての要素を参照（読み込み）して、目的の値を得ることです。例えば、合計を求めるためには全ての要素の情報が必要になります。";
+document.getElementById('description').innerHTML = "与えられたN個の整数の和を求めてください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sum_of_integers/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sum_of_integers/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/sum_of_integers.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "合計（サム）";
+document.getElementById('atitle_en').innerHTML = "Sum";
+document.getElementById('abstract').innerHTML = "ここでは、与えられた整数の列を１次元の配列変数で管理します。また、この配列変数とは別に、和を記録する変数を用意します。";
+document.getElementById('explanation').innerHTML = "本事典の可視化では、繰り返し処理を連続するステップ（フレームの列）で表します。繰り返し処理によって、配列Aの要素を先頭から順番に読み込んでいき、それらの値をsumに加算していきます。sumは0に初期化しておきます。";
+document.getElementById('note').innerHTML = "配列の要素の和を求める処理は、多くのプログラミング言語では便利な関数として準備されています。言語によっては、合計値を記録する変数の初期化が必要になるので注意しましょう。また、多くの要素を１つの変数に加算していくため、オーバーフローに注意する必要があります（その変数の型でどの範囲まで管理できるか、注意する必要があります）。";
+document.getElementById('application').innerHTML = "配列の要素の合計値を求める操作はとてもシンプルですが、一般的なアプリケーションにおいても使用頻度が高いアルゴリズムです。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/><img src="../../icons/structures/A0D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">一次元配列とシングルノード</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>入力の数列</td><td class="code">A</td></tr><tr><td class="symbol"><img src="variable_sum.svg" /></td><td>要素の合計値</td><td class="code">sum</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">入力と初期化</th></tr><tr><td class="symbol"><img src="formula_all.svg" /></td><td>整数の列を読み込みます。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_ini.svg" /></td><td>合計値を0に初期化します。</td><td class="code">sum &larr; 0</td></tr><tr><th class="scene_desc" colspan="3">加算</th></tr><tr><td class="symbol"><img src="formula_i.svg" /></td><td>i番目の要素を読み込みます。</td><td class="code">A[i]</td></tr><tr><td class="symbol"><img src="formula_t.svg" /></td><td>読み込んだ要素をsumに加算します。</td><td class="code">sum &larr; sum + A[i]</td></tr><tr><td class="symbol"><img src="formula_passed.svg" /></td><td>加算済みの範囲</td><td class="code">区間[0, i]</td></tr><tr><th class="scene_desc" colspan="3">出力</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>合計値を出力します。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">配列の要素をsumに加算していきます。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">入力と初期化</b><br/><img src="scene_0.svg" alt="合計（サム） | 入力と初期化" title="合計（サム） | 入力と初期化"/></p></div><div><p><b class="scene_desc">加算</b><br/><img src="scene_1.svg" alt="合計（サム） | 加算" title="合計（サム） | 加算"/></p></div><div><p><b class="scene_desc">出力</b><br/><img src="scene_2.svg" alt="合計（サム） | 出力" title="合計（サム） | 出力"/></p></div>';
+document.getElementById('complexity').innerHTML = '';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

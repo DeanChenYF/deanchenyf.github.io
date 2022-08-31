@@ -1,0 +1,18 @@
+.flash_g{
+    animation-name: Flash1;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
+    /* animation-iteration-count: 3; */
+    animation-iteration-count: 2; 
+}
+
+@keyframes Flash1{
+  50%{
+    opacity: 0;
+  }
+}
+
+.for_print{
+    display:none;
+}
+

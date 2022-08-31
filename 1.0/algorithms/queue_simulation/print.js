@@ -1,0 +1,5 @@
+window.onload = function () {
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">資料</th></tr><tr><td class="symbol"><img src="variable_Q.svg" /></td><td>佇列的元素</td><td class="code">Q</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">插入與刪除資料</th></tr><tr><td class="symbol"><img src="formula_tail.svg" /></td><td>新增資料到佇列尾端。</td><td class="code">Q[tail++] &larr; x</td></tr><tr><td class="symbol"><img src="formula_head.svg" /></td><td>從佇列前端取出資料。</td><td class="code">return Q[head++]</td></tr><tr><td class="symbol"><img src="formula_p_head.svg" /></td><td>指向佇列前端。</td><td class="code">head</td></tr><tr><td class="symbol"><img src="formula_p_tail.svg" /></td><td>指向佇列尾端。</td><td class="code">tail</td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">插入與刪除資料</b><br/><img src="scene_0.svg" alt="佇列 | 插入與刪除資料" title="佇列 | 插入與刪除資料"/></p></div>';
+};

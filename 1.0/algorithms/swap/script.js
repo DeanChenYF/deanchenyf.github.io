@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9734; ";
+document.getElementById('ptitle').innerHTML = "2個元素的互換";
+document.getElementById('ptitle_en').innerHTML = "Swapping Two Elements";
+document.getElementById('input_comment').innerHTML = "2 個有順序性的整數";
+document.getElementById('output_comment').innerHTML = "改變順序後的 2 個整數";
+document.getElementById('motivation').innerHTML = "演算法中最基本的操作就是對變數 (記憶體) 進行資料的讀取與寫入。許多演算法都有資料排序等操作，執行時需要「交換」資料，交換過程中需要進行資料的讀取與寫入。";
+document.getElementById('description').innerHTML = "請交換 2 個不同變數的值。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/swap/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/swap/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/swap.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "互換 (swap)";
+document.getElementById('atitle_en').innerHTML = "Swap";
+document.getElementById('abstract').innerHTML = "交換變數內容的處理稱為【互換】(swap)。在互換處理中，除了要進行交換的 2 個變數外，還需另外準備 1 個變數來暫存其中一個變數值。";
+document.getElementById('explanation').innerHTML = "在交換 2 個變數值時，首先將第 1 個變數 (a) 的值「暫時存放」到另外準備的第 3 個變數 (t) 中。這樣可避免第 1 個變數 (a) 的資料被覆蓋而消失。接下來，將第 2 個變數 (b) 的值寫入到第 1 個變數 (a) 裡 (此時 2 個變數 a、b 的值相同)，再將暫存變數 (t) 的值寫入到第 2 個變數 (b)，互換處理就完成了。";
+document.getElementById('note').innerHTML = "接下來的章節，我們會直接使用 swap(a,b) 函式來進行互換處理。swap 函式接收的是變數的位址，變數 a 與變數 b 的值在 swap(a,b) 函式執行後會互相交換。";
+document.getElementById('application').innerHTML = "互換處理通常是在管理資料序列的陣列元素上進行，一般會用在資料的排序，或是資料結構的操作等。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A0D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">3 個單節點</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">資料</th></tr><tr><td class="symbol"><img src="variable_a.svg" /></td><td>第 1 個變數</td><td class="code">a</td></tr><tr><td class="symbol"><img src="variable_b.svg" /></td><td>第 2 個變數</td><td class="code">b</td></tr><tr><td class="symbol"><img src="variable_t.svg" /></td><td>暫存用的變數</td><td class="code">t</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">輸入</th></tr><tr><td class="symbol"><img src="formula_ina.svg" /></td><td>輸入 2 個變數值</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">スワップ</th></tr><tr><td class="symbol"><img src="formula_ai.svg" /></td><td>在變數中寫入另一個變數值</td><td class="code">t &larr; a<br/>a &larr; b<br/>b &larr; t</td></tr><tr><th class="scene_desc" colspan="3">出力</th></tr><tr><td class="symbol"><img src="formula_outa.svg" /></td><td>輸出互換後的變數值</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">複製並寫入其他變數的值</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">輸入</b><br/><img src="scene_0.svg" alt="互換 | 輸入" title="互換 | 輸入"/></p></div><div><p><b class="scene_desc">互換</b><br/><img src="scene_1.svg" alt="互換 | 互換" title="互換 | 互換"/></p></div><div><p><b class="scene_desc">輸出</b><br/><img src="scene_2.svg" alt="互換 | 輸出" title="互換 | 輸出"/></p></div>';
+document.getElementById('complexity').innerHTML = '';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

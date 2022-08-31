@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "查詢區間最小值";
+document.getElementById('ptitle_en').innerHTML = "Range Minimum Query";
+document.getElementById('input_comment').innerHTML = "更新序列中的單一元素<ul><li>整數的數量 N  &le; 100,000</li><li>提問的次數 Q  &le; 100,000</li><li>0 &le; x, $a_i$ &le; 1,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "查詢區間的最小值";
+document.getElementById('motivation').innerHTML = "整數序列區間的操作與查詢除了有各種不同的搭配組合外，還有許多相關的應用問題。本節將從最基本的問題開始，說明如何查詢區間的最小值。";
+document.getElementById('description').innerHTML = "請針對整數序列 {a0, a1, ..., aN-1} 回應以下的操作與提問。<ul><li>將 $a_i$ 更新為 x</li><li>区間[a, b)回報區間 [a, b) 的最小值</li></ul>";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/rmq/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/rmq/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/rmq_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "線段樹: RMQ";
+document.getElementById('atitle_en').innerHTML = "Segment Tree: RMQ";
+document.getElementById('abstract').innerHTML = "　完整二元樹（Complete Binary Tree）可做為管理區間的線段樹。本節會以線段樹的元素代表儲存區間最小值的變數。";
+document.getElementById('explanation').innerHTML = "　線段樹為完整二元樹（Complete Binary Tree）。完整二元樹的葉節點可依序對應到序列中的各元素。樹中的內部節點則對應到包含其子孫節點的區間。例如，根節點代表的是序列整體的區間，而其左、右子節點則分別代表序列前、後半段的區間。線段樹會依照可回答的查詢種類，在各節點內儲存對應的值。為了回應單點更新與區間最小值的查詢（RMQ：Range Minimum Query），各節點內會儲存對應區間內的最小值 minv，並會在單點更新之後重新計算。<br/>　單點更新查詢的回應方式，是找出指定序列元素所對應的葉節點，再以其為起點，往根節點方向逐一進行 minv 的更新。假設目前要更新的是節點 k，則其 minv 應以其左、右子節點之間的較小值進行更新。<br/>　回應區間最小值的查詢時，則可利用內部節點的值（若可直接利用，就不需要確認其子孫節點）快速查找出指定區間的最小值。查找的方式是從根節點開始進行搜尋，以二元樹的後序追蹤順序走訪節點。假設要查詢的區間為 [a, b)，目前正在搜尋的區間為[l, r)，則搜尋答案的過程中可能會遇到以下 3 種情形：<ol><li>[l, r) 與 [a, b) 不相交</li><li> [l, r) 完全包含於 [a, b)</li><li>其他</li></ol>遇到第 1 種情況時，傳回一個不影響 RMQ 答案的值 INF（極大的值）即可。遇到第 2 種情況時，由於該區間的最小值已經確定，因此直接傳回其值即可。遇到第 3 種情況時，則需分別針對其左、右子節點以遞迴方式查找答案，並傳回較小值（若兩者的值相同，則傳回該值）。";
+document.getElementById('note').innerHTML = "　線段樹在進行更新時，是從葉節點往根節點的方向追蹤節點，因此時間複雜度為O(log N)。而查找區間最小值所需的計算次數也同樣取決於樹的高度，因此時間複雜度也是 O(log N)。";
+document.getElementById('application').innerHTML = "";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/CBT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">完整二元樹</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_minv.svg" /></td><td>區間最小值</td><td class="code">minv</td></tr><tr><td class="symbol"><img src="variable_res.svg" /></td><td>代表指定區間最小值的傳回值（ ※ 僅供顯示用，不需設為陣列）</td><td class="code">res</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">針對提問進行處理</th></tr><tr><td class="symbol"><img src="formula_update.svg" /></td><td>更新區間最小值。</td><td class="code">minv[k] &larr; ?</td></tr><tr><td class="symbol"><img src="formula_query.svg" /></td><td>決定指定區間的最小值。</td><td class="code">res &larr; ?</td></tr><tr><td class="symbol"><img src="formula_updated.svg" /></td><td>已經因應查詢完成更新的區間</td><td class="code">k 的軌跡</td></tr><tr><td class="symbol"><img src="formula_outside.svg" /></td><td>搜尋區間與查詢區間不相交的區間</td><td class="code">if r &le; a or b &le; l:</td></tr><tr><td class="symbol"><img src="formula_contain.svg" /></td><td>搜尋區間完全包含在查詢區間內的區間</td><td class="code">else if a &le; l and r &le; b:</td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>搜尋區間包含查詢區間和查詢區間以外的區間</td><td class="code">else:</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">查詢 1：更新區間最小值。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">查詢 2：取得指定區間的最小值。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">針對提問進行處理</b><br/><img src="scene_0.svg" alt="線段樹: RMQ | 針對提問進行處理" title="線段樹: RMQ | 針對提問進行處理"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/btree_postorder.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

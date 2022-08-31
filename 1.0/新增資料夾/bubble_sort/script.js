@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "整數序列的排序";
+document.getElementById('ptitle_en').innerHTML = "Sorting Integers";
+document.getElementById('input_comment').innerHTML = "整數序列<ul><li>$N &le; 100$</li><li> $a_i &le; 10^9$</li></ul>";
+document.getElementById('output_comment').innerHTML = "已排序的整數序列";
+document.getElementById('motivation').innerHTML = "資訊處理的基礎就是以資料之間共通的鍵值（key）為基準，將資料排序。本節將介紹元素數較少的整數序列排序方式。";
+document.getElementById('description').innerHTML = "請將整數序列{a_0, a_1, ..., a_N}按照升冪排列。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sort_small/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sort_small/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/bubble_sort.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "氣泡排序法";
+document.getElementById('atitle_en').innerHTML = "Bubble Sort";
+document.getElementById('abstract').innerHTML = "氣泡排序法將陣列分為前方已排序和後方待排序的 2 個部分，一開始已排序的元素數目為 0，未排序元素數目為 N。排序時，從待排序部分的尾端開始，比較相鄰元素的大小順序，若相反則互換（編註：意思是前一個數值若大於後一個數值則交換），並繼續比較下一組相鄰元素，直到當次比較中最小的元素抵達序列的最前端，並把此元素列入已排序部分。";
+document.getElementById('explanation').innerHTML = "此排序法是反覆從最尾端開始將相鄰的元素兩兩相比，如果前者大於後者，則將兩者互換排列，重複走訪要排序的序列，直到沒有需要再交換的元素為止 ( 序列已經由小到大排列 )，就完成排序。";
+document.getElementById('note').innerHTML = "氣泡排序法是因為資料在排序時會如氣泡般浮上水面而得此名。將第 1 小的元素移動到最前端，需要進行 N-1 次互換處理；將第 2 小的元素移動到已排序部分的最尾端，需要進行 N-2 次互換處理，以此類推，像這樣透過互換處理將最小值移動到已排序部分最尾端的處理，共需要進行 N-1 次。因此整體的比較、互換次數應為 (N-1)+(N-2) +...+1 = N(N-1)/2 次，所以氣泡排序法的時間複雜度為 O(N 2 )。";
+document.getElementById('application').innerHTML = "氣泡排序法是最單純的排序演算法之一。雖然因計算效率差而不實用，但當中反覆互換相鄰元素以移動資料的操作，在許多演算法中都會用到。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_s.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">１次元配列</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">資料</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整數序列</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">輸入</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>輸入整數序列。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">排序</th></tr><tr><td class="symbol"><img src="formula_comp.svg" /></td><td>比 較 相 鄰 元 素 的 大小。</td><td class="code">if A[j-1] &gt; A[j]:</td></tr><tr><td class="symbol"><img src="formula_swap.svg" /></td><td>將 2 個元素互換。</td><td class="code">swap(A[j-1], A[j])</td></tr><tr><td class="symbol"><img src="formula_sorted.svg" /></td><td>擴大已排序完成的範圍。</td><td class="code">区間[0, i)</td></tr><tr><td class="symbol"><img src="formula_unsorted.svg" /></td><td>由後往前擴大已和相鄰元素比較過的元素範圍。</td><td class="code">区間[j-1, N)</td></tr><tr><th class="scene_desc" colspan="3">輸出</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>輸出排序完成的整數序列。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">比較相鄰的 2 個元素。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">由於12比4大，所以互換位置。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">輸入</b><br/><img src="scene_0.svg" alt="氣泡排序法 | 輸入" title="氣泡排序法 | 輸入"/></p></div><div><p><b class="scene_desc">排序</b><br/><img src="scene_1.svg" alt="氣泡排序法 | 排序" title="氣泡排序法 | 排序"/></p></div><div><p><b class="scene_desc">輸出</b><br/><img src="scene_2.svg" alt="氣泡排序法 | 輸出" title="氣泡排序法 | 輸出"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/quad.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/swap.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9734; ";
+document.getElementById('ptitle').innerHTML = "３つの整数の整列";
+document.getElementById('ptitle_en').innerHTML = "Sorting Three Integers";
+document.getElementById('input_comment').innerHTML = "順序のある３つの整数";
+document.getElementById('output_comment').innerHTML = "小さい順に並べられた３つの整数";
+document.getElementById('motivation').innerHTML = "アルゴリズムは手順の組み合わせです。すでに獲得した部品を組み合わせて、問題を解決してみましょう。";
+document.getElementById('description').innerHTML = "３つの整数を小さい順に並べ替えてください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sorting_three_elements/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sorting_three_elements/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/sorting_three_elements.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "スワップによるソート";
+document.getElementById('atitle_en').innerHTML = "Sorting by Swaps";
+document.getElementById('abstract').innerHTML = "３つの整数の並べ替えは、条件分岐で６通りすべての順列を調べれば行うことができますが、条件分岐とスワップを組み合わせることで、より簡潔に解決することができます。";
+document.getElementById('explanation').innerHTML = "最初に、多くとも2回のスワップで、一番大きい値を3つ目の変数に移動することができます。すると後は、1つ目と2つ目の値を必要に応じてもう1回スワップすれば整列が完了します。多くとも３回のスワップ操作で、昇順に並べることができます。";
+document.getElementById('note').innerHTML = "３つの要素の順列は3! = 6通りあるので、この条件文（例えば a &le; b and b &le; c）とそれぞれの順列の出力を６通り書くこともできますが、スワップを用いた方法では２種類の条件分岐しか必要がなく、よりシンプルに実装することができます。";
+document.getElementById('application').innerHTML = "このアルゴリズムのアイデアを整数の列に対応して一般化すると、初等的整列アルゴリズムであるバブルソートになります。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A0D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">３つのシングルノード</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_a.svg" /></td><td>１つ目の整数</td><td class="code">a</td></tr><tr><td class="symbol"><img src="variable_b.svg" /></td><td>２つ目の整数</td><td class="code">b</td></tr><tr><td class="symbol"><img src="variable_c.svg" /></td><td>３つ目の整数</td><td class="code">c</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">入力</th></tr><tr><td class="symbol"><img src="formula_in1.svg" /></td><td>３つの整数を読み込みます。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">整列</th></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>大小関係を調べます。</td><td class="code">if a &gt; b:<br/>または<br/>if b &gt; c:</td></tr><tr><td class="symbol"><img src="formula_i1.svg" /></td><td>２つの要素を交換します。</td><td class="code">swap(a, b)<br/>または<br/>swap(b, c)</td></tr><tr><th class="scene_desc" colspan="3">出力</th></tr><tr><td class="symbol"><img src="formula_out1.svg" /></td><td>３つの整列済みの整数を出力します。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">隣り合う変数の値の大小関係を比較します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">順番が逆ならば交換します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">入力</b><br/><img src="scene_0.svg" alt="スワップによるソート | 入力" title="スワップによるソート | 入力"/></p></div><div><p><b class="scene_desc">整列</b><br/><img src="scene_1.svg" alt="スワップによるソート | 整列" title="スワップによるソート | 整列"/></p></div><div><p><b class="scene_desc">出力</b><br/><img src="scene_2.svg" alt="スワップによるソート | 出力" title="スワップによるソート | 出力"/></p></div>';
+document.getElementById('complexity').innerHTML = '';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/swap.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

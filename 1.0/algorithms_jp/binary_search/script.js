@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "整列された整数列に対する探索";
+document.getElementById('ptitle_en').innerHTML = "Search from Sorted Sequence";
+document.getElementById('input_comment').innerHTML = "整数の列と目的の値<ul><li>列の要素は昇順に並べられている</li><li>要素の数N&le;1,000,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "目的の値の位置";
+document.getElementById('motivation').innerHTML = "コンピュータで扱うデータは、ほとんどの場合、よく整理され管理されています。例えば、辞書はアルファベット順（辞書順）に整理されています。これは、データを探しやすくするためです。この特徴を使えば、探索アルゴリズムは劇的に高速化することができます。";
+document.getElementById('description').innerHTML = "要素が昇順に整列された配列の中から、指定された値を探してください。指定された値が存在しない場合はそのことを報告し、存在すればその位置を求めてください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/search_sorted/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/search_sorted/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/binary_search.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "二分探索";
+document.getElementById('atitle_en').innerHTML = "Binary Search";
+document.getElementById('abstract').innerHTML = "配列の要素と目的の値の大小関係を利用し、探索範囲を絞り込みながら、探索を進めます。";
+document.getElementById('explanation').innerHTML = "現在の探索範囲の中央の値と目的の値の大小関係をもとに、探索範囲を半分に絞り込んでいきます。探索範囲は配列の区間[left, right)で表します。まず、探索範囲の中央の位置midを(left + right)/2によって求めます。割り算の結果の小数点以下は切り捨てます。中央の値と目的の値が等しければ、目的の値が発見できたので、midを返して探索は終了します。目的の値が中央の値よりも大きければ、探索範囲は中央よりも後方に絞り込むことができるので、leftをmid+1に更新して探索を続けます。一方、目的の値が中央の値より小さければ、前方に絞り込むことができるので、rightをmidに更新して探索を続けます。";
+document.getElementById('note').innerHTML = "二分探索は、最悪の場合は探索範囲が１つになるまで、範囲を半分に絞り込んでいきます。従って、要素の数Nをそれが1になるまで2で何回割れるかが、最悪の計算ステップになります。よってオーダーはO(log N)になります。最悪の計算ステップの回数は log_2 N ですが、O表記法では、定数の2は無視することができます。<br/><br/>オーダーがO(log N) の二分探索は大変強力です。要素数が1,000,000であっても、20回程度の計算ステップで探索が終了します。これは線形探索の50,000倍高速です。";
+document.getElementById('application').innerHTML = "多くの検索アルゴリズムの基礎となるアルゴリズムです。要素が単調に増加する数列を扱う問題やアルゴリズムに適用できる可能性があります。また、二分探索は増加する数の列だけではなく、単調に増加する関数y = f(x)の解を求めるような問題にも応用することができるため、汎用性の高いアルゴリズムです。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/><img src="../../icons/structures/A0D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">一次元配列とシングルノード</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>探索対象となる整数の列。要素は昇順に整列されている必要がある。</td><td class="code">A</td></tr><tr><td class="symbol"><img src="variable_key.svg" /></td><td>目的の値</td><td class="code">key</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">入力</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>整数の列を読み込みます。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_ink.svg" /></td><td>目的の値を読み込みます。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">探索</th></tr><tr><td class="symbol"><img src="formula_comp.svg" /></td><td>探索範囲の中央の値とキーを比較します。</td><td class="code">if A[mid] = key:<br/>else if A[mid] < key:</td></tr><tr><td class="symbol"><img src="formula_left.svg" /></td><td>探索範囲の先頭を指します。</td><td class="code">left</td></tr><tr><td class="symbol"><img src="formula_right.svg" /></td><td>探索範囲の末尾を指します。</td><td class="code">right</td></tr><tr><td class="symbol"><img src="formula_mid.svg" /></td><td>目的の値の位置を指します。</td><td class="code">mid</td></tr><tr><td class="symbol"><img src="formula_candidate.svg" /></td><td>探索の範囲を縮小していきます。</td><td class="code">区間[left, right)</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_search.svg" /><p class="caption">真ん中の値の大小関係を調べ、前半または後半へ絞り込みます。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">入力</b><br/><img src="scene_0.svg" alt="二分探索 | 入力" title="二分探索 | 入力"/></p></div><div><p><b class="scene_desc">探索</b><br/><img src="scene_1.svg" alt="二分探索 | 探索" title="二分探索 | 探索"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/log.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

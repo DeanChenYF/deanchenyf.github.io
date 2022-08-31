@@ -1,0 +1,16 @@
+<pre>
+class PriorityQueue:
+    Heap H;  
+
+    insert(x):
+        H.insert(x);
+        H.upHeap(HheapSize-1)
+
+    extract():
+        tmp &larr; H.top()
+        H.key[0] &larr; H.key[H.heapSize-1]
+        H.heapSize &larr; H.heapSize - 1
+        H.downHeap(0)
+        return tmp
+  
+</pre>

@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "管理互不相交的集合";
+document.getElementById('ptitle_en').innerHTML = "Disjoint Set";
+document.getElementById('input_comment').innerHTML = "合併互不相交集合<ul><li>節點數 N &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "針對互不相交集合提問";
+document.getElementById('motivation').innerHTML = "若多個集合之間沒有共同的元素（1 個元素同時屬於多個集合），則稱這些集合為互不相交集合。有些演算法需要使用能夠合併互不相交集合，或在互不相交集合中找出包含指定元素的集合。";
+document.getElementById('description').innerHTML = "請實作一個可以管理互不相交集合的資料結構。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/union_find/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/union_find/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/disjoint_set_simulation.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "Union-Find Tree";
+document.getElementById('atitle_en').innerHTML = "";
+document.getElementById('abstract').innerHTML = "互不相交集合可以透過儲存各節點的父節點編號的森林來表現。Union-Find Tree 是一種藉由按秩合併與路徑壓縮來快速回答提問的資料結構。本節主要講解的是集合的合併處理。";
+document.getElementById('explanation').innerHTML = "在 Union-Find Tree 的森林中，每 1 棵樹就代表 1 個集合。集合的代表為該樹的根節點。各節點所屬的集合編號，則為該集合代表的編號。findSet(x) 雖然是用於尋找節點x 的代表操作，但同時也會壓縮從 x 到所屬樹根節點的路徑。若要合併 2 個節點 x 與 y各自所屬的集合（樹），可以先以 findSet(x) 與 findSet(y) 找出各自的代表，再按代表的秩進行合併。合併方式為改寫其中一個代表的父節點。<br><br>本節雖然偏重講解合併的方式，不過要回答指定的 2 個元素 x 與 y 是否同屬一個集合的問題也很簡單，只要檢查這 2 個元素的 findSet 的值（根節點）是否相等即可。";
+document.getElementById('note').innerHTML = "Union-Find Tree 在進行合併處理和回答問題時都會進行路徑壓縮，因此兩種操作的對象都是高度極低的樹。由於其時間複雜度的分析較為困難，因此本書將省略說明，但目前已知為 O(log N)，處理速度相當快。";
+document.getElementById('application').innerHTML = "針對互不相交集合所進行的合併處理與提問回答，雖然可藉由圖形的搜尋演算法來解決，但使用圖形時，搜尋是在邊的連通度被改變後才進行，因此並不適用於資料量較大的情況。本節所實作的 Union-Find Tree，節點數是固定的，後續無法再增加，但可以解決的問題很多，是一種相當強大的資料結構。比如說尋找圖形中最小生成樹的克魯斯克爾 （Kruskal）演算法（參見下一章的說明），就使用了 UnionFind Tree。。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/FRST.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">森林</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_rank.svg" /></td><td>秩</td><td class="code">rank</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">合併集合</th></tr><tr><td class="symbol"><img src="formula_comp.svg" /></td><td>尋找被指定的 2 個節點的根節點（代表）。</td><td class="code">root1 &larr; findSet(x)<br>root2 &larr; findSet(y)</td></tr><tr><td class="symbol"><img src="formula_target.svg" /></td><td>指向要合併的根節點（代表）。</td><td class="code">root1, root2</td></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>比較根節點的秩。</td><td class="code">if rank[x] > rank[y]:</td></tr><tr><td class="symbol"><img src="formula_decision.svg" /></td><td>指向被選中的新的根節點（代表）。</td><td class="code">xまたはy</td></tr><tr><td class="symbol"><img src="formula_update_rank.svg" /></td><td>將秩加 1。</td><td class="code">rank[y]++</td></tr><tr><td class="symbol"><img src="formula_p.svg" /></td><td>改寫父節點。</td><td class="code">parent[?] &larr; ?</td></tr><tr><td class="symbol"><img src="formula_path.svg" /></td><td>壓縮路徑。</td><td class="code">parent[x] &larr; findSet(parent[x]):</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">指定要合併的 2 個節點。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">壓縮路徑的同時，尋找各自的根節點（集合的代表）。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step3.svg" /><p class="caption">根據秩決定該更新何者的父節點，並以兩者的根節點進行合併。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">合併集合</b><br/><img src="scene_0.svg" alt="Union-Find Tree | 合併集合" title="Union-Find Tree | 合併集合"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/union_by_rank.svg" width="60"/><img src="../../icons/algorithms/path_compression.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

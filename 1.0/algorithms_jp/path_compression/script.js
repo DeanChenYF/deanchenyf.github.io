@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "木の高さの縮小";
+document.getElementById('ptitle_en').innerHTML = "Descreasing Height of Tree";
+document.getElementById('input_comment').innerHTML = "森の一部の木<ul><li>ノードの数N &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "高さを縮小した木";
+document.getElementById('motivation').innerHTML = "森に含まれる木を集合として扱う場合、その高さが計算量に影響するため、木の高さをなるべく低く保つ必要があります。";
+document.getElementById('description').innerHTML = "森の木を変型して、その高さを縮小してください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/path_compression/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/path_compression/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/path_compression.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "経路圧縮";
+document.getElementById('atitle_en').innerHTML = "Path Compression";
+document.getElementById('abstract').innerHTML = "深さ優先探索のバックトラックの原理で、始点ノードから根までの経路上にある全てのノードの親を、根に更新していきます。";
+document.getElementById('explanation').innerHTML = "始点から根に至る経路上の全てのノードについて、それらの親が根を指すように変更することにより経路圧縮を行います。始点から深さ優先探索で根までの経路上にあるノードの親を根に更新します。これはノードxを訪問する関数の戻り値がxの親であり、xの親をたどっていく深さ優先探索で実現します。";
+document.getElementById('note').innerHTML = "この経路圧縮のオーダーはO(N)ですが、この工夫によって、高さの低い木が生成され、木に対する操作が極少ない計算量で行われるようになります。";
+document.getElementById('application').innerHTML = "互いに素な集合の基本操作に応用されます。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/FRST.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">森</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">経路圧縮</th></tr><tr><td class="symbol"><img src="formula_parse.svg" /></td><td>根までの経路を探索します。</td><td class="code">compress(x)</td></tr><tr><td class="symbol"><img src="formula_update.svg" /></td><td>親を更新します。</td><td class="code">parent[x] &larr; compress(parent[x])</td></tr><tr><td class="symbol"><img src="formula_path.svg" /></td><td>圧縮する経路</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">経路を探索します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">経路を圧縮します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">経路圧縮</b><br/><img src="scene_0.svg" alt="経路圧縮 | 経路圧縮" title="経路圧縮 | 経路圧縮"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/dfs_stack.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

@@ -1,0 +1,56 @@
+<pre>
+class PriorityQueue:
+    A          # 儲存佇列元素的陣列
+    heapSize   # 實際上有儲存資料的堆積大小
+
+    insert(x):
+        A[heapSize++] &larr; x  # 插入元素
+        upHeap(heapSize-1)      # 進行Up Heap
+
+    top():
+        return A[0]
+
+    extract():
+        val &larr; A[0]
+        A[0] &larr; A[heapSize-1]
+        heapSize--
+        downHeap(0)     # 進行 Down Heap
+        return val
+
+    upHeap(i): # 以插入方式實作
+        val &larr; A[i]
+
+        while True:
+            if  i &le; 0: break
+            if A[parent(i)] &ge; val: break
+            A[i] &larr; A[parent(i)]
+            i &larr; parent(i)
+        
+        A[i] &larr; val
+
+    downHeap(i): # 以插入方式實作
+        largest &larr; i
+        val = A[i]
+
+        while True:
+            if left(i) < heapSize and right(i) < heapSize:
+                if A[left(i)] > A[right(i)] ):
+                    largest &larr; left(i)
+                else:
+                    largest &larr; right(i)
+            else if left(i) < heapSize:
+                largest &larr; left(i)
+            else if right(i) < heapSize:
+                largest &larr; right(i)
+            else:
+                largest &larr; NIL
+
+            if largest = NIL : break
+            if A[largest] &le; val: break
+      
+            A[i] &larr; A[largest]
+            i &larr; largest
+
+        A[i] &larr; val
+</pre>
+

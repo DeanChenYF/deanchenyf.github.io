@@ -1,0 +1,172 @@
+var cur = 0;
+var id;
+var view = "anim";
+var anim_mode = "run";
+var ncolumns = 2;
+var frameWidth = 280; 
+var frameHeight = 200;
+
+window.onload = function () {
+    var pro = "";
+    for ( var i = 0; i < svg.length; i++ ){
+	pro += "<td>&#9679;</td>";
+    }
+    document.getElementById("progress").innerHTML = pro;
+
+    changeView("anim");
+    
+    changeMode("run");
+    run();
+
+    document.getElementById("play").onmousedown = function() {
+	if ( anim_mode == "run" ){
+	    changeMode("step");
+	    stop();
+	} else if ( anim_mode == "step" ){
+	    changeMode("run");
+	    run();
+	}
+    };
+    document.getElementById("next").onmousedown = function() {
+	changeMode("step");
+	clearInterval(id);
+	forward();
+    };
+    document.getElementById("prev").onmousedown = function() {
+	changeMode("step");
+	clearInterval(id);
+	backward();
+    };
+
+    document.getElementById("tile_view").onclick = function() {	changeView("tile"); }
+    document.getElementById("anim_view").onclick = function() {	changeView("anim"); }
+
+    document.getElementById("tile_1").onmousedown = function() { setTileView(1); }
+    document.getElementById("tile_2").onmousedown = function() { setTileView(2); }
+    document.getElementById("tile_3").onmousedown = function() { setTileView(3); }
+
+
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(svg[0], "text/xml");
+    var boxes = doc.querySelector('svg').getAttribute('viewBox').split(/\s+|, /);
+    frameWidth = boxes[2];
+    frameHeight = boxes[3];
+    changeSize();
+};
+
+window.onresize = function () {
+    changeSize()
+};
+
+var changeSize = function(){
+    var h = window.innerHeight - 216;
+    var w = h*frameWidth/frameHeight;
+    if ( w > window.innerWidth ) w = window.innerWidth - 8;
+    document.getElementById('content').style.width = w;
+}
+
+var stop = function(){
+    clearInterval(id);
+}
+
+var run = function(){
+    if ( cur >= svg.length-1 ) cur = 0;
+    cur--;
+    forward();
+    clearInterval(id);
+    id = setInterval(function(){ forward(); }, 2500);
+}
+
+var forward = function(){
+    if ( cur+1 >= svg.length ) {
+        clearInterval(id);
+	changeMode("step")
+    } else {
+	cur++;
+        document.getElementById('content').innerHTML = svg[cur];
+    }
+    snap();
+}
+
+var reset = function(){
+    cur = 0;
+    document.getElementById('content').innerHTML = svg[cur];
+    snap();
+}
+
+var backward = function(){
+    if ( cur-1 < 0 ) return;
+    cur--;
+    document.getElementById('content').innerHTML = svg[cur];
+    snap();
+}
+
+var changeMode = function(m){
+    anim_mode = m;
+    if ( anim_mode == "step" ){
+	document.getElementById('play').classList.remove("icon_stop");
+	document.getElementById('play').classList.add("icon_play");
+    } else if ( anim_mode == "run" ){
+	document.getElementById('play').classList.remove("icon_play");
+	document.getElementById('play').classList.add("icon_stop");
+    }
+}
+
+var snap = function(){
+    for ( var i = 0; i < svg.length; i++ ){
+	document.getElementById('progress').children[i].style.color = "#e0e0e0";
+    }
+    document.getElementById('progress').children[cur].style.color="#88aaff";
+}
+
+var changeView = function(v){
+    view = v;
+    if ( view == "anim" ){
+	document.getElementById('anim_container').style.display = "block";
+	document.getElementById('tile_container').style.display = "none";
+	document.getElementById('anim_view').style.display = "none";
+	document.getElementById('tile_view').style.display = "block";
+	changeSize()
+    } else if ( view == "tile" ){
+	document.getElementById('anim_container').style.display = "none";
+	document.getElementById('tile_container').style.display = "block";
+	document.getElementById('anim_view').style.display = "block";
+	document.getElementById('tile_view').style.display = "none";
+	setTileView(1);
+    }
+}
+
+var setTileView = function(nc){
+    ncolumns = nc;
+
+    var tile = "<table class=\"tiletable\">";
+    if ( ncolumns == 1 ){
+	for ( var i = 0; i < svg.length; i++ ){
+	    tile += "<tr><td class=\"tile_frame\">" + svg[i] + "</td></tr>";
+	    if ( i + 1 == svg.length ) continue;
+	    tile += "<tr><td style=\"text-align:center\"><b class=\"icon_next_vertical\"></b></td></tr>";
+	}
+    } else {
+	for ( var i = 0; i < svg.length; i++ ){
+	    if ( i % ncolumns == 0 ) tile += '<tr>';
+	    tile += "<td class=\"tile_frame\">" + svg[i] + "</td>";
+	    if ( i + 1 == svg.length ){
+		tile += "<td></td>";
+	    } else {
+		tile += "<td class=\"tile_next\"><b class=\"icon_next\"></b></td>";
+	    }
+	    if ( (i+1) % ncolumns == 0 ) tile += '</tr>';
+	}
+	if ( svg.length%ncolumns > 0 ){
+	    for ( var i = 0; i < (ncolumns - svg.length%ncolumns); i++ ){
+		tile += "<td></td><td></td>";
+	    }
+	    tile += "</tr>";
+	}
+    }
+
+    document.getElementById('tileview').innerHTML = tile;
+
+}
+
+    

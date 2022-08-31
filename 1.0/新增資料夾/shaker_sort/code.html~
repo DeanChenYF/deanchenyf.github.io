@@ -1,0 +1,7 @@
+<pre>
+bubbleSort(A, N):
+    for i &larr; 0 to N-2:
+        for j &larr; N-1 downto i+1   
+            if A[j-1] > A[j]:
+                swap(A[j-1], A[j])
+</pre>

@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "降低樹的高度";
+document.getElementById('ptitle_en').innerHTML = "Descreasing Height of Tree";
+document.getElementById('input_comment').innerHTML = "森林中一部分的樹<ul><li>節點數 N  &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "降低高度後的樹";
+document.getElementById('motivation').innerHTML = "將森林中的樹視為集合處理時，樹的高度會影響時間複雜度，因此應盡量壓低。";
+document.getElementById('description').innerHTML = "請改變森林中樹的形狀，以降低其高度。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/path_compression/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/path_compression/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/path_compression.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "路徑壓縮";
+document.getElementById('atitle_en').innerHTML = "Path Compression";
+document.getElementById('abstract').innerHTML = "利用深度優先搜尋的回溯原理，將起點節點到根節點路徑上，所有節點的父節點都改為根節點。";
+document.getElementById('explanation').innerHTML = "路徑壓縮的做法是找出從起點到根節點的路徑，並將路徑上所有節點的父節點都變更成根節點。過程中在沿著路徑更新各節點的父節點時，使用的是深度優先搜尋。由於深度優先搜尋在拜訪節點 x 時，函式的傳回值會是 x 的父節點，因此可藉此特性追蹤 x 的父節點。";
+document.getElementById('note').innerHTML = "雖然路徑壓縮的時間複雜度為 O(N)，但是經過這番改造後，我們可以獲得高度較低的樹狀結構，之後在對這棵新樹進行各項操作時，時間複雜度也就能降到非常低。";
+document.getElementById('application').innerHTML = "可應用在互不相交集合的基本操作中。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/FRST.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">森林</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">路徑壓縮</th></tr><tr><td class="symbol"><img src="formula_parse.svg" /></td><td>搜尋從起點到根節點的路徑。</td><td class="code">compress(x)</td></tr><tr><td class="symbol"><img src="formula_update.svg" /></td><td>更新父節點。</td><td class="code">parent[x] &larr; compress(parent[x])</td></tr><tr><td class="symbol"><img src="formula_path.svg" /></td><td>要壓縮的路徑</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">搜尋路徑。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">壓縮路徑。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">路徑壓縮</b><br/><img src="scene_0.svg" alt="路徑壓縮 | 路徑壓縮" title="路徑壓縮 | 路徑壓縮"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/dfs_stack.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

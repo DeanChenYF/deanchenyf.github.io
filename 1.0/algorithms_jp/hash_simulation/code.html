@@ -1,0 +1,29 @@
+<pre>
+class HashTable:
+    key # サイズNの表
+
+    h1(k):
+        return k mod N    # key をNで割った余り
+
+    h2(k):
+        return 1 + (k mod (N-1))
+
+    # ハッシュ関数
+    hash(k, i):
+        return (h1(k) + i*h2(k)) mod N
+
+    # キーkを挿入する
+    insert(k):
+        i &larr; 0 # 衝突回数
+        while True:
+            pos &larr; hash(k, i)
+            if key[pos]が空いている:
+                key[pos] &larr; k
+                return pos # 場所を返して終了 
+            else:
+                i++        # 空いていない場合は衝突回数を加算して再試行
+</pre>
+
+
+  
+

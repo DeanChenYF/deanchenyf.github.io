@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-28377245-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-28377245-2');
+</script>
+<!--<meta http-equiv="X-UA-Compatible" content="chrome=1">-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>堆積排序法 | 會動的演算法</title>
+<link rel="stylesheet" href="print.css" type="text/css" media="all" />
+<!--<script language="JavaScript" type="text/javascript" src="print.js"></script>-->
+</head>
+<body>
+  <div class="wrapper">
+    <h3>堆積排序法 | <a href="https://yutaka-watanobe.github.io/star-aida/books/">會動的演算法</a></h3>
+
+    <div id="content" class="content">
+      <h4>シンボル</h4>
+      
+      <table class="items" cellspacing="0">
+        <tbody id="variable">
+	  <tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整數序列</td><td class="code">A</td></tr>
+	</tbody>
+      </table>
+      <br/>
+      <table class="items" cellspacing="0">
+        <tbody id="formula">
+	  <tr><th class="scene_desc" colspan="3">輸入</th></tr><tr><td class="symbol"><img src="formula_input.svg" /></td><td>輸入整數序列。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">建立堆積</th></tr><tr><td class="symbol"><img src="formula_downRotation.svg" /></td><td>對子樹進行下濾。</td><td class="code">downHeap(A, i)</td></tr><tr><th class="scene_desc" colspan="3">互換與下濾</th></tr><tr><td class="symbol"><img src="formula_downRotation.svg" /></td><td>由根節點開始進行下濾。</td><td class="code">downHeap(A, 0)</td></tr><tr><td class="symbol"><img src="formula_exchange.svg" /></td><td>將根節點與堆積尾端的值互換。</td><td class="code">swap(A[0], A[heapSize-1])</td></tr><tr><td class="symbol"><img src="formula_heap.svg" /></td><td>縮小滿足堆積性質，但尚未排序的範圍。</td><td class="code">區間[0, heapSize)</td></tr><tr><th class="scene_desc" colspan="3">輸出</th></tr><tr><td class="symbol"><img src="formula_output.svg" /></td><td>輸出排序完成的整數序列。</td><td class="code"></td></tr>
+	</tbody>
+      </table>
+
+      <br/>
+      <h4>アニメーション</h4>
+      <div id="scene" class="scene">
+	<div><p><b class="scene_desc">輸入</b><br/><img src="scene_0.svg" alt="ヒープソート | 入力" title="堆積排序法 | 輸入"/></p></div><div><p><b class="scene_desc">建立堆積</b><br/><img src="scene_1.svg" alt="ヒープソート | ヒープ構築" title="堆積排序法 | 建立堆積"/></p></div><div><p><b class="scene_desc">互換與下濾</b><br/><img src="scene_2.svg" alt="ヒープソート | スワップとダウンヒープ" title="堆積排序法 | 互換與下濾"/></p></div><div><p><b class="scene_desc">輸出</b><br/><img src="scene_3.svg" alt="ヒープソート | 出力" title="堆積排序法 | 輸出"/></p></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

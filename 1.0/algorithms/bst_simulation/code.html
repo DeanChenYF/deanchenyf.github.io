@@ -1,0 +1,44 @@
+<pre>
+# 動態二元樹的節點
+class Node:
+    Node *parent
+    Node *left
+    Node *right
+    key
+
+# 動態二元樹
+class BinaryTree: 
+    Node *root
+
+    insert(data):
+        Node *x &larr; root   # 從根節點開始進行搜尋
+        Node *y &larr; NULL   # x 的父節點
+
+        # 決定新節點的父節點
+        while x &ne; NULL:
+            y &larr; x # 設定父節點
+            if data &lt; x.key:
+                x &larr; x.left    # 往左子節點移動
+            else:
+                x &larr; x.right   # 往右子節點移動
+
+        # 生成節點並設定指標
+        Node *z &larr; 生成節點
+        z.key &larr; data
+        z.left &larr; NULL
+        z.right &larr; NULL
+        z.parent &larr; y
+
+        if y = NULL: # 若 tree 為空樹
+            root &larr; z
+        else if z.key &lt; y.key:
+            y.left &larr; z  # 使 z 成為 y 的左子節點
+        else:
+            y.right &larr; z # 使 z 成為 y 的右子節點
+
+    inorder(Node *u):
+        if u = NULL: return
+        inorder(u.left)
+        輸出 u.key
+        inorder(u.right)
+</pre>

@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; ";
+document.getElementById('ptitle').innerHTML = "圖形的連通度";
+document.getElementById('ptitle_en').innerHTML = "Connectivity of Graph";
+document.getElementById('input_comment').innerHTML = "無向圖<ul><li>節點數 N &le; 1,000</li><li>邊數 M &le; 1,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "各節點的拜訪狀態";
+document.getElementById('motivation').innerHTML = "圖形中最基本的操作就是從給定起點開始追蹤所有可能的邊，以調查節點的連通度。";
+document.getElementById('description').innerHTML = "請由適當的起點出發，系統性地走訪圖形中的所有節點。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/connectivity/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/connectivity/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/dfs_stack.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "深度優先搜尋";
+document.getElementById('atitle_en').innerHTML = "Depth First Search";
+document.getElementById('abstract').innerHTML = "深度優先搜尋是一種系統性走訪圖形中各節點的演算法，過程中會以堆疊管理未拜訪完成的節點。";
+document.getElementById('explanation').innerHTML = "　深度優先搜尋會從起點節點開始進行走訪，若起點有邊連結到尚未拜訪過的節點，則前往拜訪，並以該節點為新的起點，重複以上搜尋步驟。如此持續下去，最後一定會遇到無法連接到任何未拜訪節點的節點。遇到此情況時，就退回到前一個節點，重新回到以該節點為起點，走訪其相鄰節點的處理中，此做法稱為回溯法 （backtracking）。<br/><br/>　為了因應此做法，我們必須記住目前已拜訪過，但也許還有邊沒有走訪完的節點清單。這項處理可以透過堆疊實現，也就是在走訪相鄰節點之前，先將節點編號儲存於堆疊中，之後只要從堆疊中取出節點編號，即可回到以該節點為起點的搜尋步驟中。";
+document.getElementById('note').innerHTML = "　將資料插入堆疊中的 push 操作以及將資料取出的 pop 操作，時間複雜度皆為O(1)。利用堆疊執行的廣度優先搜尋，在從各節點出發前往相鄰節點的過程中，會走訪所有的邊。所有的節點都會先被走訪並插入堆疊，再被取出並標示為已拜訪完成。若圖形是以相鄰串列建立而成，則時間複雜度與廣度優先搜尋相同，皆為 O(N+M)。若圖形是以相鄰矩陣建立而成，則走訪各節點的相鄰節點的時間複雜度為 O(N)，整體的時間複雜度為 O(N<sup>2</sup>)。<br/><br/>　深度優先搜尋中走訪節點的處理，可以透過遞迴函式來實作。事實上，此做法與將走訪到的節點放入堆疊中的做法是同樣的意思。我們會在下一節中以這種方法實作。";
+document.getElementById('application').innerHTML = "　深度優先搜尋可以從圖形中節點的連通度檢測出圖形的各種性質。比如說連通元件與迴路，就都能以深度優先搜尋快速地檢測出來。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/GR.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_g.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">無向圖</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_color.svg" /></td><td>各節點的拜訪狀態</td><td class="code">color</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">決定起點</th></tr><tr><td class="symbol"><img src="formula_push.svg" /></td><td>將起點放入堆疊中。</td><td class="code">st.push(s)</td></tr><tr><th class="scene_desc" colspan="3">搜尋</th></tr><tr><td class="symbol"><img src="formula_vi.svg" /></td><td>走訪節點。</td><td class="code">color[v] &larr; GRAY</td></tr><tr><td class="symbol"><img src="formula_push.svg" /></td><td>將節點放入堆疊中。</td><td class="code">st.push(v)</td></tr><tr><td class="symbol"><img src="formula_ci.svg" /></td><td>將節點標示為已拜訪完成。</td><td class="code">color[u] &larr; BLACK</td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>擴大已走訪過的節點群組。</td><td class="code">color 為 GRAY的節點</td></tr><tr><td class="symbol"><img src="formula_finished.svg" /></td><td>擴大已拜訪完成的節點群組。</td><td class="code">color 為 BLACK的節點</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_visit.svg" /><p class="caption">走訪相鄰的節點。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_back.svg" /><p class="caption">將所有相鄰的節點標示為已拜訪完成。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">決定起點</b><br/><img src="scene_0.svg" alt="深度優先搜尋 | 決定起點" title="深度優先搜尋 | 決定起點"/></p></div><div><p><b class="scene_desc">搜尋</b><br/><img src="scene_1.svg" alt="深度優先搜尋 | 搜尋" title="深度優先搜尋 | 搜尋"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/quad.svg" /><img src="../../../icons/complexity/linear.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/stack_simulation.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

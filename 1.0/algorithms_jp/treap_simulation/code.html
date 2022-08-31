@@ -1,0 +1,63 @@
+<pre>
+class Node:
+    Node *left
+    Node *right
+    key
+    pri
+
+class Treap:
+    Node *root
+
+    # 再帰的に挿入位置を探索
+    insert(Node *t, key, pri):
+        # 葉に達したらノードを生成して返す
+        if t = NULL: 
+            return Node(key, pri) # ポインタを返す
+
+        # 重複するキーを無視する
+        if key = t.key: 
+            return t
+
+        if key &lt; t.key: # 左の子に移動
+            # 返ってきたノードを左の子にする
+            t.left &larr; insert(t.left, key, pri) 
+            # その子の優先度が高ければ、右回転で持ち上げる
+            if t.pri &lt; t.left.pri:
+                t &larr; rightRotate(t)
+        else: # 右の子に移動
+            # 返ってきたノードを右の子にする
+            t.right &larr; insert(t.right, key, pri)
+            # その子の優先度が高ければ、左回転で持ち上げる
+            if t.pri &lt; t.right.pri:
+                t &larr; leftRotate(t)
+
+        return t
+
+    # 対象を再帰的に探索
+    erase(Node *t, key):
+        if t = NULL:
+            return NULL
+
+        if key = t.key # t が削除対象
+            if t.left = NULL and t.right = NULL: # tが葉:
+                return NULL
+            else if t.left = NULL:               # tがただ１つの右の子を持つ
+                t &larr; leftRotate(t)
+            else if t.right = NULL:              # tがただ１つの左の子を持つ
+                t &larr; rightRotate(t)
+            else:                                # tが２つの子をもつ
+                # 優先度が高い子を持ち上げる
+                if t.left.pri &gt; t.right.pri
+                    t &larr; rightRotate(t)
+                else:
+                    t &larr; leftRotate(t)
+            return erase(t, key)
+
+         # 対象を再帰的に探索
+         if key &lt; t.key:
+             t.left &larr; erase(t.left, key)
+         else:
+             t.right &larr; erase(t.right, key)
+
+         return t
+</pre>

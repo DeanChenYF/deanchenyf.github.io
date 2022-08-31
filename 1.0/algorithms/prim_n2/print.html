@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-28377245-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-28377245-2');
+</script>
+<!--<meta http-equiv="X-UA-Compatible" content="chrome=1">-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>普林演算法 | 會動的演算法</title>
+<link rel="stylesheet" href="print.css" type="text/css" media="all" />
+<!--<script language="JavaScript" type="text/javascript" src="print.js"></script>-->
+</head>
+<body>
+  <div class="wrapper">
+    <h3>普林演算法 | <a href="https://yutaka-watanobe.github.io/star-aida/books/">會動的演算法</a></h3>
+
+    <div id="content" class="content">
+      <h4>シンボル</h4>
+      
+      <table class="items" cellspacing="0">
+        <tbody id="variable">
+	  <tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_dist.svg" /></td><td>連到 T 內節點的最小邊上的權重</td><td class="code">dist</td></tr><tr><td class="symbol"><img src="variable_parent.svg" /></td><td>最小生成樹中的父節點</td><td class="code">parent</td></tr><tr><td class="symbol"><img src="variable_weight.svg" /></td><td>節點間的距離</td><td class="code">weight</td></tr>
+	</tbody>
+      </table>
+      <br/>
+      <table class="items" cellspacing="0">
+        <tbody id="formula">
+	  <tr><th class="scene_desc" colspan="3">決定起點與初始化</th></tr><tr><td class="symbol"><img src="formula_source.svg" /></td><td>選擇適當起點並將其 dist 初始化為 0。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_others.svg" /></td><td>將其餘節點的 dist 初始化為極大的值。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">建立最小生成樹</th></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>尋找 dist 最小的節點。</td><td class="code"># find minimum</td></tr><tr><td class="symbol"><img src="formula_u.svg" /></td><td>指向擁有最小權重的節點。</td><td class="code">u</td></tr><tr><td class="symbol"><img src="formula_v.svg" /></td><td>更新節點的 dist 與 parent。</td><td class="code">dist[v] &larr; weight[u][v]<br>parent[v] &larr; u</td></tr><tr><td class="symbol"><img src="formula_edges.svg" /></td><td>標示最小生成樹暫定要使用的邊。</td><td class="code">(v, parent[v])</td></tr><tr><td class="symbol"><img src="formula_finished.svg" /></td><td>擴大最小生成樹。</td><td class="code">將 u 新增至 T 內</td></tr><tr><th class="scene_desc" colspan="3">輸出最小生成樹</th></tr><tr><td class="symbol"><img src="formula_all.svg" /></td><td>利用父節點的資訊建立最小生成樹。</td><td class="code"></td></tr>
+	</tbody>
+      </table>
+
+      <br/>
+      <h4>アニメーション</h4>
+      <div id="scene" class="scene">
+	<div><p><b class="scene_desc">決定起點與初始化</b><br/><img src="scene_0.svg" alt="普林演算法 | 決定起點與初始化" title="普林演算法 | 決定起點與初始化"/></p></div><div><p><b class="scene_desc">建立最小生成樹</b><br/><img src="scene_1.svg" alt="普林演算法 | 建立最小生成樹" title="普林演算法 | 建立最小生成樹"/></p></div><div><p><b class="scene_desc">輸出最小生成樹</b><br/><img src="scene_2.svg" alt="普林演算法 | 輸出最小生成樹" title="普林演算法 | 輸出最小生成樹"/></p></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

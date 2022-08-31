@@ -1,0 +1,32 @@
+<pre>
+class Heap:
+    key
+
+    increase(i, x):
+        key[i] &larr; x
+  
+    upHeap(i)
+        while True:
+            if  i &le; 0:  break
+            if  key[parent(i)] &ge; key[i]: break
+            swap(key[i], key[parent(i)])
+            i &larr; parent(i)
+
+    parent(i):
+        return (i-1)/2
+
+    left(i):
+        return 2*i+1
+
+    right(i):
+        return 2*i+2
+
+
+# サイズ12のヒープを構築
+Heap H(12) 
+#ヒープの初期化
+H &larr; 初期データ
+
+H.increase(9, 25)
+H.upHeap(9)
+</pre>

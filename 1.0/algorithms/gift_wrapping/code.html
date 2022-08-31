@@ -1,0 +1,13 @@
+<pre>
+# 二維點群 PointGroup pg
+giftWrapping(pg):
+    head &larr; pg.points 中最左邊的點的編號
+    f &larr; head # 記錄終點
+    
+    while True:
+        t &larr; pg.points 中以 head 為起點逆時針旋轉時最晚碰到的點的編號
+        將點 t 新增到凸包中
+        head &larr; t;
+        if head = f:
+            break #　回到起點即結束
+</pre>

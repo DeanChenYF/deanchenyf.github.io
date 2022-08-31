@@ -1,0 +1,11 @@
+<pre>
+# ノードxから経路圧縮
+compress(x):
+    if parent[x] &ne; x: # x が根ではない
+        parent[x] &larr; compress(parent[x])
+
+    return parent[x]
+
+# 圧縮のシミュレーション
+compress(5)
+</pre>

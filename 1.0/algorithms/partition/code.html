@@ -1,0 +1,17 @@
+<pre>
+#以 A[r] 的值為基準分割陣列 A的區間 [l, r]
+partition(A, l, r):
+    p &larr; l
+    i &larr; p-1
+    for j &larr; p to r-1:
+        if A[j] < A[r]:  #與基準值做比較
+            i &larr; i+1  
+            swap(A[i], A[j]) #與較大群組最前端的元素互換
+
+    i &larr; i + 1
+    swap(A[i], A[r])  #將基準值A[r]移到較大群組的最前端    
+    return i
+
+# 使用此函式對陣列A進行分割的範例
+q &larr; partition(A, 0, N-1)
+</pre>

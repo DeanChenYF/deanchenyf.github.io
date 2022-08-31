@@ -1,0 +1,15 @@
+<pre>
+BinaryTree t &larr; 二分木を生成
+time &larr; 1  
+
+# 二分木tのノードu を訪問する関数
+postorder(u):
+    if u = NIL:
+        return
+    postorder(t.nodes[u].left)
+    postorder(t.nodes[u].right)
+    L[u] &larr; time++
+
+# 二分木の根を起点として訪問開始
+postorder(t.root)
+</pre>

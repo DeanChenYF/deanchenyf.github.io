@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "整数列の整列";
+document.getElementById('ptitle_en').innerHTML = "Sorting Integers";
+document.getElementById('input_comment').innerHTML = "整数の列$a_0, a_1, ..., a_{N-1}$ <ul><li>$N &le; 100,000$</li><li>$a_i &le; 1,000,000,000$</li></ul>";
+document.getElementById('output_comment').innerHTML = "整列された整数の列";
+document.getElementById('motivation').innerHTML = "";
+document.getElementById('description').innerHTML = "整数の列を小さい順に並び替えてください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sort/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sort/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/merge_sort.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "マージソート";
+document.getElementById('atitle_en').innerHTML = "Merge Sort";
+document.getElementById('abstract').innerHTML = "マージソート(mergeSort)は、二分木の後行順巡回の流れの中で、配列を半分に分け、それぞれをソートし、結果をマージ(merge)で統合する処理を再帰的に行うアルゴリズムです。";
+document.getElementById('explanation').innerHTML = "マージソートは、配列構造上のデータを整列しますが、その計算手順は二分木構造における後行順巡回に基づいています。アルゴリズムの起点は、配列全体をソート範囲としてmergeSortを実行します。二分木の各ノードでは、ソートの範囲を前半と後半に分割し、それぞれmergeSortを行います。左の子と右の子の計算で２つのmergeSortが完了すると、それぞれの部分列はソート済みになるため、これらをmergeで統合していきます。";
+document.getElementById('note').innerHTML = "マージソートでは、二分木の葉以外のノードの数だけmergeが行われますが、各レベルでN回のデータの比較・移動が行われます。マージソートにおける二分木の高さは$log_2 N$ になるので、オーダーはO(N log N)となります。一方、マージソートはmergeを行うために、入力以外の別の配列（メモリ）が必要になる特徴（欠点）がありす。このようなソートを外部ソートと呼びます。<br/><br/>一方、マージソートは「安定なソートアルゴリズム」であるという特長があります。安定なソートとは、入力データに同じ値の要素が２つ以上あった場合、ソートの後でそれらの要素の順序が保たれるソートです。例えば、１つの数字とS, D, C, またはHの模様からなるカードを並び替えることを考えます。5H, 3D, 2S, 3Cの４つのカードを数字のみを基準に整列したとき、3Dと3Cの順序が崩れ、2S, 3C, 3D, 5Hとソートしてしまう可能性があるアルゴリズムは安定ではありません。";
+document.getElementById('application').innerHTML = "問題をその小さい部分問題に分割・計算し、計算結果を統合する処理を（再帰的に）行う手法を分割統治法と言います。マージソートは分割統治法に基づくアルゴリズムです。マージソートはメモリを必要としますが、データの並びに依存しない高速なオーダーで、かつ安定なソートのため、いくつかのプログラミング言語の標準ライブラリの要素として広く使われています。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/><img src="../../icons/structures/BT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">１次元配列と二分木</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整数の列</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">入力</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>整数の列を入力します。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">マージソート</th></tr><tr><td class="symbol"><img src="formula_merge.svg" /></td><td>２つの区間をマージします。</td><td class="code">merge(A, l, m, r)</td></tr><tr><th class="scene_desc" colspan="3">出力</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>整列された整数の列を出力します。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_conqur.svg" /><p class="caption">マージによって隣り合う２つの区間を統合します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">入力</b><br/><img src="scene_0.svg" alt="マージソート | 入力" title="マージソート | 入力"/></p></div><div><p><b class="scene_desc">マージソート</b><br/><img src="scene_1.svg" alt="マージソート | マージソート" title="マージソート | マージソート"/></p></div><div><p><b class="scene_desc">出力</b><br/><img src="scene_2.svg" alt="マージソート | 出力" title="マージソート | 出力"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear_log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/merge.svg" width="60"/><img src="../../icons/algorithms/btree_postorder.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

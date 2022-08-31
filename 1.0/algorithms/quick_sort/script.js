@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "整數序列的排序";
+document.getElementById('ptitle_en').innerHTML = "Sorting Integers";
+document.getElementById('input_comment').innerHTML = "整數序列$a_0, a_1, ..., a_{N-1}$ <ul><li>$N &le; 100,000$</li><li>$a_i &le; 1,000,000,000$</li></ul>";
+document.getElementById('output_comment').innerHTML = "排序完成的整數序列";
+document.getElementById('motivation').innerHTML = "";
+document.getElementById('description').innerHTML = "請由小而大重新排列整數序列。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sort/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sort/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/quick_sort.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "快速排序法";
+document.getElementById('atitle_en').innerHTML = "Quick Sort";
+document.getElementById('abstract').innerHTML = "快速排序法（Quick Sort）是一種以二元樹的前序追蹤順序為基礎，先利用分割（partition）將區間分成比基準值小和比基準值大的 2 個區間，再遞迴式地對各區間進行QuickSort 的演算法。";
+document.getElementById('explanation').innerHTML = "快速排序法雖然是對陣列結構上的資料做排序，但計算順序其實是以二元樹結構的後序追蹤為基礎。演算法的起點是以陣列整體為排序範圍執行 quickSort，接著再按照二元樹各節點的位置對目前區間 [l, r] 執行 partition，將元素分成比基準值小和比基準值大的 2 個群組。此時被當成群組分界點的基準值位置應先儲存在 q 中，再以 q 為基準，將區間 [l , r] 分割成前半區間 [l , q-1] 與後半區間 [q+1, r]，並各自遞迴式地執行quickSort。";
+document.getElementById('note').innerHTML = "快速排序法的時間複雜度會受到 partition 使用的基準值位置影響。基準值的位置若較接近排序範圍的中央，就能分割成一個比較平衡的二元樹，高度也會接近 log2 N。在這種情況下，由於各階層進行的比較與互換處理的時間複雜度為 O(N)，因此整體的時間複雜度會是 O(N log N)。但若基準值的位置是固定的，輸入資料又是已排序或接近排序完成的序列，則 partition 在分割時就會不平衡，使時間複雜度變成 O(N2)。不過這種情況可透過隨機選擇基準值的位置等方式來避免。此外，由於快速排序法會使距離較遠的元素交換位置，因此不屬於穩定排序。<br/><br/>此外，快速排序法只需要 1 個陣列便可完成排序，這種排序法稱為原地（in-place）排序。";
+document.getElementById('application').innerHTML = "快速排序法雖然要多花心思在資料的排列方式與穩定性問題上，但由於它是目前被提出的演算法中，最快速的排序演算法之一，因此應用範圍仍然相當廣泛。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/><img src="../../icons/structures/BT.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">一維陣列與二元樹</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整數序列</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">輸入</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>輸入整數序列。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">快速排序法</th></tr><tr><td class="symbol"><img src="formula_partition.svg" /></td><td>分割區間。</td><td class="code">partition(A, l, r)</td></tr><tr><td class="symbol"><img src="formula_pivp.svg" /></td><td>指向分割的基準值。</td><td class="code">q</td></tr><tr><th class="scene_desc" colspan="3">輸出</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>輸出排序完成的整數序列。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_divide_and_conqur.svg" /><p class="caption">以 partition 將區間分割成大、小 2 個群組。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">輸入</b><br/><img src="scene_0.svg" alt="クイックソート | 入力" title="快速排序法 | 輸入"/></p></div><div><p><b class="scene_desc">快速排序法</b><br/><img src="scene_1.svg" alt="クイックソート | クイックソート" title="快速排序法 | 快速排序法"/></p></div><div><p><b class="scene_desc">輸出</b><br/><img src="scene_2.svg" alt="クイックソート | 出力" title="快速排序法 | 輸出"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear_log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/partition.svg" width="60"/><img src="../../icons/algorithms/btree_preorder.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

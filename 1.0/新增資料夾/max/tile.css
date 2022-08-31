@@ -1,0 +1,69 @@
+.flash_g{
+    animation-name: Flash1;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
+    /* animation-iteration-count: 3; */
+    animation-iteration-count: 2; 
+}
+
+@keyframes Flash1{
+  50%{
+    opacity: 0;
+  }
+}
+
+.for_print{
+    display:none;
+}
+
+body{
+    background-color:#ffffff;
+    font-family:"Hiragino Kaku Gothic ProN","メイリオ", sans-serif;
+}
+
+.wrapper{
+    width:100%;
+    margin: 0 auto;
+    padding:0;
+}
+
+.header{
+    width:100%;
+    background-color:#f0f0f0;
+    height:48px;
+    padding:8px;
+
+}
+
+.content{
+    width:100%;
+    margin: 0 auto;
+}
+.scene{
+    width:100%;
+    margin: 0 auto;
+}
+
+.icon_book{
+    background-image: url("../../controller/icon_book.svg");
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    horizontal-aligh: right;
+    height: 2em;
+    width: 2em;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.icon_home{
+    background-image: url("../../controller/icon_home.svg");
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    horizontal-aligh: right;
+    height: 3em;
+    width: 3em;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+

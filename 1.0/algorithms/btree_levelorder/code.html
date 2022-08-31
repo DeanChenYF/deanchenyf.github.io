@@ -1,0 +1,19 @@
+<pre>
+BinaryTree t &larr; 建立二元樹
+  
+# 以 s 為起點，依階層順序走訪二元樹 t 的節點
+levelorder(s):
+    Queue que
+    que.push(s)
+    time &larr; 1
+    while not que.empty():
+        u &larr; que.dequeue()
+        L[u] &larr; time++
+        if t.nodes[u].left &ne; NIL:
+            que.push(t.nodes[u].left)
+        if t.nodes[u].right &ne; NIL:
+            que.push(t.nodes[u].right)
+
+# 以二元樹的根節點為起點，開始走訪
+levelorder(t.root)
+</pre>

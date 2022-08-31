@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "整数列の整列";
+document.getElementById('ptitle_en').innerHTML = "Sorting Integers";
+document.getElementById('input_comment').innerHTML = "整数の列<ul><li>$N &le; 100$</li><li> $a_i &le; 10^9$</li></ul>";
+document.getElementById('output_comment').innerHTML = "整列された整数の列";
+document.getElementById('motivation').innerHTML = "データをそれらがもつある共通のキーを基準に整列することは情報処理の基本です。ここでは、要素数が比較的少ない、整数の列を整列することを考えます。";
+document.getElementById('description').innerHTML = "整数の列{a_0, a_1, ..., a_N}を小さい順に並べ替えてください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/sort_small/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/sort_small/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/shaker_sort.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "シェーカーソート";
+document.getElementById('atitle_en').innerHTML = "Shaker Sort";
+document.getElementById('abstract').innerHTML = "";
+document.getElementById('explanation').innerHTML = "";
+document.getElementById('note').innerHTML = "";
+document.getElementById('application').innerHTML = "";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/A1D.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_s.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">１次元配列</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整数の列</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">入力</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>整数の列を入力します。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">整列</th></tr><tr><td class="symbol"><img src="formula_comp.svg" /></td><td>隣り合う要素の大小関係を調べます。</td><td class="code">if A[j-1] &gt; A[j]:</td></tr><tr><td class="symbol"><img src="formula_swap.svg" /></td><td>２つの要素をスワップします。</td><td class="code">swap(A[j-1], A[j])</td></tr><tr><td class="symbol"><img src="formula_last.svg" /></td><td>最後にスワップが行われた位置を更新していきます。</td><td class="code">last</td></tr><tr><td class="symbol"><img src="formula_left.svg" /></td><td>未ソート部分の先頭を指します。</td><td class="code">left</td></tr><tr><td class="symbol"><img src="formula_right.svg" /></td><td>未ソート部分の末尾を指します。</td><td class="code">right</td></tr><tr><td class="symbol"><img src="formula_sorted.svg" /></td><td>ソート済みの部分を拡張していきます。</td><td class="code">区間[0, i)</td></tr><tr><th class="scene_desc" colspan="3">出力</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>整列された整数の列を出力します。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption"></p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption"></p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">入力</b><br/><img src="scene_0.svg" alt="シェーカーソート | 入力" title="シェーカーソート | 入力"/></p></div><div><p><b class="scene_desc">整列</b><br/><img src="scene_1.svg" alt="シェーカーソート | 整列" title="シェーカーソート | 整列"/></p></div><div><p><b class="scene_desc">出力</b><br/><img src="scene_2.svg" alt="シェーカーソート | 出力" title="シェーカーソート | 出力"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/quad.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/swap.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

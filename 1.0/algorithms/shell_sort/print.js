@@ -1,0 +1,5 @@
+window.onload = function () {
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整數序列</td><td class="code">A</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">輸入</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>輸入整數序列。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">插入排序法</th></tr><tr><td class="symbol"><img src="formula_insertion.svg" /></td><td>針對相距指定間隔的元素執行插入排序法。</td><td class="code">insertionSort(A, g)</td></tr><tr><th class="scene_desc" colspan="3">輸出</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>輸出排序完成的整數序列。</td><td class="code"></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">輸入</b><br/><img src="scene_0.svg" alt="希爾排序法 | 輸入" title="希爾排序法 | 輸入"/></p></div><div><p><b class="scene_desc">插入排序法</b><br/><img src="scene_1.svg" alt="希爾排序法 | 插入排序法" title="希爾排序法 | 插入排序法"/></p></div><div><p><b class="scene_desc">輸出</b><br/><img src="scene_2.svg" alt="希爾排序法 | 輸出" title="希爾排序法 | 輸出"/></p></div>';
+};

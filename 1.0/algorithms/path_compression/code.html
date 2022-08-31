@@ -1,0 +1,11 @@
+<pre>
+# 從節點 x 開始進行路徑壓縮
+compress(x):
+    if parent[x] &ne; x: # x 不是根節點
+        parent[x] &larr; compress(parent[x])
+
+    return parent[x]
+
+# 模擬演算法動畫中的路徑壓縮操作
+compress(5)
+</pre>

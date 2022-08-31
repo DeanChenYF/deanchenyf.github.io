@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9734; ";
+document.getElementById('ptitle').innerHTML = "最短路徑";
+document.getElementById('ptitle_en').innerHTML = "Shortest Path";
+document.getElementById('input_comment').innerHTML = "加權圖形<ul><li>節點數 N &le; 1,000</li><li>邊數 M  &le; 10,000</li><li>0 &le;  邊上權重 &le; 10,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "從起點到終點的最短路徑";
+document.getElementById('motivation').innerHTML = "在日常生活中，尋找指定 2 點間的最短距離或路徑，是大家很感興趣的問題之一。因此已經有許多與最短路徑相關的演算法被提出。";
+document.getElementById('description').innerHTML = "從給定的加權圖形、起點及終點，找出從起點到終點的最短路徑。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/shortest_distance_small/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/shortest_distance_small/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/dijkstra_n2.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "戴克斯特拉演算法";
+document.getElementById('atitle_en').innerHTML = "Dijkstra's Algorithm";
+document.getElementById('abstract').innerHTML = "戴克斯特拉演算法會產生一個以起點為根節點的生成樹，稱為最短路徑樹（shortestpath tree）。我們可以透過最短路徑樹，求出從起點到其他節點的最短路徑與最短距離。戴克斯特拉演算法會先建立一個空的最短路徑樹 T，再將節點逐一新增到該樹中。";
+document.getElementById('explanation').innerHTML = "戴克斯特拉演算法（Dijkstra's Algorithm）是以逐步擴展最短路徑樹 T 的方式來求取圖形中的最短路徑。最短路徑樹是指以根節點為起點時，從根節點到各節點的（唯一一條）路徑即為圖形上最短路徑的一種樹狀結構。各計算步驟會更新從起點出發，只經由T 內節點抵達各節點的最短路徑。過程中，dist[i] 會記錄從起點到 T 外各節點 i 的暫定最短距離。演算法在各步驟中會選出暫定距離 dist 最小的 T 外節點 u，並將其新增到 T內。不過選擇節點前，若發現與節點 u 相鄰的 T 外節點 v，可經由 u 獲得更小的暫定距離，則需先將其更新。同時，將節點 v 在最短路徑樹內的父節點 parent[v] 更新為 u。戴克斯特拉演算法會在所有節點都被包含在最短路徑樹內時結束。由於 dist 在演算法結束時已全數更新完成，因此可利用 dist[i] 求出從起點到節點 i 的最短距離。而最短路徑樹，也就是從起點到各節點的最短路徑，可利用 parent 來建立。";
+document.getElementById('note').innerHTML = "戴克斯特拉演算法的最短路徑樹 T 是以一個步驟新增 1 個節點的方式逐步擴展而成。若尋找暫定距離最小節點的處理是以線性搜尋法執行，則時間複雜度將會是 O(N<sup>2</sup>)。這一點無論圖形是以相鄰矩陣或相鄰串列實作，都不會改變。但若此處理是以堆積（優先佇列）執行，則可實作出相當快速的演算法。";
+document.getElementById('application').innerHTML = "時間複雜度 O(N<sup>2</sup>) 在實作上的效率相當差，對大型圖形而言並不實用。下一節我們將講解以堆積實作，這是比較實用的戴克斯特拉演算法。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/GR.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">加權無向圖</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_dist.svg" /></td><td>從起點到各節點的暫定最短距離</td><td class="code">dist</td></tr><tr><td class="symbol"><img src="variable_parent.svg" /></td><td>最短路徑樹中的父節點</td><td class="code">parent</td></tr><tr><td class="symbol"><img src="variable_weight.svg" /></td><td>節點間的距離</td><td class="code">weight</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">決定起點與初始化</th></tr><tr><td class="symbol"><img src="formula_source.svg" /></td><td>將起點的距離初始化為 0。</td><td class="code">dist[s] &larr; 0</td></tr><tr><td class="symbol"><img src="formula_others.svg" /></td><td>將其餘節點的暫定距離初始化為極大的值。</td><td class="code">dist[v] &larr; INF</td></tr><tr><th class="scene_desc" colspan="3">建立最短路徑樹</th></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>尋找暫定距離最小的節點。</td><td class="code"># find minimum</td></tr><tr><td class="symbol"><img src="formula_u.svg" /></td><td>指向擁有最小暫定距離的節點。</td><td class="code">u</td></tr><tr><td class="symbol"><img src="formula_v.svg" /></td><td>更新節點的暫定距離與父節點。</td><td class="code">if dist[v] &gt; dist[u] + weight[u][v]:<br>&nbsp;&nbsp;&nbsp;&nbsp;dist[v] &larr; dist[u] + weight[u][v]<br>&nbsp;&nbsp;&nbsp;&nbsp;parent[v] &larr; u</td></tr><tr><td class="symbol"><img src="formula_edges.svg" /></td><td>標示最短路徑樹暫定要使用的邊。</td><td class="code">(v, parent[v])</td></tr><tr><td class="symbol"><img src="formula_finished.svg" /></td><td>擴大最短路徑樹。</td><td class="code">將 u 新增至 T 內</td></tr><tr><th class="scene_desc" colspan="3">輸出最短路徑樹</th></tr><tr><td class="symbol"><img src="formula_all.svg" /></td><td>利用父節點的資訊建立最短路徑樹。</td><td class="code"></td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">尋找擁有最小 dist 的節點。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">將所選節點新增到 T 中，並更新 相鄰節點的暫定距離。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">決定起點與初始化</b><br/><img src="scene_0.svg" alt="戴克斯特拉演算法 | 決定起點與初始化" title="戴克斯特拉演算法 | 決定起點與初始化"/></p></div><div><p><b class="scene_desc">建立最短路徑樹</b><br/><img src="scene_1.svg" alt="戴克斯特拉演算法 | 建立最短路徑樹" title="戴克斯特拉演算法 | 建立最短路徑樹"/></p></div><div><p><b class="scene_desc">輸出最短路徑樹</b><br/><img src="scene_2.svg" alt="戴克斯特拉演算法 | 輸出最短路徑樹" title="戴克斯特拉演算法 | 輸出最短路徑樹"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/quad.svg" />';
+document.getElementById('prerequisites').innerHTML = '';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

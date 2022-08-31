@@ -1,0 +1,14 @@
+<pre>
+# 針對陣列 A 的區間 [l, r) 執行合併排序法
+mergeSort(A, l, r):
+    if l+1 < r:
+        m &larr; (l+r)/2
+        mergeSort(A, l, m)
+        mergeSort(A, m, r)
+        merge(A, l, m, r)
+
+	     
+# 針對陣列整體執行合併排序法
+A &larr; 欲輸入的整數序列
+mergeSort(A, 0, N)
+</pre>

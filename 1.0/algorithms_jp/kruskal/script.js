@@ -1,0 +1,26 @@
+window.onload = function () {
+document.getElementById('io_arrow').innerHTML = "&rarr;";
+document.getElementById('level').innerHTML = "&#9733; &#9733; &#9733; ";
+document.getElementById('ptitle').innerHTML = "最小全域木";
+document.getElementById('ptitle_en').innerHTML = "Minimum Spanning Tree";
+document.getElementById('input_comment').innerHTML = "重み付き無向グラフ<ul><li>ノードの数N &le; 100,000</li><li>エッジの数M &le; 100,000</li></ul>";
+document.getElementById('output_comment').innerHTML = "最小全域木";
+document.getElementById('motivation').innerHTML = "より大きなグラフに対して、最小全域木を求めてみましょう。";
+document.getElementById('description').innerHTML = "重み付き無向グラフの最小全域木を求めてください。";
+document.getElementById('input_panel').innerHTML = '<img src="../../problems/minimum_spanning_tree/input.svg" width="340"/>';
+document.getElementById('output_panel').innerHTML = '<img src="../../problems/minimum_spanning_tree/output.svg" width="340"/>';
+document.getElementById('algorithm_icon').innerHTML = '<img src="../../icons/algorithms/kruskal.svg" width="100"/>';
+document.getElementById('atitle').innerHTML = "クラスカルのアルゴリズム";
+document.getElementById('atitle_en').innerHTML = "Kruskal's Algorithm";
+document.getElementById('abstract').innerHTML = "クラスカルのアルゴリズムは互いに素な集合を管理しながら、１つずつエッジを全域木に追加していきます。";
+document.getElementById('explanation').innerHTML = "クラスカルのアルゴリズムは、まずグラフのエッジをそれらの重みの昇順で整列します。重みが小さい順にエッジ(u, v)を選び、uとvが異なる集合にある場合にこれらの集合を合併し、(u, v)を最小全域木に追加します。uとvが同じ集合に属する場合は、エッジを追加するとグラフに閉路（サイクル）ができてしまうので、そのエッジを捨て、次のエッジの選択に進みます。クラスカルのアルゴリズムは、追加したエッジの数がN-1に達したときに終了します。";
+document.getElementById('note').innerHTML = "クラスカルのアルゴリズムの計算量は、エッジに対するソートアルゴリズムに依存します。エッジのソートにクイックソートやマージソートなどの速いソートを使えば、オーダーはO(M log M)となります。";
+document.getElementById('application').innerHTML = "O($N^2$)の実装のプリムのアルゴリズムとは違い、クラスカルのアルゴリズムは大規模なグラフに対して最小全域木を求めることができます。";
+document.getElementById('structure').innerHTML = '<tr><td style="text-align:center;width:100"><img src="../../icons/structures/GR.svg" /><br/><br/></td><td class="frame">&nbsp;<img height="160" class="frame_svg" valign="middle" src="space_st.svg" />&nbsp;</td></tr><tr><td></td><td class="caption">重み付き無向グラフ</td></tr>';
+document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_weight.svg" /></td><td>ノード間の距離</td><td class="code">weight</td></tr>';
+document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">整列</th></tr><tr><td class="symbol"><img src="formula_sort.svg" /></td><td>エッジを重みの昇順にソートします。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">エッジの追加</th></tr><tr><td class="symbol"><img src="formula_connect.svg" /></td><td>最小全域木にエッジを追加します。</td><td class="code">MSTにeを追加する</td></tr><tr><td class="symbol"><img src="formula_check_pair.svg" /></td><td>接続しようとするエッジを表します。</td><td class="code">u, v</td></tr><tr><td class="symbol"><img src="formula_edges.svg" /></td><td>最小全域木に含まれるエッジを表します。</td><td class="code">MSTに含まれるエッジ</td></tr><tr><td class="symbol"><img src="formula_mst.svg" /></td><td>最小全域木に含まれるノードを拡張していきます。</td><td class="code">MSTに含まれるノード</td></tr>';
+document.getElementById('scheme').innerHTML = '<tr><td style="text-align:center;width:100"><img src="anim_qr.svg" width="80"/></td><td class="frame"><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step1.svg" /><p class="caption">エッジを追加できるか確認します。</p><hr class="separator"/><img height="160" class="frame_svg" src="scheme_step2.svg" /><p class="caption">エッジを追加して集合を合併します。</p></td></tr>';
+document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">整列</b><br/><img src="scene_0.svg" alt="クラスカルのアルゴリズム | 整列" title="クラスカルのアルゴリズム | 整列"/></p></div><div><p><b class="scene_desc">エッジの追加</b><br/><img src="scene_1.svg" alt="クラスカルのアルゴリズム | エッジの追加" title="クラスカルのアルゴリズム | エッジの追加"/></p></div>';
+document.getElementById('complexity').innerHTML = '<img src="../../../icons/complexity/linear_log.svg" />';
+document.getElementById('prerequisites').innerHTML = '<img src="../../icons/algorithms/disjoint_set_simulation.svg" width="60"/><img src="../../icons/algorithms/quick_sort.svg" width="60"/>';
+MathJax.Hub.Queue(["Typeset",MathJax.Hub]);};

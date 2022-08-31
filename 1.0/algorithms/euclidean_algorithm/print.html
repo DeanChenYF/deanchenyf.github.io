@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-28377245-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-28377245-2');
+</script>
+<!--<meta http-equiv="X-UA-Compatible" content="chrome=1">-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>輾轉相除法 | 會動的演算法</title>
+<link rel="stylesheet" href="print.css" type="text/css" media="all" />
+<!--<script language="JavaScript" type="text/javascript" src="print.js"></script>-->
+</head>
+<body>
+  <div class="wrapper">
+    <h3>輾轉相除法 | <a href="https://yutaka-watanobe.github.io/star-aida/books/">會動的演算法</a></h3>
+
+    <div id="content" class="content">
+      <h4>符號表示</h4>
+      
+      <table class="items" cellspacing="0">
+        <tbody id="variable">
+	  <tr><th class="scene_desc" colspan="3">資料</th></tr><tr><td class="symbol"><img src="variable_a.svg" /></td><td>第 1 個整數</td><td class="code">a</td></tr><tr><td class="symbol"><img src="variable_b.svg" /></td><td>第 2 個整數</td><td class="code">b</td></tr><tr><td class="symbol"><img src="variable_r.svg" /></td><td>a 除以 b 的餘數</td><td class="code">r</td></tr>
+	</tbody>
+      </table>
+      <br/>
+      <table class="items" cellspacing="0">
+        <tbody id="formula">
+	  <tr><th class="scene_desc" colspan="3">輸入</th></tr><tr><td class="symbol"><img src="formula_inx.svg" /></td><td>輸入 2 個整數。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">輾轉相除法</th></tr><tr><td class="symbol"><img src="formula_zw.svg" /></td><td>將 r 指定為 a 除以 b 的餘數。</td><td class="code">r &larr; a % b</td></tr><tr><td class="symbol"><img src="formula_xw.svg" /></td><td>複製變數的值。</td><td class="code">a &larr; b<br/>b &larr; r</td></tr><tr><th class="scene_desc" colspan="3">輸出</th></tr><tr><td class="symbol"><img src="formula_outx.svg" /></td><td>輸出最大公因數。</td><td class="code"></td></tr>
+	</tbody>
+      </table>
+
+      <br/>
+      <h4>演算法動畫</h4>
+      <div id="scene" class="scene">
+	<div><p><b class="scene_desc">輸入</b><br/><img src="scene_0.svg" alt="輾轉相除法 | 輸入" title="輾轉相除法 | 輸入"/></p></div><div><p><b class="scene_desc">輾轉相除法</b><br/><img src="scene_1.svg" alt="輾轉相除法 | 輾轉相除法" title="輾轉相除法 | 輾轉相除法"/></p></div><div><p><b class="scene_desc">輸出</b><br/><img src="scene_2.svg" alt="輾轉相除法 | 輸出" title="輾轉相除法 | 輸出"/></p></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+

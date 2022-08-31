@@ -1,0 +1,13 @@
+<pre>
+rightRotate(Node *t):
+    Node *s &larr; t.left
+    t.left &larr; s.right
+    s.right &larr; t
+    return s # 部分木の新しい根を返す
+
+leftRotate(Node *t):
+    Node *s &larr; t.right
+    t.right &larr; s.left
+    s.left &larr; t
+    return s # 部分木の新しい根を返す
+</pre>

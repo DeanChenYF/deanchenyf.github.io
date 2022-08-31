@@ -1,0 +1,19 @@
+<pre>
+# 圖形 g 及起點節點 s
+breadthFirstSearch(g, s):
+    Queue que
+
+    for i &larr; 0 to g.N-1:
+        color[i] &larr; WHITE
+
+    color[s] &larr; GRAY
+    que.enqueue(s)
+    
+    while not que.empty():
+        u &larr; que.dequeue()
+        color[u] &larr; BLACK
+        for v in g.adjLists[u]:
+            if color[v] = WHITE:
+                color[v] &larr; GRAY
+                que.enqueue(v)
+</pre>
