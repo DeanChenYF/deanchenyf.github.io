@@ -1,5 +1,0 @@
-window.onload = function () {
-document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_dist.svg" /></td><td>始点からの最短距離</td><td class="code">dist</td></tr>';
-document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">始点の初期化</th></tr><tr><td class="symbol"><img src="formula_si.svg" /></td><td>始点の最短距離を0に初期化します。</td><td class="code">dist[s] &larr; 0</td></tr><tr><th class="scene_desc" colspan="3">幅優先探索</th></tr><tr><td class="symbol"><img src="formula_vi.svg" /></td><td>最短距離を更新します。</td><td class="code">dist[v] &larr; dist[u] + 1</td></tr>';
-document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">始点の初期化</b><br/><img src="scene_0.svg" alt="BFSによる最短距離の計算 | 始点の初期化" title="BFSによる最短距離の計算 | 始点の初期化"/></p></div><div><p><b class="scene_desc">幅優先探索</b><br/><img src="scene_1.svg" alt="BFSによる最短距離の計算 | 幅優先探索" title="BFSによる最短距離の計算 | 幅優先探索"/></p></div>';
-};

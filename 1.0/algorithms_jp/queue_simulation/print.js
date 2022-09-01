@@ -1,5 +1,0 @@
-window.onload = function () {
-document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_Q.svg" /></td><td>キューの要素</td><td class="code">Q</td></tr>';
-document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">データの挿入と削除</th></tr><tr><td class="symbol"><img src="formula_tail.svg" /></td><td>キューの末尾にデータを追加します。</td><td class="code">Q[tail++] &larr; x</td></tr><tr><td class="symbol"><img src="formula_head.svg" /></td><td>キューの先頭からデータを取り出します。</td><td class="code">return Q[head++]</td></tr><tr><td class="symbol"><img src="formula_p_head.svg" /></td><td>キューの先頭を指します。</td><td class="code">head</td></tr><tr><td class="symbol"><img src="formula_p_tail.svg" /></td><td>キューの末尾を指します。</td><td class="code">tail</td></tr>';
-document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">データの挿入と削除</b><br/><img src="scene_0.svg" alt="キュー | データの挿入と削除" title="キュー | データの挿入と削除"/></p></div>';
-};

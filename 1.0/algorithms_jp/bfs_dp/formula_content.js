@@ -1,2 +1,0 @@
-var variable_content = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_dist.svg" /></td><td>始点からの最短距離</td><td class="code">dist</td></tr>';
-var formula_content = '<tr><th class="scene_desc" colspan="3">始点の初期化</th></tr><tr><td class="symbol"><img src="formula_si.svg" /></td><td>始点の最短距離を0に初期化します。</td><td class="code">dist[s] &larr; 0</td></tr><tr><th class="scene_desc" colspan="3">幅優先探索</th></tr><tr><td class="symbol"><img src="formula_vi.svg" /></td><td>最短距離を更新します。</td><td class="code">dist[v] &larr; dist[u] + 1</td></tr>';

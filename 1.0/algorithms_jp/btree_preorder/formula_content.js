@@ -1,2 +1,0 @@
-var variable_content = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_L.svg" /></td><td>訪問した順番</td><td class="code">L</td></tr>';
-var formula_content = '<tr><th class="scene_desc" colspan="3">二分木の巡回</th></tr><tr><td class="symbol"><img src="formula_visit.svg" /></td><td>ノードを訪問した順番を印字します。</td><td class="code">L[u] &larr; time++</td></tr><tr><td class="symbol"><img src="formula_visited.svg" /></td><td>訪問済みのノードを拡張していきます。</td><td class="code">L[u]が設定されたノード</td></tr>';

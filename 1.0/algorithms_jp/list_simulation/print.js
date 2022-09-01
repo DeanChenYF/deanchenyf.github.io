@@ -1,5 +1,0 @@
-window.onload = function () {
-document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_key.svg" /></td><td>リストの要素</td><td class="code">key</td></tr>';
-document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">データの挿入と削除</th></tr><tr><td class="symbol"><img src="formula_create.svg" /></td><td>ノードを生成し、データとポインタを設定します。</td><td class="code">insert(data):の前半</td></tr><tr><td class="symbol"><img src="formula_link.svg" /></td><td>ポインタを繋ぎ換え、ノードを連結します。</td><td class="code">insert(data):の後半</td></tr><tr><td class="symbol"><img src="formula_delete.svg" /></td><td>ポインタを繋ぎ換え、ノードを削除します。</td><td class="code">deleteNode(Node *t)</td></tr>';
-document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">データの挿入と削除</b><br/><img src="scene_0.svg" alt="双方向連結リスト | データの挿入と削除" title="双方向連結リスト | データの挿入と削除"/></p></div>';
-};

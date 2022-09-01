@@ -1,5 +1,0 @@
-window.onload = function () {
-document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr><tr><td class="symbol"><img src="variable_A.svg" /></td><td>整数の列</td><td class="code">A</td></tr>';
-document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">入力</th></tr><tr><td class="symbol"><img src="formula_in.svg" /></td><td>整数の列を入力します。</td><td class="code"></td></tr><tr><th class="scene_desc" colspan="3">マージソート</th></tr><tr><td class="symbol"><img src="formula_merge.svg" /></td><td>２つの区間をマージします。</td><td class="code">merge(A, l, m, r)</td></tr><tr><th class="scene_desc" colspan="3">出力</th></tr><tr><td class="symbol"><img src="formula_out.svg" /></td><td>整列された整数の列を出力します。</td><td class="code"></td></tr>';
-document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">入力</b><br/><img src="scene_0.svg" alt="マージソート | 入力" title="マージソート | 入力"/></p></div><div><p><b class="scene_desc">マージソート</b><br/><img src="scene_1.svg" alt="マージソート | マージソート" title="マージソート | マージソート"/></p></div><div><p><b class="scene_desc">出力</b><br/><img src="scene_2.svg" alt="マージソート | 出力" title="マージソート | 出力"/></p></div>';
-};

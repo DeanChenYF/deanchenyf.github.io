@@ -1,5 +1,0 @@
-window.onload = function () {
-document.getElementById('variable').innerHTML = '<tr><th class="scene_desc" colspan="3">データ</th></tr>';
-document.getElementById('formula').innerHTML = '<tr><th class="scene_desc" colspan="3">凸包の構築</th></tr><tr><td class="symbol"><img src="formula_order.svg" /></td><td>最も左にある点を探します。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_select.svg" /></td><td>起点を中心に、最も反時計回りにある点を選択します。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_pointer.svg" /></td><td>選ばれた点を指します。</td><td class="code">t</td></tr><tr><td class="symbol"><img src="formula_head.svg" /></td><td>点を凸包に追加します。</td><td class="code"></td></tr><tr><td class="symbol"><img src="formula_trace.svg" /></td><td>凸包の辺を確定していきます。</td><td class="code"></td></tr>';
-document.getElementById('scene').innerHTML = '<div><p><b class="scene_desc">凸包の構築</b><br/><img src="scene_0.svg" alt="ギフトラッピング | 凸包の構築" title="ギフトラッピング | 凸包の構築"/></p></div>';
-};
